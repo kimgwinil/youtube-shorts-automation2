@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       TZ: Asia/Seoul
       TIMEZONE_NAME: Asia/Seoul
       LOCATION_NAME: Seoul, KR
