@@ -25,9 +25,9 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.5,
         "mute_drums": True,
         "prompts": [
-            ("ambient instrumental meditation, no bass, no sub-frequencies, no low drone", 1.2),
-            ("soft piano, airy atmospheric pads, crystalline shimmer, upper harmonics only, no vocals", 1.0),
-            ("zen garden, dawn silence, sparse and spacious, pure midrange, no bass rumble", 0.8),
+            ("classical solo instrument, piano or harp or guitar, no bass, no sub-bass, no low frequencies", 1.2),
+            ("acoustic piano upper register, gentle sparse melody, or harp arpeggios, no vocals, no drums", 1.0),
+            ("serene classical chamber, dawn stillness, pure tone, no bass rumble, no low drone", 0.8),
         ],
     },
     "reflective": {
@@ -36,9 +36,9 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.3,
         "mute_drums": True,
         "prompts": [
-            ("cinematic ambient instrumental, completely bass-free, clean midrange, no percussion", 1.2),
-            ("felt piano, gentle cello harmonics, misty strings, subtle rain texture, no vocals", 1.0),
-            ("introspective evening, candlelight atmosphere, restrained tone, no bass drone, no rumble", 0.8),
+            ("classical solo or duet, piano violin or cello upper register, no bass drum, no sub-bass", 1.2),
+            ("acoustic piano melody, or violin legato, or guitar fingerpicking, no vocals, no percussion", 1.0),
+            ("introspective classical, warm midrange tone, no bass drone, no low rumble, restrained", 0.8),
         ],
     },
     "focused": {
@@ -47,37 +47,37 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.0,
         "mute_drums": False,
         "prompts": [
-            ("modern ambient instrumental, minimal bass, clean forward motion, bright spectrum", 1.2),
-            ("clean piano pulse, glass marimba, light rhythmic texture, bright upper tone, no vocals", 1.0),
-            ("morning clarity, disciplined momentum, crisp upper frequencies, no bass rumble", 0.7),
+            ("classical piano or guitar, clear bright melody, light rhythmic pulse, no heavy bass", 1.2),
+            ("acoustic piano bright arpeggios, or guitar clean picking, forward motion, no vocals", 1.0),
+            ("uplifting classical chamber, crisp upper register, disciplined, no bass rumble", 0.7),
         ],
     },
 }
 
 _INSTRUMENT_POOLS: dict[str, list[str]] = {
     "meditative": [
-        "solo acoustic piano, sparse gentle notes, deep pedal resonance, no other instruments",
-        "classical nylon string guitar, slow fingerpicking, warm intimate tone, solo",
-        "ambient synthesizer, soft evolving pads, gentle arpeggios, ethereal atmosphere, no bass",
-        "solo kalimba, warm metallic tones, meditative repetition, peaceful resonance",
-        "music box, delicate crystalline melody, simple and pure, minimal texture",
-        "solo acoustic guitar, gentle fingerstyle, warm harmonics, meditative",
+        "solo piano, gentle upper register melody, sparse soft touch, pianissimo, no bass notes",
+        "classical harp, delicate arpeggios, shimmering harmonics, ethereal, no low strings",
+        "nylon string guitar, slow fingerpicking, warm midrange, solo, no bass strings",
+        "solo violin, soft sustained melody, pianissimo bowing, serene, no accompaniment",
+        "cello playing in upper register, lyrical bow strokes, warm mid-tone, no low drone",
+        "piano and harp duet, gentle interplay, upper register only, peaceful, no bass",
     ],
     "reflective": [
-        "grand piano, expressive melodic lines, rich harmonic resonance, no bass drum",
-        "acoustic guitar, fingerpicking style, melancholic phrasing, warm nylon strings",
-        "electric Rhodes piano, warm vintage tone, gentle chords and melody, no bass",
-        "analog synthesizer, soft warm pads, subtle melodic motif, gentle introspective",
-        "solo violin, expressive lyrical melody, light reverb, no percussion",
-        "acoustic guitar and piano duet, complementary interplay, reflective mood",
+        "grand piano, expressive rubato melody, mid and upper register, no heavy bass pedal",
+        "violin, singing legato melody, heartfelt bowing, warm tone, solo, no percussion",
+        "cello, lyrical mid-register melody, expressive, no low open strings, bowed gently",
+        "classical guitar, fingerpicked arpeggios, warm nylon tone, melancholic, no bass strings",
+        "harp, flowing arpeggios, shimmering texture, emotional, mid and upper register only",
+        "piano and violin duet, tender intertwining melody, upper register, no bass drum",
     ],
     "focused": [
-        "upright piano, clear articulate notes, steady gentle pulse, bright tone",
-        "acoustic guitar, clean fingerpicking, light rhythmic clarity, positive energy",
-        "electric piano, clean bright tone, gentle rhythmic accompaniment, forward motion",
-        "marimba, gentle melodic percussion, clear crystalline sound, rhythmic focus",
-        "electronic synth arpeggio, clean bright tone, steady rhythm, modern ambient",
-        "guitar and synthesizer combination, clean textured sound, forward momentum",
+        "piano, clear bright articulate melody, upper register, steady gentle pulse, no bass",
+        "classical guitar, clean bright fingerpicking, forward motion, positive, no bass strings",
+        "violin, bright clear bowing, light staccato phrases, energetic but delicate, no bass",
+        "harp, rhythmic bright arpeggios, uplifting, clear tone, mid and upper register",
+        "piano and cello duet, bright mid-register melody, disciplined, clear, no low drone",
+        "guitar and violin, complementary bright melody, warm, forward moving, no bass",
     ],
 }
 
@@ -257,9 +257,10 @@ def _transcode_pcm_to_m4a(raw_path: Path, output_path: Path, duration: float) ->
         "-i", str(raw_path),
         "-af",
         (
-            "highpass=f=380,lowpass=f=5400,"
-            "equalizer=f=120:t=q:w=1.5:g=-18,"
-            "equalizer=f=200:t=q:w=2:g=-14,"
+            "highpass=f=440,lowpass=f=5400,"
+            "equalizer=f=100:t=q:w=1.5:g=-20,"
+            "equalizer=f=160:t=q:w=1.5:g=-18,"
+            "equalizer=f=280:t=q:w=2:g=-12,"
             "dynaudnorm=f=500:g=3,alimiter=limit=0.84,"
             f"afade=t=in:st=0:d=1.8,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2.0"
         ),
