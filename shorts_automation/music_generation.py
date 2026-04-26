@@ -54,6 +54,33 @@ _GEMINI_MOOD_PROFILES: dict = {
     },
 }
 
+_INSTRUMENT_POOLS: dict[str, list[str]] = {
+    "meditative": [
+        "solo acoustic piano, sparse gentle notes, deep pedal resonance, no other instruments",
+        "classical nylon string guitar, slow fingerpicking, warm intimate tone, solo",
+        "ambient synthesizer, soft evolving pads, gentle arpeggios, ethereal atmosphere, no bass",
+        "solo kalimba, warm metallic tones, meditative repetition, peaceful resonance",
+        "music box, delicate crystalline melody, simple and pure, minimal texture",
+        "solo acoustic guitar, gentle fingerstyle, warm harmonics, meditative",
+    ],
+    "reflective": [
+        "grand piano, expressive melodic lines, rich harmonic resonance, no bass drum",
+        "acoustic guitar, fingerpicking style, melancholic phrasing, warm nylon strings",
+        "electric Rhodes piano, warm vintage tone, gentle chords and melody, no bass",
+        "analog synthesizer, soft warm pads, subtle melodic motif, gentle introspective",
+        "solo violin, expressive lyrical melody, light reverb, no percussion",
+        "acoustic guitar and piano duet, complementary interplay, reflective mood",
+    ],
+    "focused": [
+        "upright piano, clear articulate notes, steady gentle pulse, bright tone",
+        "acoustic guitar, clean fingerpicking, light rhythmic clarity, positive energy",
+        "electric piano, clean bright tone, gentle rhythmic accompaniment, forward motion",
+        "marimba, gentle melodic percussion, clear crystalline sound, rhythmic focus",
+        "electronic synth arpeggio, clean bright tone, steady rhythm, modern ambient",
+        "guitar and synthesizer combination, clean textured sound, forward momentum",
+    ],
+}
+
 _LOCAL_MOOD_PROFILES: dict = {
     "meditative": {
         "freqs": [392.00, 523.25, 587.33, 659.25, 783.99],
@@ -128,7 +155,7 @@ async def _generate_music_with_gemini(
     raw_path = output_dir / f"{signature}_{_MUSIC_VERSION}.pcm"
     output_path = output_dir / f"{signature}_{_MUSIC_VERSION}.m4a"
     profile = _GEMINI_MOOD_PROFILES.get(script.bgm_mood, _GEMINI_MOOD_PROFILES["reflective"])
-    prompt_seed = _build_gemini_prompts(script, profile["prompts"])
+    prompt_seed = _build_gemini_prompts(script, profile["prompts"], signature)
     bytes_written = 0
 
     client = genai.Client(api_key=gemini_api_key, http_options={"api_version": "v1alpha"})
@@ -183,8 +210,17 @@ async def _generate_music_with_gemini(
     return output_path
 
 
-def _build_gemini_prompts(script: EssayScript, base_prompts: list[tuple[str, float]]) -> list[tuple[str, float]]:
+def _pick_instrument(bgm_mood: str, signature: str) -> str:
+    pool = _INSTRUMENT_POOLS.get(bgm_mood, _INSTRUMENT_POOLS["reflective"])
+    seeded = random.Random(f"{signature}|instrument-pick")
+    return seeded.choice(pool)
+
+
+def _build_gemini_prompts(script: EssayScript, base_prompts: list[tuple[str, float]], signature: str = "") -> list[tuple[str, float]]:
+    instrument = _pick_instrument(script.bgm_mood, signature)
+    print(f"[music] 악기 선택: {instrument[:60]}")
     prompts = list(base_prompts)
+    prompts.append((instrument, 1.15))
     prompts.append((f"{script.mood} mood, {script.visual_style} visual atmosphere", 0.55))
     prompts.append((f"theme: {script.topic}", 0.50))
     prompts.append((script.bgm_prompt_en, 1.1))
