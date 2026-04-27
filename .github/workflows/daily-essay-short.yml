@@ -2,8 +2,10 @@ name: Daily Essay Short
 
 on:
   schedule:
-    # 06:00 KST = 21:00 UTC (전날)
-    - cron: "0 21 * * *"
+    # GitHub scheduled workflows can be delayed or dropped at the start of the hour.
+    # Run twice off the hour so the second attempt backfills if the first one is dropped.
+    - cron: "7 21 * * *"   # 06:07 KST
+    - cron: "17 21 * * *"  # 06:17 KST
   workflow_dispatch:
     inputs:
       force:
