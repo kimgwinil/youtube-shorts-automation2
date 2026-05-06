@@ -4,7 +4,6 @@
     "달",
     "노력",
     "인내",
-    "지혜",
     "믿음",
     "평화",
     "새벽",
@@ -12,15 +11,16 @@
     "겨울",
     "친구",
     "그리움",
-    "기억"
+    "기억",
+    "지혜"
   ],
   "recent_visual_styles": [
     "oil_painting",
     "photography",
-    "ink",
     "photoreal",
     "watercolor",
-    "pencil_sketch"
+    "pencil_sketch",
+    "ink"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -34,6 +34,7 @@
     "2026-05-03",
     "2026-05-04",
     "2026-05-05",
-    "2026-05-06"
+    "2026-05-06",
+    "2026-05-07"
   ]
 }
