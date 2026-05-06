@@ -28,6 +28,9 @@ class AppConfig:
     gemini_image_model: str
     gemini_music_model: str
     enable_gemini_music: bool
+    enable_narration: bool
+    narration_voice: str
+    narration_model: str
 
 
 def load_config(project_root: Path) -> AppConfig:
@@ -52,4 +55,7 @@ def load_config(project_root: Path) -> AppConfig:
         gemini_image_model=os.environ.get("GEMINI_IMAGE_MODEL", "imagen-4.0-fast-generate-001"),
         gemini_music_model=os.environ.get("GEMINI_MUSIC_MODEL", "models/lyria-realtime-exp"),
         enable_gemini_music=os.environ.get("ENABLE_GEMINI_MUSIC", "true").lower() == "true",
+        enable_narration=os.environ.get("ENABLE_NARRATION", "true").lower() == "true",
+        narration_voice=os.environ.get("NARRATION_VOICE", "coral"),
+        narration_model=os.environ.get("NARRATION_MODEL", "gpt-4o-mini-tts"),
     )

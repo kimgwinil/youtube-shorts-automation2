@@ -7,6 +7,7 @@ LINE_DURATION = 9.5
 LINE_GAP = 0.5
 LEAD_PADDING = 1.0
 TAIL_PADDING = 2.5
+MIN_TOTAL_DURATION = 15.0
 
 
 @dataclass
@@ -33,3 +34,5 @@ class EssayScript:
                 LEAD_PADDING + n * LINE_DURATION + (n - 1) * LINE_GAP + TAIL_PADDING,
                 2,
             )
+        if self.total_duration < MIN_TOTAL_DURATION:
+            self.total_duration = MIN_TOTAL_DURATION
