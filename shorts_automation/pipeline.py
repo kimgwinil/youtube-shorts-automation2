@@ -10,6 +10,7 @@ from .ai_generation import build_daily_package
 from .daily_context import build_daily_context
 from .config import load_config
 from .music_generation import generate_music
+from .narration import generate_narration
 from .render import render_short
 from .script_builder import build_script, pick_next_quote
 from .state_store import load_state, save_state
@@ -65,6 +66,17 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
         prefer_gemini=config.enable_gemini_music,
     )
 
+    narration = None
+    if config.enable_narration:
+        narration = generate_narration(
+            script=script,
+            signature=bgm_signature,
+            output_dir=config.output_dir,
+            openai_api_key=config.openai_api_key,
+            voice=config.narration_voice,
+            model=config.narration_model,
+        )
+
     render_result = render_short(
         script=script,
         background_dir=config.background_dir,
@@ -73,6 +85,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
         shorts_hashtags=config.shorts_hashtags,
         background_override=background_override,
         bgm_override=bgm_override,
+        narration=narration,
     )
     if dry_run:
         return {

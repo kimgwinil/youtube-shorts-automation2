@@ -11,6 +11,7 @@ from typing import List, Sequence, Tuple
 from PIL import Image, ImageDraw, ImageFont
 
 from .ffmpeg_utils import resolve_ffmpeg
+from .narration import NarrationResult, SUBTITLE_LEAD, SUBTITLE_TAIL
 from .script_builder import VideoScript
 
 
@@ -33,10 +34,14 @@ def render_short(
     shorts_hashtags: str,
     background_override: Path | None = None,
     bgm_override: Path | None = None,
+    narration: NarrationResult | None = None,
 ) -> RenderResult:
     background = background_override or _pick_background(background_dir, script)
     bgm = bgm_override or _pick_bgm(background_dir.parent / "music", script.quote.bgm_mood)
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    if narration is not None:
+        script.total_duration = max(script.total_duration, narration.total_duration)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     stem = f"{timestamp}_{script.quote.author.lower().replace(' ', '_')}"
@@ -94,6 +99,10 @@ def render_short(
                 "bgm_prompt_en": script.bgm_prompt_en,
                 "background": str(background),
                 "bgm": str(bgm) if bgm else None,
+                "narration": [str(p) for p in narration.line_audio_paths] if narration else None,
+                "narration_starts": list(narration.line_start_times) if narration else None,
+                "narration_durations": list(narration.line_durations) if narration else None,
+                "lines": list(script.lines),
                 "duration_seconds": script.total_duration,
             },
             ensure_ascii=False,
@@ -109,6 +118,7 @@ def render_short(
         author_overlay=author_overlay,
         output=video_path,
         duration=script.total_duration,
+        narration=narration,
     )
     subprocess.run(cmd, check=True)
     return RenderResult(video_path=video_path, metadata_path=metadata_path)
@@ -161,6 +171,7 @@ def _build_render_cmd(
     author_overlay: Path,
     output: Path,
     duration: float,
+    narration: NarrationResult | None = None,
 ) -> List[str]:
     cmd = [resolve_ffmpeg(), "-y"]
     if background.suffix.lower() in IMAGE_EXTS:
@@ -171,12 +182,26 @@ def _build_render_cmd(
     for overlay_path in line_overlays:
         cmd.extend(["-i", str(overlay_path)])
     cmd.extend(["-i", str(author_overlay)])
+
+    bgm_input_index: int | None = None
     if bgm:
+        bgm_input_index = 1 + len(line_overlays) + 1
         cmd.extend(["-stream_loop", "-1", "-i", str(bgm)])
+
+    narration_input_indices: List[int] = []
+    if narration:
+        next_idx = 1 + len(line_overlays) + 1 + (1 if bgm else 0)
+        for path in narration.line_audio_paths:
+            cmd.extend(["-i", str(path)])
+            narration_input_indices.append(next_idx)
+            next_idx += 1
 
     filter_complex, video_map, audio_map = _filter_graph(
         num_line_overlays=len(line_overlays),
-        has_bgm=bgm is not None,
+        bgm_index=bgm_input_index,
+        narration_indices=narration_input_indices,
+        narration_starts=list(narration.line_start_times) if narration else [],
+        narration_durations=list(narration.line_durations) if narration else [],
         duration=duration,
     )
     cmd.extend(
@@ -218,8 +243,20 @@ def _build_render_cmd(
     return cmd
 
 
-def _filter_graph(num_line_overlays: int, has_bgm: bool, duration: float) -> Tuple[str, str, str | None]:
-    timings = _line_timings(num_line_overlays)
+def _filter_graph(
+    num_line_overlays: int,
+    bgm_index: int | None,
+    narration_indices: Sequence[int],
+    narration_starts: Sequence[float],
+    duration: float,
+    narration_durations: Sequence[float] = (),
+) -> Tuple[str, str, str | None]:
+    if narration_durations and len(narration_durations) == num_line_overlays:
+        timings = _line_timings_from_narration(
+            narration_starts, narration_durations, duration
+        )
+    else:
+        timings = _line_timings(num_line_overlays)
     parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[v0]"]
     current = "[v0]"
     for index, (start, end) in enumerate(timings, start=1):
@@ -233,16 +270,55 @@ def _filter_graph(num_line_overlays: int, has_bgm: bool, duration: float) -> Tup
     final_label = f"[v{author_index}]"
     parts.append(f"{current}[{author_index}:v]overlay=0:0{final_label}")
 
-    audio_map = None
-    if has_bgm:
-        bgm_index = author_index + 1
-        parts.append(
+    audio_streams: List[str] = []
+    has_narration = bool(narration_indices)
+    bgm_volume = 0.07 if has_narration else 0.32
+
+    if bgm_index is not None:
+        bgm_chain = (
             f"[{bgm_index}:a]highpass=f=420,lowpass=f=5200,"
             "equalizer=f=120:t=q:w=1.5:g=-16,equalizer=f=200:t=q:w=2:g=-12,"
-            f"volume=0.32,"
-            f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2,"
-            "dynaudnorm=f=500:g=3,alimiter=limit=0.85[aout]"
         )
+        if has_narration:
+            bgm_chain += "equalizer=f=2400:t=q:w=2.0:g=-6,"
+            bgm_chain += (
+                f"volume={bgm_volume:.3f},"
+                f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2,"
+                "alimiter=limit=0.85[abgm]"
+            )
+        else:
+            bgm_chain += (
+                f"volume={bgm_volume:.2f},"
+                f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2,"
+                "dynaudnorm=f=500:g=3,alimiter=limit=0.85[abgm]"
+            )
+        parts.append(bgm_chain)
+        audio_streams.append("[abgm]")
+
+    for slot, (input_idx, start) in enumerate(zip(narration_indices, narration_starts)):
+        delay_ms = max(int(start * 1000), 0)
+        label = f"[anar{slot}]"
+        parts.append(
+            f"[{input_idx}:a]aresample=48000,"
+            f"adelay={delay_ms}|{delay_ms},"
+            "volume=1.85,"
+            "highpass=f=90,lowpass=f=11000,"
+            "equalizer=f=2800:t=q:w=1.6:g=2.5,"
+            "dynaudnorm=f=400:g=5"
+            f"{label}"
+        )
+        audio_streams.append(label)
+
+    audio_map = None
+    if audio_streams:
+        if len(audio_streams) == 1:
+            parts.append(f"{audio_streams[0]}alimiter=limit=0.95[aout]")
+        else:
+            mix_inputs = "".join(audio_streams)
+            parts.append(
+                f"{mix_inputs}amix=inputs={len(audio_streams)}:normalize=0:dropout_transition=0,"
+                "alimiter=limit=0.95[aout]"
+            )
         audio_map = "[aout]"
 
     return ";".join(parts), final_label, audio_map
@@ -255,6 +331,26 @@ def _line_timings(num_lines: int) -> List[Tuple[float, float]]:
     for duration in durations:
         timings.append((cursor, cursor + duration))
         cursor += duration + 0.25
+    return timings
+
+
+def _line_timings_from_narration(
+    starts: Sequence[float],
+    durations: Sequence[float],
+    total_duration: float,
+) -> List[Tuple[float, float]]:
+    timings: List[Tuple[float, float]] = []
+    for index, (start, dur) in enumerate(zip(starts, durations)):
+        show_start = max(0.0, start - SUBTITLE_LEAD)
+        is_last = index == len(starts) - 1
+        if is_last:
+            show_end = min(total_duration, start + dur + SUBTITLE_TAIL + 1.0)
+        else:
+            next_start = starts[index + 1] - SUBTITLE_LEAD
+            show_end = min(start + dur + SUBTITLE_TAIL, next_start - 0.05)
+        if show_end <= show_start:
+            show_end = show_start + max(dur, 0.5)
+        timings.append((show_start, show_end))
     return timings
 
 
