@@ -3,7 +3,6 @@
     "위로",
     "노력",
     "인내",
-    "믿음",
     "평화",
     "새벽",
     "겸손",
@@ -13,15 +12,16 @@
     "기억",
     "지혜",
     "달",
-    "웃음"
+    "웃음",
+    "믿음"
   ],
   "recent_visual_styles": [
-    "oil_painting",
     "watercolor",
     "pencil_sketch",
     "ink",
     "photography",
-    "photoreal"
+    "photoreal",
+    "oil_painting"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -36,6 +36,7 @@
     "2026-05-04",
     "2026-05-05",
     "2026-05-06",
-    "2026-05-07"
+    "2026-05-07",
+    "2026-05-08"
   ]
 }
