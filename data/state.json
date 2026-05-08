@@ -15,7 +15,6 @@
     "5c258b3e679190dcbc8dc8a5665148f9573a6277",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
-    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "6297e1290da7926c4568a898da2116c84083ddf2",
@@ -35,10 +34,10 @@
     "85661b85057484d01768b7cc8383a1737744c71e",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
-    "930cb2ee522fb24021eaae8015e6aba1cd8fde18"
+    "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca"
   ],
   "recent_titles": [
-    "대나무 숲, 새벽 명상의 숨결",
     "새벽 산사의 지혜 향연",
     "봄의 창을 여는 아침",
     "혁신의 묘약, 포근한 카페에서",
@@ -57,10 +56,10 @@
     "도심의 아침, 품격의 예술",
     "아침의 도시, 리더의 통찰",
     "선명한 아침, 도시의 향기",
-    "새벽빛 속의 생각 정리"
+    "새벽빛 속의 생각 정리",
+    "새벽 안개의 경건한 길"
   ],
   "recent_quote_ids": [
-    "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
@@ -79,10 +78,10 @@
     "85661b85057484d01768b7cc8383a1737744c71e",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
-    "930cb2ee522fb24021eaae8015e6aba1cd8fde18"
+    "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca"
   ],
   "recent_image_fingerprints": [
-    "213c4d65056138ec",
     "7a3caea79e023ae8",
     "ef5ae4808e802352",
     "6043e2ec063d70fe",
@@ -101,7 +100,8 @@
     "5c154170a0af56f4",
     "f6de8c3254365c47",
     "54e9ebe2a5089a08",
-    "3aae2668630e5987"
+    "3aae2668630e5987",
+    "6a7497cb29780547"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -110,7 +110,6 @@
     "calligraphy"
   ],
   "recent_music_signatures": [
-    "106a35125f7b",
     "244e86624dfa",
     "c2c0e00b8182",
     "2d2497d9c5c5",
@@ -129,7 +128,8 @@
     "2b367d1a0287",
     "da7f0c0630fd",
     "754f321a214c",
-    "6f03620556ac"
+    "6f03620556ac",
+    "6ff7693f5a28"
   ],
   "recent_music_assets": [],
   "recent_dates": [
@@ -149,6 +149,7 @@
     "2026-05-05",
     "2026-05-06",
     "2026-05-07",
-    "2026-05-08"
+    "2026-05-08",
+    "2026-05-09"
   ]
 }
