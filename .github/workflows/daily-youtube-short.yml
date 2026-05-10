@@ -4,8 +4,8 @@ on:
   schedule:
     # GitHub scheduled workflows can be delayed or dropped at the start of the hour.
     # Run twice off the hour so the second attempt backfills if the first one is dropped.
-    - cron: "8 22 * * *"   # 07:08 KST
-    - cron: "18 22 * * *"  # 07:18 KST
+    - cron: "0 21 * * *"   # 06:00 KST
+    - cron: "10 21 * * *"  # 06:10 KST
   workflow_dispatch:
     inputs:
       force:
