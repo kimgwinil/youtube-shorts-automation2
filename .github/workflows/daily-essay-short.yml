@@ -86,8 +86,10 @@ jobs:
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             FORCE_FLAG="--force"
           fi
+          set +e
           python scripts/run_daily.py $FORCE_FLAG
           EXIT=$?
+          set -e
           if [ $EXIT -eq 2 ]; then
             echo "오늘 이미 처리됨 — 정상 스킵"
             exit 0
