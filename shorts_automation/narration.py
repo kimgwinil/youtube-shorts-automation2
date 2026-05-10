@@ -70,7 +70,8 @@ def generate_narration(
             client_options=ClientOptions(api_key=google_tts_api_key)
         )
     else:
-        client = texttospeech.TextToSpeechClient()
+        print("[narration] TTS 인증 정보 없음 (GOOGLE_TTS_CREDENTIALS 또는 GOOGLE_TTS_API_KEY 필요) — 나레이션 건너뜀")
+        return None
 
     lang_code = "-".join(voice.split("-")[:2])
     voice_params = texttospeech.VoiceSelectionParams(
