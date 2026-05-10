@@ -94,17 +94,13 @@ def generate_narration(
             cursor += LINE_DURATION + LINE_GAP
             continue
         path = output_dir / f"{signature}_narration_{index}.mp3"
-        try:
-            synthesis_input = texttospeech.SynthesisInput(text=text)
-            response = client.synthesize_speech(
-                input=synthesis_input,
-                voice=voice_params,
-                audio_config=audio_config,
-            )
-            path.write_bytes(response.audio_content)
-        except Exception as exc:
-            print(f"[narration] 라인 {index} TTS 실패: {exc}")
-            return None
+        synthesis_input = texttospeech.SynthesisInput(text=text)
+        response = client.synthesize_speech(
+            input=synthesis_input,
+            voice=voice_params,
+            audio_config=audio_config,
+        )
+        path.write_bytes(response.audio_content)
 
         duration = probe_audio_duration(path)
         if duration <= 0:
