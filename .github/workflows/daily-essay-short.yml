@@ -87,6 +87,12 @@ jobs:
             FORCE_FLAG="--force"
           fi
           python scripts/run_daily.py $FORCE_FLAG
+          EXIT=$?
+          if [ $EXIT -eq 2 ]; then
+            echo "오늘 이미 처리됨 — 정상 스킵"
+            exit 0
+          fi
+          exit $EXIT
 
       - name: Persist state
         env:
