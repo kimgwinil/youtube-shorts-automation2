@@ -17,15 +17,16 @@
     "아침",
     "비",
     "창의",
-    "고독"
+    "고독",
+    "꿈"
   ],
   "recent_visual_styles": [
-    "ink",
     "oil_painting",
     "watercolor",
     "photoreal",
     "photography",
-    "pencil_sketch"
+    "pencil_sketch",
+    "ink"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -43,6 +44,7 @@
     "2026-05-07",
     "2026-05-08",
     "2026-05-09",
-    "2026-05-10"
+    "2026-05-10",
+    "2026-05-11"
   ]
 }
