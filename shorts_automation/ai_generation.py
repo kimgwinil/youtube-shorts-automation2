@@ -29,13 +29,29 @@ VISUAL_STYLES = [
     "photography",
 ]
 
+_NO_TEXT = (
+    "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no kanji, "
+    "no Latin letters, no Arabic numerals, no calligraphy script, no signage, "
+    "no watermark, no stamp, no label, no caption. Pure image only."
+)
+_NO_COLLAGE = (
+    "Single unified scene — no collage, no double exposure, no montage, "
+    "no multiple overlapping images, no split frame, no image-within-image."
+)
+_LAYOUT = (
+    "LAYOUT ZONES (strict): "
+    "① TOP-LEFT corner (left 55%, top 14% of frame) kept plain and empty — author name overlay goes here. "
+    "② BOTTOM 38% of frame kept plain, calm, and free of all detail — subtitle text overlay goes here. "
+    "③ CENTER and upper-right carry the main visual subject and atmosphere."
+)
+
 _STYLE_PREFIX: dict[str, str] = {
-    "photoreal": "photorealistic, ultra-detailed, 8k, cinematic lighting, no text, no people",
-    "watercolor": "beautiful watercolor painting, soft color washes, delicate brushstrokes, artistic, no text",
-    "ink": "traditional East Asian ink painting, sumi-e style, minimal, flowing brushwork, no text",
-    "oil_painting": "impressionist oil painting, rich impasto texture, vivid brushstrokes, museum quality, no text",
-    "pencil_sketch": "detailed pencil sketch, fine linework, crosshatching, monochrome, artistic, no text",
-    "photography": "professional photography, natural light, photojournalistic, shallow depth of field, no text",
+    "photoreal": f"photorealistic DSLR photography, 8K resolution, physically accurate lighting, sharp focus, single coherent scene, cinematic color grading, award-winning landscape photography quality. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
+    "watercolor": f"beautiful watercolor painting, soft color washes, delicate brushstrokes, paper texture, single unified composition. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
+    "ink": f"traditional East Asian ink painting, sumi-e style, minimal, flowing brushwork, generous empty space, single unified composition. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
+    "oil_painting": f"impressionist oil painting, rich impasto texture, vivid brushstrokes, museum quality, single unified scene. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
+    "pencil_sketch": f"detailed pencil sketch, fine linework, crosshatching, monochrome, single unified scene. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
+    "photography": f"professional photography, natural light, photojournalistic, shallow depth of field, single coherent scene. {_NO_COLLAGE} {_NO_TEXT} {_LAYOUT}",
 }
 
 
@@ -76,6 +92,7 @@ def build_essay_package(
         image_model=image_model,
         date_iso=context.date_iso,
         variation_seed=variation_seed,
+        openai_api_key=openai_api_key,
     )
 
     sig_base = f"{context.date_iso}_{topic[:8]}{variation_seed[:6]}"
@@ -209,6 +226,44 @@ def _generate_essay(
     )
 
 
+def _dalle3_prompt(style_prefix: str, scene: str, topic: str) -> str:
+    return (
+        f"Background image for a Korean inspirational essay short video. "
+        f"Style: {style_prefix}. Scene: {scene}. Topic: {topic}. "
+        "IMPORTANT: Do not include any text, letters, words, characters, numbers, "
+        "signs, watermarks, or writing of any kind anywhere in the image. "
+        "The bottom 40% of the image must be kept very calm, simple, and empty "
+        "(reserved for subtitle text overlay — no objects, no detail). "
+        "The top-left area must be plain and uncluttered "
+        "(reserved for author credit overlay). "
+        "Single unified scene only — no collage, no montage. "
+        "No people, no faces, no anime characters. "
+        "Vertical 9:16 portrait orientation."
+    )
+
+
+def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
+    if not openai_api_key:
+        return False
+    try:
+        import requests as _req
+        from openai import OpenAI
+        client = OpenAI(api_key=openai_api_key)
+        resp = client.images.generate(
+            model="dall-e-3",
+            prompt=prompt,
+            size="1024x1792",
+            quality="hd",
+            n=1,
+        )
+        image_bytes = _req.get(resp.data[0].url, timeout=30).content
+        output_path.write_bytes(image_bytes)
+        return True
+    except Exception as exc:
+        print(f"[image] DALL-E 3 실패: {exc}")
+        return False
+
+
 def _generate_background(
     script: EssayScript,
     output_dir: Path,
@@ -216,6 +271,7 @@ def _generate_background(
     image_model: str,
     date_iso: str,
     variation_seed: str,
+    openai_api_key: str = "",
 ) -> Path:
     try:
         from google import genai
@@ -223,20 +279,26 @@ def _generate_background(
     except ImportError as exc:
         raise RuntimeError("`google-genai` 패키지가 필요합니다.") from exc
 
-    client = genai.Client(api_key=gemini_api_key)
-    style_prefix = _STYLE_PREFIX.get(script.visual_style, "artistic, no text")
-    base_prompt = script.image_prompt_en
-    seed_suffix = f", variation {variation_seed[:6]}" if variation_seed else ""
-
-    prompts = [
-        f"{style_prefix}, {base_prompt}{seed_suffix}",
-        f"{style_prefix}, {script.topic} theme, serene atmosphere, no people{seed_suffix}",
-        f"{style_prefix}, abstract mood representing {script.mood}, beautiful composition{seed_suffix}",
-    ]
-
     output_dir.mkdir(parents=True, exist_ok=True)
     sig = f"{date_iso}_{script.topic[:6]}{variation_seed[:4]}".replace(" ", "_")
     output_path = output_dir / f"{sig}_bg.png"
+
+    style_prefix = _STYLE_PREFIX.get(script.visual_style, "artistic, no text")
+
+    # ── 1차: DALL-E 3 (텍스트 미생성 신뢰도 높음) ──
+    dalle3_p = _dalle3_prompt(style_prefix, script.image_prompt_en, script.topic)
+    if _try_dalle3(dalle3_p, output_path, openai_api_key):
+        print(f"[image] DALL-E 3 배경 생성 완료: {output_path.name} / 주제: {script.topic}")
+        return output_path
+
+    # ── 2차 fallback: Imagen ──
+    client = genai.Client(api_key=gemini_api_key)
+    seed_suffix = f", variation {variation_seed[:6]}" if variation_seed else ""
+    prompts = [
+        f"{style_prefix}, {script.image_prompt_en}{seed_suffix}",
+        f"{style_prefix}, {script.topic} theme, serene atmosphere, no people{seed_suffix}",
+        f"{style_prefix}, abstract mood representing {script.mood}, beautiful composition{seed_suffix}",
+    ]
 
     for attempt, prompt in enumerate(prompts):
         try:
@@ -252,11 +314,10 @@ def _generate_background(
             images = getattr(result, "generated_images", None) or []
             if not images:
                 raise ValueError("빈 결과")
-            image_bytes = images[0].image.image_bytes
-            output_path.write_bytes(image_bytes)
-            print(f"[image] 배경 생성 완료 (시도 {attempt + 1}): {output_path.name} / 주제: {script.topic} / 스타일: {script.visual_style}")
+            output_path.write_bytes(images[0].image.image_bytes)
+            print(f"[image] Imagen 배경 생성 완료 (시도 {attempt + 1}): {output_path.name} / 주제: {script.topic}")
             return output_path
         except Exception as exc:
-            print(f"[image] 시도 {attempt + 1} 실패: {exc}")
+            print(f"[image] Imagen 시도 {attempt + 1} 실패: {exc}")
 
-    raise RuntimeError(f"배경 이미지 생성 실패 (3회 시도): {script.topic}")
+    raise RuntimeError(f"배경 이미지 생성 실패 (모든 시도): {script.topic}")

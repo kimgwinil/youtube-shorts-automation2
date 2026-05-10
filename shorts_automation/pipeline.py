@@ -57,9 +57,9 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
             script=package.script,
             signature=package.bgm_signature,
             output_dir=config.output_dir,
-            openai_api_key=config.openai_api_key,
+            google_tts_credentials=config.google_tts_credentials,
+            google_tts_api_key=config.google_tts_api_key,
             voice=config.narration_voice,
-            model=config.narration_model,
         )
 
     render_result = render_short(
