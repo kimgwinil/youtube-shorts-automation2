@@ -39,10 +39,13 @@ jobs:
       SHORTS_HASHTAGS: "#Shorts #쇼츠 #에세이 #감성 #아침"
       OPENAI_TEXT_MODEL: gpt-4o
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      GEMINI_IMAGE_MODEL: imagen-4.0-fast-generate-001
+      GEMINI_IMAGE_MODEL: imagen-4.0-generate-001
       ENABLE_GEMINI_MUSIC: "true"
       GEMINI_MUSIC_MODEL: models/lyria-realtime-exp
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      ENABLE_NARRATION: "true"
+      NARRATION_VOICE: ko-KR-Chirp3-HD-Aoede
+      GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
       GITHUB_ACTIONS: "true"
 
     steps:
