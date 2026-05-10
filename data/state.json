@@ -2,7 +2,6 @@
   "used_quotes": [
     "a33b33e232af21f0d23e93b7c5127507b60774ab",
     "61c24e86fa2c1b265c13441bdb0b9c91cf0f832d",
-    "a8d3280e673a76fd628c0ecbd378f82f80c85675",
     "7596ecce673a99bdd7b7f83934f4c2b5f3d1b9d2",
     "f713f804bec8553e8cd635c2ed32d4a4ba0f3be9",
     "67c786b5354f65a0f70dd7067be34fbe971bdd6d",
@@ -35,10 +34,10 @@
     "28d59344521642a898142450d68d80115d340d4f",
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "2aa8ef5c397344aa98e621e64d25b8a5ffda2609"
+    "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
+    "a8d3280e673a76fd628c0ecbd378f82f80c85675"
   ],
   "recent_titles": [
-    "봄날의 도서관, 내면의 반영",
     "새벽, 기회의 문을 열다",
     "새벽의 플랫폼, 미래를 꿈꾸다",
     "고요한 오솔길의 깨달음",
@@ -57,10 +56,10 @@
     "봄날의 따스한 앉음새",
     "잔잔한 서재에서 찾은 진리",
     "자애로운 해뜰녘, 자유의 의미",
-    "안개 속의 마음의 평온"
+    "안개 속의 마음의 평온",
+    "새벽 강변의 고요한 명상"
   ],
   "recent_quote_ids": [
-    "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
@@ -79,10 +78,10 @@
     "28d59344521642a898142450d68d80115d340d4f",
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "2aa8ef5c397344aa98e621e64d25b8a5ffda2609"
+    "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
+    "a8d3280e673a76fd628c0ecbd378f82f80c85675"
   ],
   "recent_image_fingerprints": [
-    "6b03e78cac9f3aeb",
     "a08ac9c594145791",
     "861516aaa63fb05c",
     "f618e60cc423c2a5",
@@ -101,7 +100,8 @@
     "82d6374eb2b8b267",
     "2f5a68cd9cba43cd",
     "6d8dd9a68b4cc6ad",
-    "a512fed5ae40fe58"
+    "a512fed5ae40fe58",
+    "5b1210e3977c1d7b"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -110,7 +110,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "15144a5602ea",
     "2e4c5496c976",
     "6383396ddd2a",
     "3c6f1464843e",
@@ -129,7 +128,8 @@
     "db4ba526e795",
     "50511d6dee50",
     "80726d2ab2ce",
-    "ae98f0e08774"
+    "ae98f0e08774",
+    "80dd7094d1e6"
   ],
   "recent_music_assets": [],
   "recent_dates": [
