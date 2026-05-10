@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import subprocess
-from typing import List
+from typing import List, Optional
 
 from .ffmpeg_utils import resolve_ffmpeg
 from .script_builder import VideoScript
@@ -14,12 +14,6 @@ TAIL_PADDING = 2.5
 MIN_TOTAL_DURATION = 15.0
 SUBTITLE_LEAD = 0.15
 SUBTITLE_TAIL = 0.5
-
-NARRATION_STYLE_INSTRUCTIONS = (
-    "Speak the line slowly and warmly in Korean, like reading a contemplative essay aloud."
-    " Use a calm, gentle, slightly low pitch with natural pauses between phrases."
-    " Avoid sounding robotic or rushed; keep an introspective, mature tone."
-)
 
 
 @dataclass
@@ -51,25 +45,51 @@ def generate_narration(
     script: VideoScript,
     signature: str,
     output_dir: Path,
-    openai_api_key: str,
-    voice: str = "coral",
-    model: str = "gpt-4o-mini-tts",
+    google_tts_credentials: str = "",
+    google_tts_api_key: str = "",
+    voice: str = "ko-KR-Studio-B",
+    speaking_rate: float = 0.85,
+    pitch: float = -1.5,
 ) -> NarrationResult | None:
-    if not openai_api_key:
-        print("[narration] OPENAI_API_KEY 없음 - 나래이션 생략")
-        return None
-
     try:
-        from openai import OpenAI
+        from google.cloud import texttospeech
+        from google.api_core.client_options import ClientOptions
     except ImportError as exc:
-        raise RuntimeError("`openai` 패키지가 필요합니다.") from exc
+        raise RuntimeError(
+            "`google-cloud-texttospeech` 패키지가 필요합니다: "
+            "pip install google-cloud-texttospeech"
+        ) from exc
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    client = OpenAI(api_key=openai_api_key)
+
+    if google_tts_credentials:
+        from google.oauth2 import service_account
+        credentials = service_account.Credentials.from_service_account_file(
+            google_tts_credentials,
+            scopes=["https://www.googleapis.com/auth/cloud-platform"],
+        )
+        client = texttospeech.TextToSpeechClient(credentials=credentials)
+    elif google_tts_api_key:
+        client = texttospeech.TextToSpeechClient(
+            client_options=ClientOptions(api_key=google_tts_api_key)
+        )
+    else:
+        client = texttospeech.TextToSpeechClient()
+
+    lang_code = "-".join(voice.split("-")[:2])  # "ko-KR-Studio-B" -> "ko-KR"
+    voice_params = texttospeech.VoiceSelectionParams(
+        language_code=lang_code,
+        name=voice,
+    )
+    supports_pitch = "Chirp" not in voice
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3,
+        speaking_rate=speaking_rate,
+        **({"pitch": pitch} if supports_pitch else {}),
+    )
 
     lines: List[NarrationLine] = []
     cursor = 0.0
-    supports_instructions = model.startswith("gpt-4o")
 
     for index, line_text in enumerate(script.lines, start=1):
         text = line_text.strip()
@@ -77,11 +97,13 @@ def generate_narration(
             continue
         path = output_dir / f"{signature}_narration_{index}.mp3"
         try:
-            kwargs = dict(model=model, voice=voice, input=text, response_format="mp3")
-            if supports_instructions:
-                kwargs["instructions"] = NARRATION_STYLE_INSTRUCTIONS
-            with client.audio.speech.with_streaming_response.create(**kwargs) as response:
-                response.stream_to_file(path)
+            synthesis_input = texttospeech.SynthesisInput(text=text)
+            response = client.synthesize_speech(
+                input=synthesis_input,
+                voice=voice_params,
+                audio_config=audio_config,
+            )
+            path.write_bytes(response.audio_content)
         except Exception as exc:
             print(f"[narration] 라인 {index} TTS 실패: {exc}")
             return None
@@ -100,7 +122,7 @@ def generate_narration(
     last = lines[-1]
     total = max(MIN_TOTAL_DURATION, last.start + last.duration + TAIL_PADDING)
     print(
-        f"[narration] {len(lines)}개 라인 TTS 생성 완료 (voice={voice}, model={model}), "
+        f"[narration] {len(lines)}개 라인 TTS 생성 완료 (voice={voice}), "
         f"총 길이 {total:.2f}초"
     )
     return NarrationResult(lines=lines, total_duration=round(total, 2))

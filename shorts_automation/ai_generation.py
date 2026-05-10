@@ -53,7 +53,8 @@ def build_daily_package(
     background_path: Path | None = None
     try:
         background_path = _generate_background_from_direction(
-            direction, quote, output_dir, gemini_api_key, image_model, variation_seed=variation_seed
+            direction, quote, output_dir, gemini_api_key, image_model,
+            openai_api_key=openai_api_key, variation_seed=variation_seed,
         )
     except Exception as exc:
         print(f"[image] Gemini/Imagen 배경 생성 실패, 로컬 fallback 사용: {exc}")
@@ -244,10 +245,14 @@ def _generate_script_with_ai(
 
 
 _STYLE_DESC: dict[str, str] = {
-    "photoreal": "photorealistic cinematic photography, ultra-detailed, natural lighting",
-    "watercolor": "soft watercolor illustration with delicate brushwork and paper texture",
-    "ink": "East Asian ink wash painting with expressive brushwork and generous empty space",
-    "calligraphy": "East Asian calligraphy painting style with elegant brushwork and serene empty space",
+    "photoreal": (
+        "photorealistic DSLR photography, 8K resolution, physically accurate lighting, "
+        "sharp focus, single coherent scene, cinematic color grading, natural depth of field, "
+        "award-winning landscape photography quality"
+    ),
+    "watercolor": "soft watercolor illustration with delicate brushwork and paper texture, single unified composition",
+    "ink": "East Asian ink wash painting with expressive brushwork and generous empty space, single unified composition",
+    "calligraphy": "East Asian calligraphy painting style with elegant brushwork and serene empty space, single unified composition",
 }
 
 _THEME_SCENE_FALLBACK: dict[str, str] = {
@@ -257,12 +262,51 @@ _THEME_SCENE_FALLBACK: dict[str, str] = {
 }
 
 
+def _dalle3_prompt(style_desc: str, scene: str) -> str:
+    return (
+        f"Background image for a Korean inspirational quote short video. "
+        f"Style: {style_desc}. Scene: {scene}. "
+        "IMPORTANT: Do not include any text, letters, words, characters, numbers, "
+        "signs, watermarks, or writing of any kind anywhere in the image. "
+        "The bottom 40% of the image must be kept very calm, simple, and empty "
+        "(reserved for subtitle text overlay — no objects, no detail). "
+        "The top-left area must be plain and uncluttered "
+        "(reserved for author credit overlay). "
+        "Single unified scene only — no collage, no montage. "
+        "No people, no faces, no anime characters. "
+        "Vertical 9:16 portrait orientation."
+    )
+
+
+def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
+    if not openai_api_key:
+        return False
+    try:
+        import requests as _req
+        from openai import OpenAI
+        client = OpenAI(api_key=openai_api_key)
+        resp = client.images.generate(
+            model="dall-e-3",
+            prompt=prompt,
+            size="1024x1792",
+            quality="hd",
+            n=1,
+        )
+        image_bytes = _req.get(resp.data[0].url, timeout=30).content
+        output_path.write_bytes(image_bytes)
+        return True
+    except Exception as exc:
+        print(f"[image] DALL-E 3 실패: {exc}")
+        return False
+
+
 def _generate_background_from_direction(
     direction: CreativeDirection,
     quote: QuoteEntry,
     output_dir: Path,
     api_key: str,
     image_model: str,
+    openai_api_key: str = "",
     variation_seed: str = "",
 ) -> Path:
     if not api_key:
@@ -278,21 +322,41 @@ def _generate_background_from_direction(
     style_desc = _STYLE_DESC.get(direction.visual_style, _STYLE_DESC["photoreal"])
     theme_fallback = _THEME_SCENE_FALLBACK.get(direction.theme, _THEME_SCENE_FALLBACK["dawn"])
 
+    no_text = (
+        "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no kanji, "
+        "no Latin letters, no Arabic numerals, no calligraphy script, no signage, "
+        "no watermark, no stamp, no label, no caption. Pure image only."
+    )
+    no_collage = (
+        "Single unified scene — no collage, no double exposure, no montage, "
+        "no multiple overlapping images, no split frame, no image-within-image."
+    )
+    layout = (
+        "LAYOUT ZONES (strict): "
+        "① TOP-LEFT corner (roughly left 55%, top 14% of frame) must be kept plain and uncluttered — "
+        "no busy detail, no text, no objects — reserved for author name overlay. "
+        "② BOTTOM 38% of frame must be kept plain, calm, and free of all detail — "
+        "no objects, no text, no strong lines — reserved for subtitle text overlay. "
+        "③ CENTER and upper-right area carry the main visual subject and atmosphere."
+    )
     base_suffix = (
-        "Vertical 9:16 composition for a Korean inspirational short. "
-        "Scene-focused, atmospheric, no city skyline, no Seoul landmarks, "
-        "no recurring character, no anime, no mascot, no portrait, no close-up face. "
-        "If a person appears, keep them tiny, distant, or shown from behind only. "
-        "Keep the lower center area uncluttered for subtitle text overlay."
+        f"Vertical 9:16 format. {no_collage} {no_text} {layout} "
+        "No city skyline, no Seoul landmarks, no recurring character, "
+        "no anime, no mascot, no portrait, no close-up face. "
+        "If a person appears, keep them tiny, distant, or shown from behind only."
     )
 
+    # ── 1차: DALL-E 3 (텍스트 미생성 신뢰도 높음) ──
+    dalle3_prompt = _dalle3_prompt(style_desc, direction.scene_prompt_en)
+    if _try_dalle3(dalle3_prompt, filename, openai_api_key):
+        print(f"[image] DALL-E 3 배경 생성 완료: {filename.name} / scene: {direction.scene_hint_ko}")
+        return filename
+
+    # ── 2차 fallback: Imagen ──
     safe_prompts = [
-        # 1차: 풀 프롬프트 (scene_prompt_en 사용)
         f"{style_desc}. {direction.scene_prompt_en}. {base_suffix}",
-        # 2차: scene_prompt_en 앞부분만 사용한 간소화 버전 (영어 유지)
-        f"{style_desc}. {direction.scene_prompt_en[:200].rstrip()}. Atmospheric background, no people, no text, vertical 9:16, clean lower center.",
-        # 3차: 테마 기반 범용 영어 fallback (한국어 완전 제거)
-        f"{style_desc}. {theme_fallback}. Peaceful atmosphere, no figures, no text, vertical 9:16 format.",
+        f"{style_desc}. {direction.scene_prompt_en[:180].rstrip()}. {no_collage} {no_text} {layout} Atmospheric background, no people, vertical 9:16.",
+        f"{style_desc}. {theme_fallback}. {no_collage} {no_text} {layout} Peaceful atmosphere, no figures, vertical 9:16.",
     ]
 
     image_bytes: bytes | None = None
@@ -375,18 +439,22 @@ def _build_image_prompt(script: VideoScript) -> str:
         f"{script.image_prompt_en}. "
         f"{variant}. "
         f"Render this in {script.visual_style} style. "
-        "Background for a Korean quote short. "
-        "No recurring character, no anime character, no mascot, no centered face, no portrait, no close-up person. "
-        "No Seoul skyline, no N Seoul Tower, no Han River skyline, no repeated modern landmark. "
-        "Prefer scenery, objects, architecture, weather, light, paper texture, ink texture, or distant environment. "
-        "If a person appears, keep them tiny, turned away, and not identifiable. "
-        "Rotate freely between these motifs based on the quote mood: "
-        "East Asian (garden, bamboo forest, temple eaves, ink study, stone path, river pavilion, morning maru), "
-        "Nature (misty mountain ridge, dewy meadow, desert dune at dawn, snowy pine forest, sea cliff at dusk, autumn forest rain), "
-        "Interior (Victorian library, Scandinavian minimal studio, candlelit attic, museum corridor, old cafe counter, reading room), "
-        "Urban (dawn alley with long shadows, train platform, rainy cafe window, park bench in mist). "
-        "Do NOT default to a Korean city skyline. Pick the motif that best fits the quote. "
-        "Keep the lower center clean for subtitles."
+        "Background for a Korean quote short video. "
+        "Single unified scene — no collage, no double exposure, no montage, no split frame. "
+        "CRITICAL — zero text anywhere in the image: no Korean hangul, no Chinese hanja, no kanji, "
+        "no Latin letters, no numerals, no calligraphy script, no signage, no watermark, no label. "
+        "LAYOUT ZONES: "
+        "top-left (55% wide, 14% tall) kept plain and empty — author name overlay goes here; "
+        "bottom 38% kept plain, calm, and empty — subtitle text overlay goes here; "
+        "center and upper-right hold the main atmospheric scene. "
+        "No recurring character, no anime, no mascot, no portrait, no close-up face. "
+        "No Seoul skyline, no N Seoul Tower, no repeated landmark. "
+        "Choose ONE motif that fits the quote: "
+        "East Asian (garden, bamboo forest, temple eaves, ink study, stone path, river pavilion), "
+        "Nature (misty mountain, dewy meadow, snowy pine forest, sea cliff, desert dune), "
+        "Interior (Victorian library, Scandinavian studio, candlelit attic, museum corridor), "
+        "Urban (dawn alley, train platform, rainy cafe window, park bench in mist). "
+        "If a person appears, keep them tiny, turned away, not identifiable."
     )
 
 
@@ -579,3 +647,5 @@ def _choose_scene_hint(quote: QuoteEntry, context: DailyContext, variation_seed:
     pool = scene_map.get(quote.mood, scene_map[context.mood_hint if context.mood_hint in scene_map else "dawn"])
     seeded = random.Random(f"{quote.quote_id}|{context.date_iso}|scene-hint|{variation_seed}")
     return seeded.choice(pool)
+
+
