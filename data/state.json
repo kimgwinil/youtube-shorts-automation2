@@ -5,7 +5,6 @@
     "7596ecce673a99bdd7b7f83934f4c2b5f3d1b9d2",
     "f713f804bec8553e8cd635c2ed32d4a4ba0f3be9",
     "67c786b5354f65a0f70dd7067be34fbe971bdd6d",
-    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "e8f3431806965624077ddba412d6083f7ad08f5a",
     "de863c32d05e42af6ae160ccdd2366e54bbc7f08",
@@ -35,10 +34,10 @@
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
-    "a8d3280e673a76fd628c0ecbd378f82f80c85675"
+    "a8d3280e673a76fd628c0ecbd378f82f80c85675",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_titles": [
-    "새벽, 기회의 문을 열다",
     "새벽의 플랫폼, 미래를 꿈꾸다",
     "고요한 오솔길의 깨달음",
     "구름 사이로 스며드는 봄기운",
@@ -57,10 +56,10 @@
     "잔잔한 서재에서 찾은 진리",
     "자애로운 해뜰녘, 자유의 의미",
     "안개 속의 마음의 평온",
-    "새벽 강변의 고요한 명상"
+    "새벽 강변의 고요한 명상",
+    "새벽 골목의 차분한 선택"
   ],
   "recent_quote_ids": [
-    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
@@ -79,10 +78,10 @@
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
-    "a8d3280e673a76fd628c0ecbd378f82f80c85675"
+    "a8d3280e673a76fd628c0ecbd378f82f80c85675",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_image_fingerprints": [
-    "a08ac9c594145791",
     "861516aaa63fb05c",
     "f618e60cc423c2a5",
     "78cfe392830f196a",
@@ -101,7 +100,8 @@
     "2f5a68cd9cba43cd",
     "6d8dd9a68b4cc6ad",
     "a512fed5ae40fe58",
-    "5b1210e3977c1d7b"
+    "5b1210e3977c1d7b",
+    "66f102af09a5d6eb"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -110,7 +110,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "2e4c5496c976",
     "6383396ddd2a",
     "3c6f1464843e",
     "bf9b127b4244",
@@ -129,7 +128,8 @@
     "50511d6dee50",
     "80726d2ab2ce",
     "ae98f0e08774",
-    "80dd7094d1e6"
+    "80dd7094d1e6",
+    "188d0886c725"
   ],
   "recent_music_assets": [],
   "recent_dates": [
@@ -149,6 +149,7 @@
     "2026-05-05",
     "2026-05-06",
     "2026-05-07",
-    "2026-05-10"
+    "2026-05-10",
+    "2026-05-11"
   ]
 }
