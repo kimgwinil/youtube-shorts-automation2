@@ -10,7 +10,7 @@ from typing import List, Sequence, Tuple
 from PIL import Image, ImageDraw, ImageFont
 
 from .ffmpeg_utils import resolve_ffmpeg
-from .narration import NarrationResult
+from .narration import NarrationResult, SUBTITLE_LEAD, SUBTITLE_TAIL
 from .script_builder import EssayScript, LINE_DURATION, LINE_GAP, LEAD_PADDING
 
 
@@ -33,9 +33,7 @@ def render_short(
 
     if narration is not None and narration.lines:
         last = narration.lines[-1]
-        needed = last.start + last.duration + 2.5
-        if needed > script.total_duration:
-            script.total_duration = round(needed, 2)
+        script.total_duration = round(last.start + last.duration + 2.5, 2)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     stem = f"{timestamp}_{script.topic}"
@@ -152,6 +150,7 @@ def _build_render_cmd(
         bgm_index=bgm_input_index,
         narration_indices=narration_input_indices,
         narration_starts=list(narration.line_start_times) if narration else [],
+        narration_durations=list(narration.line_durations) if narration else [],
         duration=duration,
     )
     cmd.extend(["-t", f"{duration:.2f}", "-filter_complex", filter_complex, "-map", video_map])
@@ -169,9 +168,16 @@ def _filter_graph(
     bgm_index: int | None,
     narration_indices: Sequence[int],
     narration_starts: Sequence[float],
+    narration_durations: Sequence[float],
     duration: float,
 ) -> Tuple[str, str, str | None]:
-    timings = _line_timings(num_lines)
+    if len(narration_starts) == num_lines and narration_durations:
+        timings = [
+            (max(s - SUBTITLE_LEAD, 0.0), s + d + SUBTITLE_TAIL)
+            for s, d in zip(narration_starts, narration_durations)
+        ]
+    else:
+        timings = _line_timings(num_lines)
     parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[v0]"]
     current = "[v0]"
 

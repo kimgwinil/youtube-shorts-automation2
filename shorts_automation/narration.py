@@ -6,11 +6,12 @@ import subprocess
 from typing import List
 
 from .ffmpeg_utils import resolve_ffmpeg
-from .script_builder import EssayScript, LEAD_PADDING, LINE_DURATION, LINE_GAP
+from .script_builder import EssayScript, LEAD_PADDING
 
 
 SUBTITLE_LEAD = 0.15
 SUBTITLE_TAIL = 0.5
+NARRATION_GAP = 0.8
 
 
 @dataclass
@@ -91,7 +92,7 @@ def generate_narration(
     for index, line_text in enumerate(script.lines, start=1):
         text = line_text.strip()
         if not text:
-            cursor += LINE_DURATION + LINE_GAP
+            cursor += NARRATION_GAP
             continue
         path = output_dir / f"{signature}_narration_{index}.mp3"
         synthesis_input = texttospeech.SynthesisInput(text=text)
@@ -104,10 +105,10 @@ def generate_narration(
 
         duration = probe_audio_duration(path)
         if duration <= 0:
-            duration = LINE_DURATION
+            duration = 5.0
 
         lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
-        cursor += LINE_DURATION + LINE_GAP
+        cursor += duration + NARRATION_GAP
 
     if not lines:
         return None
