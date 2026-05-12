@@ -1,6 +1,5 @@
 {
   "recent_topics": [
-    "위로",
     "노력",
     "인내",
     "평화",
@@ -19,15 +18,16 @@
     "창의",
     "고독",
     "꿈",
-    "설렘"
+    "설렘",
+    "위로"
   ],
   "recent_visual_styles": [
-    "oil_painting",
     "watercolor",
     "photography",
     "pencil_sketch",
     "ink",
-    "photoreal"
+    "photoreal",
+    "oil_painting"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -47,6 +47,7 @@
     "2026-05-09",
     "2026-05-10",
     "2026-05-11",
-    "2026-05-12"
+    "2026-05-12",
+    "2026-05-13"
   ]
 }
