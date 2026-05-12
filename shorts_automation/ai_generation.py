@@ -266,13 +266,18 @@ def _dalle3_prompt(style_desc: str, scene: str) -> str:
     return (
         f"Background image for a Korean inspirational quote short video. "
         f"Style: {style_desc}. Scene: {scene}. "
-        "IMPORTANT: Do not include any text, letters, words, characters, numbers, "
-        "signs, watermarks, or writing of any kind anywhere in the image. "
-        "The bottom 40% of the image must be kept very calm, simple, and empty "
-        "(reserved for subtitle text overlay — no objects, no detail). "
-        "The top-left area must be plain and uncluttered "
-        "(reserved for author credit overlay). "
-        "Single unified scene only — no collage, no montage. "
+        "CRITICAL — ABSOLUTE RULE: zero text anywhere in the image. "
+        "No Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
+        "no Latin letters, no Arabic numerals, no calligraphy, no brush strokes that resemble writing, "
+        "no signs, no banners, no stamps, no watermarks, no captions, no labels. "
+        "Pure visual scene only — if any character or glyph appears, the image is rejected. "
+        "LAYOUT ZONES (strict): "
+        "① BOTTOM 40% of frame: kept completely plain, calm, and empty — "
+        "no objects, no detail, no text — reserved for subtitle text overlay. "
+        "② TOP-LEFT corner (left 55%, top 14%): plain and uncluttered — "
+        "reserved for author name overlay. "
+        "③ CENTER and upper-right: main visual subject and atmosphere. "
+        "Single unified scene only — no collage, no montage, no split frame. "
         "No people, no faces, no anime characters. "
         "Vertical 9:16 portrait orientation."
     )
@@ -323,8 +328,9 @@ def _generate_background_from_direction(
     theme_fallback = _THEME_SCENE_FALLBACK.get(direction.theme, _THEME_SCENE_FALLBACK["dawn"])
 
     no_text = (
-        "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no kanji, "
-        "no Latin letters, no Arabic numerals, no calligraphy script, no signage, "
+        "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
+        "no Latin letters, no Arabic numerals, no calligraphy script, "
+        "no brush strokes resembling writing or glyphs, no signage, "
         "no watermark, no stamp, no label, no caption. Pure image only."
     )
     no_collage = (
