@@ -33,7 +33,9 @@ def render_short(
 
     if narration is not None and narration.lines:
         last = narration.lines[-1]
-        script.total_duration = round(last.start + last.duration + 2.5, 2)
+        needed = last.start + last.duration + 2.5
+        if needed > script.total_duration:
+            script.total_duration = round(needed, 2)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     stem = f"{timestamp}_{script.topic}"
