@@ -3,6 +3,7 @@ name: Daily Essay Short
 on:
   schedule:
     - cron: "0 22 * * *"   # 07:00 KST
+    - cron: "20 22 * * *"  # 07:20 KST backup in case GitHub misses the first tick
   workflow_dispatch:
     inputs:
       force:
