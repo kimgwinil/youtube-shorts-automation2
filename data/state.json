@@ -6,7 +6,6 @@
     "겨울",
     "친구",
     "그리움",
-    "기억",
     "지혜",
     "달",
     "웃음",
@@ -19,15 +18,16 @@
     "꿈",
     "설렘",
     "위로",
-    "용서"
+    "용서",
+    "기억"
   ],
   "recent_visual_styles": [
     "watercolor",
     "photography",
-    "ink",
     "photoreal",
     "oil_painting",
-    "pencil_sketch"
+    "pencil_sketch",
+    "ink"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -48,6 +48,7 @@
     "2026-05-10",
     "2026-05-11",
     "2026-05-12",
-    "2026-05-13"
+    "2026-05-13",
+    "2026-05-14"
   ]
 }
