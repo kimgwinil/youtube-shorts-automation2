@@ -247,17 +247,17 @@ def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
     if not openai_api_key:
         return False
     try:
-        import requests as _req
+        import base64
         from openai import OpenAI
         client = OpenAI(api_key=openai_api_key)
         resp = client.images.generate(
-            model="dall-e-3",
+            model="gpt-image-1",
             prompt=prompt,
-            size="1024x1792",
-            quality="hd",
+            size="1024x1536",
+            quality="high",
             n=1,
         )
-        image_bytes = _req.get(resp.data[0].url, timeout=30).content
+        image_bytes = base64.b64decode(resp.data[0].b64_json)
         output_path.write_bytes(image_bytes)
         return True
     except Exception as exc:
