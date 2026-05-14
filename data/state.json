@@ -13,21 +13,21 @@
     "겸손",
     "아침",
     "비",
-    "창의",
     "고독",
     "꿈",
     "설렘",
     "위로",
     "용서",
-    "기억"
+    "기억",
+    "창의"
   ],
   "recent_visual_styles": [
     "watercolor",
     "photography",
-    "photoreal",
     "oil_painting",
     "pencil_sketch",
-    "ink"
+    "ink",
+    "photoreal"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
@@ -49,6 +49,7 @@
     "2026-05-11",
     "2026-05-12",
     "2026-05-13",
-    "2026-05-14"
+    "2026-05-14",
+    "2026-05-15"
   ]
 }
