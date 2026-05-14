@@ -3,6 +3,7 @@ name: Daily YouTube Short
 on:
   schedule:
     - cron: "0 21 * * *"   # 06:00 KST
+    - cron: "20 21 * * *"  # 06:20 KST backup in case GitHub misses the first tick
   workflow_dispatch:
     inputs:
       force:
@@ -15,7 +16,7 @@ permissions:
 
 concurrency:
   group: daily-youtube-short
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   daily-short:
