@@ -41,92 +41,175 @@ def generate_narration(
     script: EssayScript,
     signature: str,
     output_dir: Path,
+    elevenlabs_api_key: str = "",
+    elevenlabs_voice_id: str = "yIiJDIlA4V9TvoOO12TS",
+    elevenlabs_model: str = "eleven_multilingual_v2",
     google_tts_credentials: str = "",
     google_tts_api_key: str = "",
     voice: str = "ko-KR-Chirp3-HD-Aoede",
     speaking_rate: float = 0.85,
     pitch: float = -1.5,
 ) -> NarrationResult | None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    text_lines = [t.strip() for t in script.lines if t.strip()]
+    if not text_lines:
+        return None
+
+    # 1순위: ElevenLabs
+    if elevenlabs_api_key:
+        lines = _generate_elevenlabs(
+            text_lines, signature, output_dir,
+            elevenlabs_api_key, elevenlabs_voice_id, elevenlabs_model,
+        )
+        if lines is not None:
+            print(f"[narration] {len(lines)}개 라인 생성 완료 (engine=ElevenLabs, voice={elevenlabs_voice_id})")
+            return NarrationResult(lines=lines)
+        print("[narration] ElevenLabs 실패 — Google TTS로 fallback")
+
+    # 2순위: Google TTS
+    lines = _generate_google_tts(
+        text_lines, signature, output_dir,
+        google_tts_credentials, google_tts_api_key, voice, speaking_rate, pitch,
+    )
+    if lines is not None:
+        print(f"[narration] {len(lines)}개 라인 생성 완료 (engine=Google TTS, voice={voice})")
+        return NarrationResult(lines=lines)
+
+    print("[narration] 모든 TTS 엔진 실패 — 나레이션 건너뜀")
+    return None
+
+
+# ── ElevenLabs ────────────────────────────────────────────────────────────────
+
+def _generate_elevenlabs(
+    text_lines: List[str],
+    signature: str,
+    output_dir: Path,
+    api_key: str,
+    voice_id: str,
+    model: str,
+) -> List[NarrationLine] | None:
+    try:
+        from elevenlabs.client import ElevenLabs
+    except ImportError:
+        print("[narration] elevenlabs 패키지 없음: pip install elevenlabs")
+        return None
+
+    try:
+        client = ElevenLabs(api_key=api_key)
+        lines: List[NarrationLine] = []
+        cursor = LEAD_PADDING
+
+        for index, text in enumerate(text_lines, start=1):
+            path = output_dir / f"{signature}_narration_{index}.mp3"
+            audio_iter = client.text_to_speech.convert(
+                voice_id=voice_id,
+                text=text,
+                model_id=model,
+                output_format="mp3_44100_128",
+            )
+            path.write_bytes(b"".join(audio_iter))
+
+            duration = probe_audio_duration(path)
+            if duration <= 0:
+                duration = LINE_DURATION
+
+            lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
+            cursor += LINE_DURATION + LINE_GAP
+
+        return lines if lines else None
+
+    except Exception as exc:
+        reason = str(exc)
+        if "quota" in reason.lower() or "limit" in reason.lower() or "429" in reason:
+            print("[narration] ElevenLabs 크레딧/쿼터 초과 — Google TTS로 fallback")
+        elif "401" in reason or "unauthorized" in reason.lower():
+            print("[narration] ElevenLabs 인증 오류 — Google TTS로 fallback")
+        elif "voice" in reason.lower() and ("not found" in reason.lower() or "404" in reason):
+            print("[narration] ElevenLabs 보이스 ID 없음 — Google TTS로 fallback")
+        else:
+            print(f"[narration] ElevenLabs 오류 ({type(exc).__name__}: {exc}) — Google TTS로 fallback")
+        return None
+
+
+# ── Google TTS ────────────────────────────────────────────────────────────────
+
+def _generate_google_tts(
+    text_lines: List[str],
+    signature: str,
+    output_dir: Path,
+    credentials: str,
+    api_key: str,
+    voice: str,
+    speaking_rate: float,
+    pitch: float,
+) -> List[NarrationLine] | None:
     try:
         from google.cloud import texttospeech
         from google.api_core.client_options import ClientOptions
-    except ImportError as exc:
-        raise RuntimeError(
-            "`google-cloud-texttospeech` 패키지가 필요합니다: "
-            "pip install google-cloud-texttospeech"
-        ) from exc
-
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    if google_tts_credentials:
-        from google.oauth2 import service_account
-        credentials = service_account.Credentials.from_service_account_file(
-            google_tts_credentials,
-            scopes=["https://www.googleapis.com/auth/cloud-platform"],
-        )
-        client = texttospeech.TextToSpeechClient(credentials=credentials)
-    elif google_tts_api_key:
-        client = texttospeech.TextToSpeechClient(
-            client_options=ClientOptions(api_key=google_tts_api_key)
-        )
-    else:
-        print("[narration] TTS 인증 정보 없음 (GOOGLE_TTS_CREDENTIALS 또는 GOOGLE_TTS_API_KEY 필요) — 나레이션 건너뜀")
+    except ImportError:
+        print("[narration] google-cloud-texttospeech 패키지 없음")
         return None
 
-    lang_code = "-".join(voice.split("-")[:2])
-    voice_params = texttospeech.VoiceSelectionParams(
-        language_code=lang_code,
-        name=voice,
-    )
-    supports_pitch = "Chirp" not in voice
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3,
-        speaking_rate=speaking_rate,
-        **({"pitch": pitch} if supports_pitch else {}),
-    )
+    if not credentials and not api_key:
+        print("[narration] Google TTS 인증 정보 없음 (GOOGLE_TTS_CREDENTIALS 또는 GOOGLE_TTS_API_KEY 필요)")
+        return None
 
-    lines: List[NarrationLine] = []
-    cursor = LEAD_PADDING
+    try:
+        if credentials:
+            from google.oauth2 import service_account
+            creds = service_account.Credentials.from_service_account_file(
+                credentials,
+                scopes=["https://www.googleapis.com/auth/cloud-platform"],
+            )
+            client = texttospeech.TextToSpeechClient(credentials=creds)
+        else:
+            client = texttospeech.TextToSpeechClient(
+                client_options=ClientOptions(api_key=api_key)
+            )
 
-    for index, line_text in enumerate(script.lines, start=1):
-        text = line_text.strip()
-        if not text:
+        lang_code = "-".join(voice.split("-")[:2])
+        voice_params = texttospeech.VoiceSelectionParams(language_code=lang_code, name=voice)
+        supports_pitch = "Chirp" not in voice
+        audio_config = texttospeech.AudioConfig(
+            audio_encoding=texttospeech.AudioEncoding.MP3,
+            speaking_rate=speaking_rate,
+            **({"pitch": pitch} if supports_pitch else {}),
+        )
+
+        lines: List[NarrationLine] = []
+        cursor = LEAD_PADDING
+
+        for index, text in enumerate(text_lines, start=1):
+            path = output_dir / f"{signature}_narration_{index}.mp3"
+            response = client.synthesize_speech(
+                input=texttospeech.SynthesisInput(text=text),
+                voice=voice_params,
+                audio_config=audio_config,
+            )
+            path.write_bytes(response.audio_content)
+
+            duration = probe_audio_duration(path)
+            if duration <= 0:
+                duration = LINE_DURATION
+
+            lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
             cursor += LINE_DURATION + LINE_GAP
-            continue
-        path = output_dir / f"{signature}_narration_{index}.mp3"
-        synthesis_input = texttospeech.SynthesisInput(text=text)
-        response = client.synthesize_speech(
-            input=synthesis_input,
-            voice=voice_params,
-            audio_config=audio_config,
-        )
-        path.write_bytes(response.audio_content)
 
-        duration = probe_audio_duration(path)
-        if duration <= 0:
-            duration = LINE_DURATION
+        return lines if lines else None
 
-        lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
-        cursor += LINE_DURATION + LINE_GAP
-
-    if not lines:
+    except Exception as exc:
+        print(f"[narration] Google TTS 오류 ({type(exc).__name__}: {exc})")
         return None
 
-    print(f"[narration] {len(lines)}개 라인 TTS 생성 완료 (voice={voice})")
-    return NarrationResult(lines=lines)
 
+# ── 공통 ──────────────────────────────────────────────────────────────────────
 
 def probe_audio_duration(audio_path: Path) -> float:
-    cmd = [
-        resolve_ffmpeg(),
-        "-i", str(audio_path),
-        "-hide_banner",
-        "-f", "null",
-        "-",
-    ]
+    cmd = [resolve_ffmpeg(), "-i", str(audio_path), "-hide_banner", "-f", "null", "-"]
     proc = subprocess.run(cmd, capture_output=True, text=True)
-    output = proc.stderr
-    for line in output.splitlines():
+    for line in proc.stderr.splitlines():
         if "Duration:" in line:
             stamp = line.split("Duration:")[1].split(",")[0].strip()
             try:

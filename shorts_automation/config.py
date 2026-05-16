@@ -30,6 +30,9 @@ class AppConfig:
     enable_gemini_music: bool
     enable_narration: bool
     narration_voice: str
+    elevenlabs_api_key: str
+    elevenlabs_voice_id: str
+    elevenlabs_model: str
     google_tts_credentials: str
     google_tts_api_key: str
 
@@ -58,6 +61,9 @@ def load_config(project_root: Path) -> AppConfig:
         enable_gemini_music=os.environ.get("ENABLE_GEMINI_MUSIC", "true").lower() == "true",
         enable_narration=os.environ.get("ENABLE_NARRATION", "true").lower() == "true",
         narration_voice=os.environ.get("NARRATION_VOICE", "ko-KR-Chirp3-HD-Aoede"),
+        elevenlabs_api_key=os.environ.get("ELEVENLABS_API_KEY", ""),
+        elevenlabs_voice_id=os.environ.get("ELEVENLABS_VOICE_ID", "yIiJDIlA4V9TvoOO12TS"),
+        elevenlabs_model=os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2"),
         google_tts_credentials=os.environ.get("GOOGLE_TTS_CREDENTIALS", ""),
         google_tts_api_key=os.environ.get("GOOGLE_TTS_API_KEY", ""),
     )
