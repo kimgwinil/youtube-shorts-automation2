@@ -7,10 +7,10 @@
     "67c786b5354f65a0f70dd7067be34fbe971bdd6d",
     "e8f3431806965624077ddba412d6083f7ad08f5a",
     "de863c32d05e42af6ae160ccdd2366e54bbc7f08",
-    "8ebdfc614c8251807c94526b307c9e240d057f50",
-    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
+    "0f571748654087b515f12c03598f81b5ef5285dd",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
+    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
@@ -34,8 +34,8 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
-    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
-    "0f571748654087b515f12c03598f81b5ef5285dd"
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
+    "8ebdfc614c8251807c94526b307c9e240d057f50"
   ],
   "recent_titles": [
     "가로등 아래 서재 속 명상",
@@ -56,8 +56,8 @@
     "새벽 창가의 결심",
     "창신의 힘을 깨우는 순간",
     "조용한 아침, 깊은 생각의 여행",
-    "아침 서재의 깨달음",
-    "강변 산책의 평화로운 순간"
+    "새벽의 시작, 길의 첫발",
+    "새벽의 사막, 마음의 울림"
   ],
   "recent_quote_ids": [
     "e2399538de6458351a15ebb5787b72518d888a72",
@@ -78,8 +78,8 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
-    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
-    "0f571748654087b515f12c03598f81b5ef5285dd"
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
+    "8ebdfc614c8251807c94526b307c9e240d057f50"
   ],
   "recent_image_fingerprints": [
     "e536cc06ebaafa7a",
@@ -100,14 +100,14 @@
     "d5b7932b4dfe04b5",
     "586f58536e6ee47b",
     "83d3c5fac49cae0c",
-    "90a63ad0c2eb8747",
-    "72dd9fb1f88df7c0"
+    "1e2305e6923129d2",
+    "cdd24de8358beb24"
   ],
   "recent_visual_styles": [
-    "photoreal",
     "calligraphy",
+    "ink",
     "watercolor",
-    "ink"
+    "photoreal"
   ],
   "recent_music_signatures": [
     "55859f2d31d4",
@@ -128,8 +128,8 @@
     "7c97ecb5b543",
     "3d29d348c3fb",
     "2d9c5f120ec5",
-    "b9217538f601",
-    "f0d51446f869"
+    "29a058275d8a",
+    "1e90f5824de8"
   ],
   "recent_music_assets": [],
   "recent_dates": [
@@ -151,7 +151,7 @@
     "2026-05-12",
     "2026-05-13",
     "2026-05-14",
-    "2026-05-15",
-    "2026-05-16"
+    "2026-05-16",
+    "2026-05-17"
   ]
 }
