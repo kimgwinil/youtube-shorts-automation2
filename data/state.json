@@ -2,7 +2,6 @@
   "recent_topics": [
     "인내",
     "평화",
-    "새벽",
     "겨울",
     "친구",
     "그리움",
@@ -19,19 +18,19 @@
     "위로",
     "용서",
     "기억",
-    "창의"
+    "창의",
+    "새벽"
   ],
   "recent_visual_styles": [
     "watercolor",
-    "photography",
     "oil_painting",
     "pencil_sketch",
     "ink",
-    "photoreal"
+    "photoreal",
+    "photography"
   ],
   "recent_music_signatures": [],
   "recent_dates": [
-    "2026-04-26",
     "2026-04-27",
     "2026-04-28",
     "2026-04-29",
@@ -50,6 +49,7 @@
     "2026-05-12",
     "2026-05-13",
     "2026-05-14",
-    "2026-05-15"
+    "2026-05-15",
+    "2026-05-16"
   ]
 }
