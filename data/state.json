@@ -8,7 +8,6 @@
     "e8f3431806965624077ddba412d6083f7ad08f5a",
     "de863c32d05e42af6ae160ccdd2366e54bbc7f08",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
-    "0f571748654087b515f12c03598f81b5ef5285dd",
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
@@ -35,10 +34,10 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
-    "29ddfc87e563b4b49ca269e94c69fd26e15f2720"
+    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
+    "0f571748654087b515f12c03598f81b5ef5285dd"
   ],
   "recent_titles": [
-    "봄 안개 속의 내적 나그네",
     "가로등 아래 서재 속 명상",
     "봄바람 속 마음 정돈의 순간",
     "새벽의 결심, 사무실에서 배우다",
@@ -57,10 +56,10 @@
     "새벽 창가의 결심",
     "창신의 힘을 깨우는 순간",
     "조용한 아침, 깊은 생각의 여행",
-    "아침 서재의 깨달음"
+    "아침 서재의 깨달음",
+    "강변 산책의 평화로운 순간"
   ],
   "recent_quote_ids": [
-    "8cc152b9a73fe0e7ba56065b8f7eb3e511d6a8ec",
     "e2399538de6458351a15ebb5787b72518d888a72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
@@ -79,10 +78,10 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
-    "29ddfc87e563b4b49ca269e94c69fd26e15f2720"
+    "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
+    "0f571748654087b515f12c03598f81b5ef5285dd"
   ],
   "recent_image_fingerprints": [
-    "5d172729c3c25824",
     "e536cc06ebaafa7a",
     "a8f4f24699d98d0d",
     "2af7ffc2f78f0066",
@@ -101,7 +100,8 @@
     "d5b7932b4dfe04b5",
     "586f58536e6ee47b",
     "83d3c5fac49cae0c",
-    "90a63ad0c2eb8747"
+    "90a63ad0c2eb8747",
+    "72dd9fb1f88df7c0"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -110,7 +110,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "00a20017e151",
     "55859f2d31d4",
     "b13ec95c40c0",
     "b3d010e97845",
@@ -129,11 +128,11 @@
     "7c97ecb5b543",
     "3d29d348c3fb",
     "2d9c5f120ec5",
-    "b9217538f601"
+    "b9217538f601",
+    "f0d51446f869"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-04-24",
     "2026-04-25",
     "2026-04-26",
     "2026-04-27",
@@ -152,6 +151,7 @@
     "2026-05-12",
     "2026-05-13",
     "2026-05-14",
-    "2026-05-15"
+    "2026-05-15",
+    "2026-05-16"
   ]
 }
