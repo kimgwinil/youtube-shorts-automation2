@@ -13,7 +13,6 @@
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
-    "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "8cc152b9a73fe0e7ba56065b8f7eb3e511d6a8ec",
     "e2399538de6458351a15ebb5787b72518d888a72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
@@ -36,10 +35,10 @@
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
-    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_titles": [
-    "새벽의 결심, 사무실에서 배우다",
     "봄빛 속의 의지 새김",
     "도심의 아침, 품격의 예술",
     "아침의 도시, 리더의 통찰",
@@ -58,10 +57,10 @@
     "새벽의 시작, 길의 첫발",
     "새벽의 사막, 마음의 울림",
     "햇살 서재에서 시작되는 하루",
-    "새벽의 모래 위 사색의 걸음"
+    "새벽의 모래 위 사색의 걸음",
+    "아침 햇살에 드러나는 도약의 기회"
   ],
   "recent_quote_ids": [
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
@@ -80,10 +79,10 @@
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
-    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_image_fingerprints": [
-    "2af7ffc2f78f0066",
     "3ecbe7773c7a81ba",
     "5c154170a0af56f4",
     "f6de8c3254365c47",
@@ -102,16 +101,16 @@
     "1e2305e6923129d2",
     "cdd24de8358beb24",
     "ec78b4d29fe2ae0a",
-    "7c59905a0923fb8f"
+    "7c59905a0923fb8f",
+    "fb1d9f3650d45a57"
   ],
   "recent_visual_styles": [
-    "watercolor",
     "photoreal",
     "calligraphy",
-    "ink"
+    "ink",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "b3d010e97845",
     "7b456178300d",
     "2b367d1a0287",
     "da7f0c0630fd",
@@ -130,11 +129,11 @@
     "29a058275d8a",
     "1e90f5824de8",
     "80e55b8672ad",
-    "f325a05ec4de"
+    "f325a05ec4de",
+    "872134d0f120"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-04-25",
     "2026-04-26",
     "2026-04-27",
     "2026-04-28",
@@ -153,6 +152,7 @@
     "2026-05-13",
     "2026-05-14",
     "2026-05-16",
-    "2026-05-17"
+    "2026-05-17",
+    "2026-05-18"
   ]
 }
