@@ -4,17 +4,14 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 import subprocess
-from typing import List, Optional
+from typing import List
 
 from .ffmpeg_utils import resolve_ffmpeg
-from .script_builder import VideoScript
+from .script_builder import EssayScript, LEAD_PADDING, LINE_DURATION, LINE_GAP
 
 
-LINE_GAP_AFTER = 0.6
-TAIL_PADDING = 2.5
-MIN_TOTAL_DURATION = 15.0
 SUBTITLE_LEAD = 0.15
-SUBTITLE_TAIL = 0.5
+SUBTITLE_TAIL = 0.8
 
 
 @dataclass
@@ -27,7 +24,6 @@ class NarrationLine:
 @dataclass
 class NarrationResult:
     lines: List[NarrationLine]
-    total_duration: float
 
     @property
     def line_audio_paths(self) -> List[Path]:
@@ -45,27 +41,21 @@ class NarrationResult:
 def _text_to_ssml(text: str) -> str:
     """쉼표·마침표 등 구두점에 자연스러운 SSML break 삽입."""
     t = text.strip()
-    # 쉼표(,) → 250ms 짧은 쉬기
     t = re.sub(r',\s*', ',<break time="250ms"/> ', t)
-    # 한국어 고유 쉼표(、)
     t = re.sub(r'、\s*', '、<break time="200ms"/> ', t)
-    # 마침표(. 。) → 문장 간 450ms
     t = re.sub(r'([。.])\s*', r'\1<break time="450ms"/> ', t)
-    # 느낌표·물음표 → 400ms
     t = re.sub(r'([!?！？])\s*', r'\1<break time="400ms"/> ', t)
-    # 줄임표(…) → 400ms
     t = re.sub(r'[…]|\.{2,}', '<break time="400ms"/> ', t)
-    # 대시(— –) → 절 구분 300ms
     t = re.sub(r'\s*[—–]\s*', '<break time="300ms"/> ', t)
     return f'<speak>{t.strip()}</speak>'
 
 
 def generate_narration(
-    script: VideoScript,
+    script: EssayScript,
     signature: str,
     output_dir: Path,
     elevenlabs_api_key: str = "",
-    elevenlabs_voice_id: str = "9BWtsMINqrJLrRacOk9x",
+    elevenlabs_voice_id: str = "yIiJDIlA4V9TvoOO12TS",
     elevenlabs_model: str = "eleven_multilingual_v2",
     google_tts_credentials: str = "",
     google_tts_api_key: str = "",
@@ -86,7 +76,8 @@ def generate_narration(
             elevenlabs_api_key, elevenlabs_voice_id, elevenlabs_model,
         )
         if lines is not None:
-            return _build_result(lines, "ElevenLabs", elevenlabs_voice_id)
+            print(f"[narration] {len(lines)}개 라인 생성 완료 (engine=ElevenLabs, voice={elevenlabs_voice_id})")
+            return NarrationResult(lines=lines)
         print("[narration] ElevenLabs 실패 — Google TTS로 fallback")
 
     # 2순위: Google TTS
@@ -95,7 +86,8 @@ def generate_narration(
         google_tts_credentials, google_tts_api_key, voice, speaking_rate, pitch,
     )
     if lines is not None:
-        return _build_result(lines, "Google TTS", voice)
+        print(f"[narration] {len(lines)}개 라인 생성 완료 (engine=Google TTS, voice={voice})")
+        return NarrationResult(lines=lines)
 
     print("[narration] 모든 TTS 엔진 실패 — 나레이션 건너뜀")
     return None
@@ -120,11 +112,10 @@ def _generate_elevenlabs(
     try:
         client = ElevenLabs(api_key=api_key)
         lines: List[NarrationLine] = []
-        cursor = 0.0
+        cursor = LEAD_PADDING
 
         for index, text in enumerate(text_lines, start=1):
             path = output_dir / f"{signature}_narration_{index}.mp3"
-            # ElevenLabs v2: SSML break 태그를 텍스트에 포함해 자연스러운 쉬기 적용
             ssml_text = _text_to_ssml(text)
             audio_iter = client.text_to_speech.convert(
                 voice_id=voice_id,
@@ -134,24 +125,23 @@ def _generate_elevenlabs(
             )
             path.write_bytes(b"".join(audio_iter))
 
-            duration = _probe_duration(path)
+            duration = probe_audio_duration(path)
             if duration <= 0:
-                print(f"[narration] ElevenLabs 라인 {index} 길이 측정 실패")
-                return None
+                duration = LINE_DURATION
 
             lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
-            cursor += duration + LINE_GAP_AFTER
+            cursor += LINE_DURATION + LINE_GAP
 
         return lines if lines else None
 
     except Exception as exc:
         reason = str(exc)
         if "quota" in reason.lower() or "limit" in reason.lower() or "429" in reason:
-            print(f"[narration] ElevenLabs 크레딧/쿼터 초과 — Google TTS로 fallback")
+            print("[narration] ElevenLabs 크레딧/쿼터 초과 — Google TTS로 fallback")
         elif "401" in reason or "unauthorized" in reason.lower():
-            print(f"[narration] ElevenLabs 인증 오류 — Google TTS로 fallback")
+            print("[narration] ElevenLabs 인증 오류 — Google TTS로 fallback")
         elif "voice" in reason.lower() and ("not found" in reason.lower() or "404" in reason):
-            print(f"[narration] ElevenLabs 보이스 ID 없음 — Google TTS로 fallback")
+            print("[narration] ElevenLabs 보이스 ID 없음 — Google TTS로 fallback")
         else:
             print(f"[narration] ElevenLabs 오류 ({type(exc).__name__}: {exc}) — Google TTS로 fallback")
         return None
@@ -203,11 +193,10 @@ def _generate_google_tts(
         )
 
         lines: List[NarrationLine] = []
-        cursor = 0.0
+        cursor = LEAD_PADDING
 
         for index, text in enumerate(text_lines, start=1):
             path = output_dir / f"{signature}_narration_{index}.mp3"
-            # SSML로 쉼표·마침표·느낌표 등에 자연스러운 쉬기 적용
             ssml = _text_to_ssml(text)
             try:
                 response = client.synthesize_speech(
@@ -216,7 +205,6 @@ def _generate_google_tts(
                     audio_config=audio_config,
                 )
             except Exception as ssml_err:
-                # SSML 미지원 voice일 경우 plain text로 fallback
                 print(f"[narration] SSML 미지원 — plain text로 재시도 (line {index}): {ssml_err}")
                 response = client.synthesize_speech(
                     input=texttospeech.SynthesisInput(text=text),
@@ -225,31 +213,23 @@ def _generate_google_tts(
                 )
             path.write_bytes(response.audio_content)
 
-            duration = _probe_duration(path)
+            duration = probe_audio_duration(path)
             if duration <= 0:
-                print(f"[narration] Google TTS 라인 {index} 길이 측정 실패")
-                return None
+                duration = LINE_DURATION
 
             lines.append(NarrationLine(audio_path=path, start=cursor, duration=duration))
-            cursor += duration + LINE_GAP_AFTER
+            cursor += LINE_DURATION + LINE_GAP
 
         return lines if lines else None
 
     except Exception as exc:
-        print(f"[narration] Google TTS 오류: {exc}")
+        print(f"[narration] Google TTS 오류 ({type(exc).__name__}: {exc})")
         return None
 
 
 # ── 공통 ──────────────────────────────────────────────────────────────────────
 
-def _build_result(lines: List[NarrationLine], engine: str, voice: str) -> NarrationResult:
-    last = lines[-1]
-    total = max(MIN_TOTAL_DURATION, last.start + last.duration + TAIL_PADDING)
-    print(f"[narration] {len(lines)}개 라인 생성 완료 (engine={engine}, voice={voice}), 총 길이 {total:.2f}초")
-    return NarrationResult(lines=lines, total_duration=round(total, 2))
-
-
-def _probe_duration(audio_path: Path) -> float:
+def probe_audio_duration(audio_path: Path) -> float:
     cmd = [resolve_ffmpeg(), "-i", str(audio_path), "-hide_banner", "-f", "null", "-"]
     proc = subprocess.run(cmd, capture_output=True, text=True)
     for line in proc.stderr.splitlines():
