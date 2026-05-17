@@ -36,10 +36,10 @@
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
-    "742d9b5facb691aa9b560853aa30a44abbce10e5"
+    "742d9b5facb691aa9b560853aa30a44abbce10e5",
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
   ],
   "recent_titles": [
-    "봄빛 속의 의지 새김",
     "도심의 아침, 품격의 예술",
     "아침의 도시, 리더의 통찰",
     "고요한 아침, 마음의 잔잔함",
@@ -58,10 +58,10 @@
     "새벽의 사막, 마음의 울림",
     "햇살 서재에서 시작되는 하루",
     "새벽의 모래 위 사색의 걸음",
-    "아침 햇살에 드러나는 도약의 기회"
+    "아침 햇살에 드러나는 도약의 기회",
+    "변화, 그 출발점은 나 자신"
   ],
   "recent_quote_ids": [
-    "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "1f4da7b7074e0521a0e38b2250b0d1d221f59a45",
@@ -80,10 +80,10 @@
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
-    "742d9b5facb691aa9b560853aa30a44abbce10e5"
+    "742d9b5facb691aa9b560853aa30a44abbce10e5",
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
   ],
   "recent_image_fingerprints": [
-    "3ecbe7773c7a81ba",
     "5c154170a0af56f4",
     "f6de8c3254365c47",
     "84ea7319dc08b01d",
@@ -102,16 +102,16 @@
     "cdd24de8358beb24",
     "ec78b4d29fe2ae0a",
     "7c59905a0923fb8f",
-    "fb1d9f3650d45a57"
+    "fb1d9f3650d45a57",
+    "b1f286198c2eb00c"
   ],
   "recent_visual_styles": [
-    "photoreal",
     "calligraphy",
     "ink",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "7b456178300d",
     "2b367d1a0287",
     "da7f0c0630fd",
     "f70b623c9667",
@@ -130,7 +130,8 @@
     "1e90f5824de8",
     "80e55b8672ad",
     "f325a05ec4de",
-    "872134d0f120"
+    "872134d0f120",
+    "083ccfd925d4"
   ],
   "recent_music_assets": [],
   "recent_dates": [
