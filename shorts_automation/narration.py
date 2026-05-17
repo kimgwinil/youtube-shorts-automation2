@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from pathlib import Path
 import subprocess
@@ -39,6 +40,24 @@ class NarrationResult:
     @property
     def line_durations(self) -> List[float]:
         return [line.duration for line in self.lines]
+
+
+def _text_to_ssml(text: str) -> str:
+    """쉼표·마침표 등 구두점에 자연스러운 SSML break 삽입."""
+    t = text.strip()
+    # 쉼표(,) → 250ms 짧은 쉬기
+    t = re.sub(r',\s*', ',<break time="250ms"/> ', t)
+    # 한국어 고유 쉼표(、)
+    t = re.sub(r'、\s*', '、<break time="200ms"/> ', t)
+    # 마침표(. 。) → 문장 간 450ms
+    t = re.sub(r'([。.])\s*', r'\1<break time="450ms"/> ', t)
+    # 느낌표·물음표 → 400ms
+    t = re.sub(r'([!?！？])\s*', r'\1<break time="400ms"/> ', t)
+    # 줄임표(…) → 400ms
+    t = re.sub(r'[…]|\.{2,}', '<break time="400ms"/> ', t)
+    # 대시(— –) → 절 구분 300ms
+    t = re.sub(r'\s*[—–]\s*', '<break time="300ms"/> ', t)
+    return f'<speak>{t.strip()}</speak>'
 
 
 def generate_narration(
@@ -105,9 +124,11 @@ def _generate_elevenlabs(
 
         for index, text in enumerate(text_lines, start=1):
             path = output_dir / f"{signature}_narration_{index}.mp3"
+            # ElevenLabs v2: SSML break 태그를 텍스트에 포함해 자연스러운 쉬기 적용
+            ssml_text = _text_to_ssml(text)
             audio_iter = client.text_to_speech.convert(
                 voice_id=voice_id,
-                text=text,
+                text=ssml_text,
                 model_id=model,
                 output_format="mp3_44100_128",
             )
@@ -186,11 +207,22 @@ def _generate_google_tts(
 
         for index, text in enumerate(text_lines, start=1):
             path = output_dir / f"{signature}_narration_{index}.mp3"
-            response = client.synthesize_speech(
-                input=texttospeech.SynthesisInput(text=text),
-                voice=voice_params,
-                audio_config=audio_config,
-            )
+            # SSML로 쉼표·마침표·느낌표 등에 자연스러운 쉬기 적용
+            ssml = _text_to_ssml(text)
+            try:
+                response = client.synthesize_speech(
+                    input=texttospeech.SynthesisInput(ssml=ssml),
+                    voice=voice_params,
+                    audio_config=audio_config,
+                )
+            except Exception as ssml_err:
+                # SSML 미지원 voice일 경우 plain text로 fallback
+                print(f"[narration] SSML 미지원 — plain text로 재시도 (line {index}): {ssml_err}")
+                response = client.synthesize_speech(
+                    input=texttospeech.SynthesisInput(text=text),
+                    voice=voice_params,
+                    audio_config=audio_config,
+                )
             path.write_bytes(response.audio_content)
 
             duration = _probe_duration(path)
