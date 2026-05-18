@@ -38,10 +38,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_titles": [
-    "아침의 도시, 리더의 통찰",
     "고요한 아침, 마음의 잔잔함",
     "햇살에 번지는 만족의 여운",
     "봄날의 따스한 앉음새",
@@ -60,10 +60,10 @@
     "새벽의 모래 위 사색의 걸음",
     "아침 햇살에 드러나는 도약의 기회",
     "변화, 그 출발점은 나 자신",
-    "새벽 골목, 미래를 향한 조용한 발걸음"
+    "새벽 골목, 미래를 향한 조용한 발걸음",
+    "고요한 공간에서 찾아낸 질문의 힘"
   ],
   "recent_quote_ids": [
-    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "1f4da7b7074e0521a0e38b2250b0d1d221f59a45",
     "5c258b3e679190dcbc8dc8a5665148f9573a6277",
     "28d59344521642a898142450d68d80115d340d4f",
@@ -82,10 +82,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_image_fingerprints": [
-    "f6de8c3254365c47",
     "84ea7319dc08b01d",
     "994dbb7b4ab89292",
     "82d6374eb2b8b267",
@@ -104,16 +104,16 @@
     "7c59905a0923fb8f",
     "fb1d9f3650d45a57",
     "b1f286198c2eb00c",
-    "7d75a4f4632d7be1"
+    "7d75a4f4632d7be1",
+    "cf5ab8c4446b0c8b"
   ],
   "recent_visual_styles": [
-    "ink",
     "watercolor",
     "photoreal",
-    "calligraphy"
+    "calligraphy",
+    "ink"
   ],
   "recent_music_signatures": [
-    "da7f0c0630fd",
     "f70b623c9667",
     "1643172952af",
     "db4ba526e795",
@@ -132,7 +132,8 @@
     "f325a05ec4de",
     "872134d0f120",
     "083ccfd925d4",
-    "7b4b8f23d972"
+    "7b4b8f23d972",
+    "b2768b6f965b"
   ],
   "recent_music_assets": [],
   "recent_dates": [
