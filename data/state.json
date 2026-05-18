@@ -37,10 +37,10 @@
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
   ],
   "recent_titles": [
-    "도심의 아침, 품격의 예술",
     "아침의 도시, 리더의 통찰",
     "고요한 아침, 마음의 잔잔함",
     "햇살에 번지는 만족의 여운",
@@ -59,10 +59,10 @@
     "햇살 서재에서 시작되는 하루",
     "새벽의 모래 위 사색의 걸음",
     "아침 햇살에 드러나는 도약의 기회",
-    "변화, 그 출발점은 나 자신"
+    "변화, 그 출발점은 나 자신",
+    "새벽 골목, 미래를 향한 조용한 발걸음"
   ],
   "recent_quote_ids": [
-    "85661b85057484d01768b7cc8383a1737744c71e",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "1f4da7b7074e0521a0e38b2250b0d1d221f59a45",
     "5c258b3e679190dcbc8dc8a5665148f9573a6277",
@@ -81,10 +81,10 @@
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
   ],
   "recent_image_fingerprints": [
-    "5c154170a0af56f4",
     "f6de8c3254365c47",
     "84ea7319dc08b01d",
     "994dbb7b4ab89292",
@@ -103,16 +103,16 @@
     "ec78b4d29fe2ae0a",
     "7c59905a0923fb8f",
     "fb1d9f3650d45a57",
-    "b1f286198c2eb00c"
+    "b1f286198c2eb00c",
+    "7d75a4f4632d7be1"
   ],
   "recent_visual_styles": [
-    "calligraphy",
     "ink",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "calligraphy"
   ],
   "recent_music_signatures": [
-    "2b367d1a0287",
     "da7f0c0630fd",
     "f70b623c9667",
     "1643172952af",
@@ -131,11 +131,11 @@
     "80e55b8672ad",
     "f325a05ec4de",
     "872134d0f120",
-    "083ccfd925d4"
+    "083ccfd925d4",
+    "7b4b8f23d972"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-04-26",
     "2026-04-27",
     "2026-04-28",
     "2026-04-29",
@@ -154,6 +154,7 @@
     "2026-05-14",
     "2026-05-16",
     "2026-05-17",
-    "2026-05-18"
+    "2026-05-18",
+    "2026-05-19"
   ]
 }
