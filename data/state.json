@@ -8,7 +8,6 @@
     "e8f3431806965624077ddba412d6083f7ad08f5a",
     "de863c32d05e42af6ae160ccdd2366e54bbc7f08",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
-    "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "29ddfc87e563b4b49ca269e94c69fd26e15f2720",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
@@ -39,10 +38,10 @@
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "c48f31df757f189b55bec88b5af903da6ae2cc29"
   ],
   "recent_titles": [
-    "고요한 아침, 마음의 잔잔함",
     "햇살에 번지는 만족의 여운",
     "봄날의 따스한 앉음새",
     "잔잔한 서재에서 찾은 진리",
@@ -61,10 +60,10 @@
     "아침 햇살에 드러나는 도약의 기회",
     "변화, 그 출발점은 나 자신",
     "새벽 골목, 미래를 향한 조용한 발걸음",
-    "고요한 공간에서 찾아낸 질문의 힘"
+    "고요한 공간에서 찾아낸 질문의 힘",
+    "빗물 속 자아의 순간"
   ],
   "recent_quote_ids": [
-    "1f4da7b7074e0521a0e38b2250b0d1d221f59a45",
     "5c258b3e679190dcbc8dc8a5665148f9573a6277",
     "28d59344521642a898142450d68d80115d340d4f",
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
@@ -83,10 +82,10 @@
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "c48f31df757f189b55bec88b5af903da6ae2cc29"
   ],
   "recent_image_fingerprints": [
-    "84ea7319dc08b01d",
     "994dbb7b4ab89292",
     "82d6374eb2b8b267",
     "2f5a68cd9cba43cd",
@@ -105,7 +104,8 @@
     "fb1d9f3650d45a57",
     "b1f286198c2eb00c",
     "7d75a4f4632d7be1",
-    "cf5ab8c4446b0c8b"
+    "cf5ab8c4446b0c8b",
+    "00d2de34eb938528"
   ],
   "recent_visual_styles": [
     "watercolor",
@@ -114,7 +114,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "f70b623c9667",
     "1643172952af",
     "db4ba526e795",
     "50511d6dee50",
@@ -133,11 +132,11 @@
     "872134d0f120",
     "083ccfd925d4",
     "7b4b8f23d972",
-    "b2768b6f965b"
+    "b2768b6f965b",
+    "bebafb7812b3"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-04-27",
     "2026-04-28",
     "2026-04-29",
     "2026-04-30",
@@ -156,6 +155,7 @@
     "2026-05-16",
     "2026-05-17",
     "2026-05-18",
-    "2026-05-19"
+    "2026-05-19",
+    "2026-05-20"
   ]
 }
