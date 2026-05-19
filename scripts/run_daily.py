@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -18,6 +19,18 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="영상만 생성하고 업로드는 하지 않습니다.")
     parser.add_argument("--force", action="store_true", help="오늘 이미 실행한 경우에도 강제로 재실행합니다.")
     args = parser.parse_args()
+    if (
+        not args.dry_run
+        and os.getenv("GITHUB_ACTIONS") != "true"
+        and os.getenv("ALLOW_LOCAL_UPLOAD", "").lower() != "true"
+    ):
+        result = {
+            "skipped": True,
+            "reason": "로컬 업로드는 비활성화되었습니다. GitHub Actions 스케줄만 자동 업로드를 수행합니다.",
+        }
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(f"[SKIPPED] {result['reason']}", file=sys.stderr)
+        return 2
     result = run_pipeline(PROJECT_ROOT, dry_run=args.dry_run, force=args.force)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result.get("skipped"):
@@ -28,4 +41,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

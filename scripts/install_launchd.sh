@@ -14,29 +14,17 @@ mkdir -p "$PROJECT_DIR/logs"
 chmod +x "$PROJECT_DIR/scripts/sync_repo_on_boot.sh"
 chmod +x "$PROJECT_DIR/scripts/catch_up_upload_on_boot.sh"
 
-BOOTSTRAP_FAILED=0
-
 for PLIST_NAME in "${PLIST_NAMES[@]}"; do
-  SOURCE_PLIST="$PROJECT_DIR/launchd/$PLIST_NAME"
   TARGET_PLIST="$HOME/Library/LaunchAgents/$PLIST_NAME"
-  cp "$SOURCE_PLIST" "$TARGET_PLIST"
   launchctl bootout "$USER_DOMAIN" "$TARGET_PLIST" >/dev/null 2>&1 || true
-  if launchctl bootstrap "$USER_DOMAIN" "$TARGET_PLIST"; then
-    echo "installed: $TARGET_PLIST"
+  launchctl unload "$TARGET_PLIST" >/dev/null 2>&1 || true
+  if [[ -f "$TARGET_PLIST" ]]; then
+    rm -f "$TARGET_PLIST"
+    echo "removed: $TARGET_PLIST"
   else
-    BOOTSTRAP_FAILED=1
-    echo "copied but not loaded: $TARGET_PLIST"
+    echo "not present: $TARGET_PLIST"
   fi
 done
 
-if [[ "$BOOTSTRAP_FAILED" -eq 1 ]]; then
-  echo "launchctl bootstrap failed in this session."
-  echo "Run this from your logged-in Mac terminal:"
-  echo "launchctl bootstrap $USER_DOMAIN $HOME/Library/LaunchAgents/com.kimgwonil.youtube-shorts-sync.plist"
-  echo "launchctl bootstrap $USER_DOMAIN $HOME/Library/LaunchAgents/com.kimgwonil.youtube-shorts-catchup.plist"
-  echo "launchctl bootstrap $USER_DOMAIN $HOME/Library/LaunchAgents/com.kimgwonil.youtube-shorts-daily.plist"
-else
-  echo "start sync now: launchctl start com.kimgwonil.youtube-shorts-sync"
-  echo "start catch-up now: launchctl start com.kimgwonil.youtube-shorts-catchup"
-  echo "start daily job now: launchctl start com.kimgwonil.youtube-shorts-daily"
-fi
+echo "Local launchd automation removed."
+echo "Daily uploads are now intended to run only from GitHub Actions at 06:00 KST."
