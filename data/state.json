@@ -41,10 +41,10 @@
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "34897b2ab8b9d89431c92532eca188a1fa3c3b26"
   ],
   "recent_titles": [
-    "잔잔한 서재에서 찾은 진리",
     "자애로운 해뜰녘, 자유의 의미",
     "안개 속의 마음의 평온",
     "새벽 강변의 고요한 명상",
@@ -63,10 +63,10 @@
     "고요한 공간에서 찾아낸 질문의 힘",
     "빗물 속 자아의 순간",
     "비 내리는 대나무숲, 사색의 시간",
-    "고요한 도서관, 그리움의 서가"
+    "고요한 도서관, 그리움의 서가",
+    "새벽 도서관, 배움의 숲"
   ],
   "recent_quote_ids": [
-    "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "a8d3280e673a76fd628c0ecbd378f82f80c85675",
@@ -85,10 +85,10 @@
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "34897b2ab8b9d89431c92532eca188a1fa3c3b26"
   ],
   "recent_image_fingerprints": [
-    "2f5a68cd9cba43cd",
     "6d8dd9a68b4cc6ad",
     "a512fed5ae40fe58",
     "5b1210e3977c1d7b",
@@ -107,16 +107,16 @@
     "cf5ab8c4446b0c8b",
     "00d2de34eb938528",
     "9b3319ba7a7b54db",
-    "a21e9a94ac51de61"
+    "a21e9a94ac51de61",
+    "b836beabef1a2fe8"
   ],
   "recent_visual_styles": [
     "photoreal",
     "calligraphy",
-    "ink",
-    "watercolor"
+    "watercolor",
+    "ink"
   ],
   "recent_music_signatures": [
-    "50511d6dee50",
     "80726d2ab2ce",
     "ae98f0e08774",
     "80dd7094d1e6",
@@ -135,11 +135,11 @@
     "b2768b6f965b",
     "bebafb7812b3",
     "6f1a3c24afe0",
-    "c54b4960c7ff"
+    "c54b4960c7ff",
+    "0da393ad1bdf"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-04-30",
     "2026-05-01",
     "2026-05-02",
     "2026-05-03",
@@ -158,6 +158,7 @@
     "2026-05-19",
     "2026-05-20",
     "2026-05-21",
-    "2026-05-22"
+    "2026-05-22",
+    "2026-05-23"
   ]
 }
