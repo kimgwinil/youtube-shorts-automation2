@@ -42,10 +42,10 @@
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
-    "34897b2ab8b9d89431c92532eca188a1fa3c3b26"
+    "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
+    "d5b654ba2aaecdf56e54f31171425fafc31e7593"
   ],
   "recent_titles": [
-    "자애로운 해뜰녘, 자유의 의미",
     "안개 속의 마음의 평온",
     "새벽 강변의 고요한 명상",
     "새벽 골목의 차분한 선택",
@@ -64,10 +64,10 @@
     "빗물 속 자아의 순간",
     "비 내리는 대나무숲, 사색의 시간",
     "고요한 도서관, 그리움의 서가",
-    "새벽 도서관, 배움의 숲"
+    "새벽 도서관, 배움의 숲",
+    "새벽 맑은 숲, 준비의 미학"
   ],
   "recent_quote_ids": [
-    "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "a8d3280e673a76fd628c0ecbd378f82f80c85675",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
@@ -86,10 +86,10 @@
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
-    "34897b2ab8b9d89431c92532eca188a1fa3c3b26"
+    "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
+    "d5b654ba2aaecdf56e54f31171425fafc31e7593"
   ],
   "recent_image_fingerprints": [
-    "6d8dd9a68b4cc6ad",
     "a512fed5ae40fe58",
     "5b1210e3977c1d7b",
     "66f102af09a5d6eb",
@@ -108,7 +108,8 @@
     "00d2de34eb938528",
     "9b3319ba7a7b54db",
     "a21e9a94ac51de61",
-    "b836beabef1a2fe8"
+    "b836beabef1a2fe8",
+    "9bb992a9cb2f3ea6"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -117,7 +118,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "80726d2ab2ce",
     "ae98f0e08774",
     "80dd7094d1e6",
     "188d0886c725",
@@ -136,11 +136,11 @@
     "bebafb7812b3",
     "6f1a3c24afe0",
     "c54b4960c7ff",
-    "0da393ad1bdf"
+    "0da393ad1bdf",
+    "7d90e1d82f20"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-01",
     "2026-05-02",
     "2026-05-03",
     "2026-05-04",
@@ -159,6 +159,7 @@
     "2026-05-20",
     "2026-05-21",
     "2026-05-22",
-    "2026-05-23"
+    "2026-05-23",
+    "2026-05-24"
   ]
 }
