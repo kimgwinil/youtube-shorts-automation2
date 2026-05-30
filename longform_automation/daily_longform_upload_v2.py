@@ -4,6 +4,19 @@ import os
 import daily_longform_upload as base
 
 
+_generate_gemini = base.generate_gemini
+
+
+def generate_gemini_with_fallback(prompt, path):
+    try:
+        _generate_gemini(prompt, path)
+        if not path.exists() or path.stat().st_size == 0:
+            raise RuntimeError("Gemini returned an empty image")
+    except Exception as exc:
+        print(f"Gemini image generation failed; falling back to OpenAI: {exc}")
+        base.generate_openai(prompt, path)
+
+
 def generate_topic(history):
     used_topics = [x.get("topic", "") for x in history if x.get("topic")]
     client = base.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
@@ -49,6 +62,7 @@ def pick_topic(history):
 
 
 base.pick_topic = pick_topic
+base.generate_gemini = generate_gemini_with_fallback
 
 
 if __name__ == "__main__":
