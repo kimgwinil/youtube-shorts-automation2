@@ -21,7 +21,7 @@ jobs:
       ELEVENLABS_SIMILARITY: "0.84"
       ELEVENLABS_STYLE: "0.0"
       ELEVENLABS_SPEAKER_BOOST: "true"
-      ELEVENLABS_SPEED: "0.94"
+      ELEVENLABS_SPEED: "0.86"
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
