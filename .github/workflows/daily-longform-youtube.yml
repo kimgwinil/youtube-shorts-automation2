@@ -28,6 +28,7 @@ jobs:
       OPENAI_IMAGE_MODEL: gpt-image-1
       OPENAI_IMAGE_SIZE: 1536x1024
       OPENAI_IMAGE_QUALITY: medium
+      OPENAI_TEXT_MODEL: gpt-4o-mini
       GEMINI_IMAGE_MODEL: gemini-2.5-flash-image
       YOUTUBE_PRIVACY: private
 
@@ -58,7 +59,7 @@ jobs:
           YOUTUBE_TOKEN_JSON: ${{ secrets.YOUTUBE_TOKEN_JSON }}
 
       - name: Generate and upload one unique longform video
-        run: python longform_automation/daily_longform_upload.py
+        run: python longform_automation/daily_longform_upload_v2.py
 
       - name: Commit longform topic history
         run: |
