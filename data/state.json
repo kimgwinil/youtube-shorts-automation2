@@ -31,7 +31,6 @@
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
-    "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
@@ -51,10 +50,10 @@
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
   ],
   "recent_titles": [
-    "아침 햇살에 드러나는 도약의 기회",
     "변화, 그 출발점은 나 자신",
     "새벽 골목, 미래를 향한 조용한 발걸음",
     "고요한 공간에서 찾아낸 질문의 힘",
@@ -73,10 +72,10 @@
     "새벽 기차역, 미래를 향한 출발",
     "정원의 적막, 시간의 경이로움",
     "새벽 서재의 고요한 성찰",
-    "새벽 플랫폼의 결의"
+    "새벽 플랫폼의 결의",
+    "사랑방의 고요한 서예, 마음의 닻을 내리다"
   ],
   "recent_quote_ids": [
-    "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
@@ -95,10 +94,10 @@
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
   ],
   "recent_image_fingerprints": [
-    "fb1d9f3650d45a57",
     "b1f286198c2eb00c",
     "7d75a4f4632d7be1",
     "cf5ab8c4446b0c8b",
@@ -117,7 +116,8 @@
     "4375d6e0198515e7",
     "eb4788f65b0b3545",
     "f8b505d5ad6ffc02",
-    "3b5722ae061e13e4"
+    "3b5722ae061e13e4",
+    "58b65fc44432bc77"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -126,7 +126,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "872134d0f120",
     "083ccfd925d4",
     "7b4b8f23d972",
     "b2768b6f965b",
@@ -145,11 +144,11 @@
     "9e037883eb4c",
     "7e44aaf9b44e",
     "8dfd8809e96b",
-    "8c97e246aab4"
+    "8c97e246aab4",
+    "a037f732c978"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-16",
     "2026-05-17",
     "2026-05-18",
     "2026-05-19",
@@ -168,6 +167,7 @@
     "2026-06-01",
     "2026-06-03",
     "2026-06-04",
-    "2026-06-05"
+    "2026-06-05",
+    "2026-06-06"
   ]
 }
