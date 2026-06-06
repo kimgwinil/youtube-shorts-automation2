@@ -2,7 +2,7 @@ name: Daily YouTube Short
 
 on:
   schedule:
-    - cron: "0 21 * * *"   # 06:00 KST
+    - cron: "10 19 * * *"   # 04:10 KST
   workflow_dispatch:
     inputs:
       force:
