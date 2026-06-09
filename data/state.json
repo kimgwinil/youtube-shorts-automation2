@@ -33,7 +33,6 @@
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
@@ -53,10 +52,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
-    "85661b85057484d01768b7cc8383a1737744c71e"
+    "85661b85057484d01768b7cc8383a1737744c71e",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_titles": [
-    "빗물 속 자아의 순간",
     "비 내리는 대나무숲, 사색의 시간",
     "고요한 도서관, 그리움의 서가",
     "새벽 도서관, 배움의 숲",
@@ -75,10 +74,10 @@
     "사랑방의 고요한 서예, 마음의 닻을 내리다",
     "이른 아침의 정원 산책",
     "고요한 서재의 지혜, 일상 속 깨달음",
-    "도시 광장, 일상의 융화"
+    "도시 광장, 일상의 융화",
+    "흰 벽에 씌어진 질문의 답변"
   ],
   "recent_quote_ids": [
-    "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
@@ -97,10 +96,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
-    "85661b85057484d01768b7cc8383a1737744c71e"
+    "85661b85057484d01768b7cc8383a1737744c71e",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_image_fingerprints": [
-    "00d2de34eb938528",
     "9b3319ba7a7b54db",
     "a21e9a94ac51de61",
     "b836beabef1a2fe8",
@@ -119,16 +118,16 @@
     "58b65fc44432bc77",
     "1beb768d968478c9",
     "29384ba5dc048b9c",
-    "b9f77ba7061950f0"
+    "b9f77ba7061950f0",
+    "4c7121c983ec92dd"
   ],
   "recent_visual_styles": [
     "photoreal",
     "calligraphy",
-    "ink",
-    "watercolor"
+    "watercolor",
+    "ink"
   ],
   "recent_music_signatures": [
-    "bebafb7812b3",
     "6f1a3c24afe0",
     "c54b4960c7ff",
     "0da393ad1bdf",
@@ -147,11 +146,11 @@
     "a037f732c978",
     "9ed3207573b2",
     "e2d2dda82228",
-    "1d4cce718c4e"
+    "1d4cce718c4e",
+    "f9fa51346c66"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-20",
     "2026-05-21",
     "2026-05-22",
     "2026-05-23",
@@ -170,6 +169,7 @@
     "2026-06-06",
     "2026-06-07",
     "2026-06-08",
-    "2026-06-09"
+    "2026-06-09",
+    "2026-06-10"
   ]
 }
