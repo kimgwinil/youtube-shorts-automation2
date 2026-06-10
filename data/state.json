@@ -22,7 +22,6 @@
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "a8d3280e673a76fd628c0ecbd378f82f80c85675",
-    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
@@ -53,10 +52,10 @@
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_titles": [
-    "비 내리는 대나무숲, 사색의 시간",
     "고요한 도서관, 그리움의 서가",
     "새벽 도서관, 배움의 숲",
     "새벽 맑은 숲, 준비의 미학",
@@ -75,10 +74,10 @@
     "이른 아침의 정원 산책",
     "고요한 서재의 지혜, 일상 속 깨달음",
     "도시 광장, 일상의 융화",
-    "흰 벽에 씌어진 질문의 답변"
+    "흰 벽에 씌어진 질문의 답변",
+    "갈림길에서의 명확한 선택"
   ],
   "recent_quote_ids": [
-    "a404502307f0b894ce27d13db608af6c5f33db8c",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "d5b654ba2aaecdf56e54f31171425fafc31e7593",
@@ -97,10 +96,10 @@
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_image_fingerprints": [
-    "9b3319ba7a7b54db",
     "a21e9a94ac51de61",
     "b836beabef1a2fe8",
     "9bb992a9cb2f3ea6",
@@ -119,7 +118,8 @@
     "1beb768d968478c9",
     "29384ba5dc048b9c",
     "b9f77ba7061950f0",
-    "4c7121c983ec92dd"
+    "4c7121c983ec92dd",
+    "63aa3c73c60ec5c7"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -128,7 +128,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "6f1a3c24afe0",
     "c54b4960c7ff",
     "0da393ad1bdf",
     "7d90e1d82f20",
@@ -147,11 +146,11 @@
     "9ed3207573b2",
     "e2d2dda82228",
     "1d4cce718c4e",
-    "f9fa51346c66"
+    "f9fa51346c66",
+    "dd18df8ab8b2"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-21",
     "2026-05-22",
     "2026-05-23",
     "2026-05-24",
@@ -170,6 +169,7 @@
     "2026-06-07",
     "2026-06-08",
     "2026-06-09",
-    "2026-06-10"
+    "2026-06-10",
+    "2026-06-11"
   ]
 }
