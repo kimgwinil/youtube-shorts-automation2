@@ -272,7 +272,7 @@ def _filter_graph(
 
     audio_streams: List[str] = []
     has_narration = bool(narration_indices)
-    bgm_volume = 0.07 if has_narration else 0.32
+    bgm_volume = 0.13 if has_narration else 0.34
 
     if bgm_index is not None:
         bgm_chain = (

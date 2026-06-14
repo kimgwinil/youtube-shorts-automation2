@@ -12,7 +12,7 @@ from .ffmpeg_utils import resolve_ffmpeg
 from .script_builder import VideoScript
 
 
-_MUSIC_VERSION = "gemini-v1"
+_MUSIC_VERSION = "piano-v2"
 _PCM_SAMPLE_RATE = 48_000
 _PCM_CHANNELS = 2
 _PCM_SAMPLE_WIDTH = 2
@@ -78,21 +78,21 @@ _INSTRUMENT_POOLS: dict[str, list[str]] = {
 _LOCAL_MOOD_PROFILES: dict = {
     "meditative": {
         "freqs": [392.00, 523.25, 587.33, 659.25, 783.99],
-        "tone_volume": 0.085,
+        "tone_volume": 0.112,
         "lowpass": 6400,
         "highpass": 520,
         "echo": "aecho=0.45:0.28:180|360:0.08|0.04",
     },
     "reflective": {
         "freqs": [440.00, 523.25, 659.25, 698.46, 880.00],
-        "tone_volume": 0.080,
+        "tone_volume": 0.106,
         "lowpass": 6200,
         "highpass": 540,
         "echo": "aecho=0.42:0.26:220|440:0.08|0.04",
     },
     "focused": {
         "freqs": [493.88, 587.33, 659.25, 783.99, 987.77],
-        "tone_volume": 0.075,
+        "tone_volume": 0.100,
         "lowpass": 6800,
         "highpass": 560,
         "echo": "aecho=0.38:0.24:160|320:0.07|0.035",
@@ -309,7 +309,7 @@ def _build_gemini_prompts(script: VideoScript, base_prompts: list[tuple[str, flo
     prompts.append((f"theme: {script.quote.context}", 0.40))
     prompts.append((script.bgm_prompt_en, 1.1))
     prompts.append((_quote_music_direction(script), 0.60))
-    prompts.append(("solo calm piano only, no bass instrument, no synthesizer drone, no low frequency rumble", 1.00))
+    prompts.append(("solo calm piano only, no guitar, no strings, no bass instrument, no synthesizer drone, no low frequency rumble", 1.25))
     prompts.append(("background score for short inspirational video, gentle piano arpeggios, airy and clear", 0.55))
     return prompts
 
@@ -317,16 +317,16 @@ def _build_gemini_prompts(script: VideoScript, base_prompts: list[tuple[str, flo
 def _quote_music_direction(script: VideoScript) -> str:
     text = f"{script.quote.quote} {script.quote.interpretation} {script.quote.context}".lower()
     if any(keyword in text for keyword in ["행동", "실천", "실행", "관리", "측정", "혁신", "리더십", "성과", "목표", "전략", "경영"]):
-        return "piano clear melody upper register, or guitar bright fingerpicking, forward motion, disciplined, no bass"
+        return "solo piano clear melody upper register, gentle forward motion, disciplined, no bass"
     if any(keyword in text for keyword in ["반성", "근심", "비", "흔들", "부끄러움", "사랑", "적자의 마음", "외로움", "슬픔", "그리움"]):
-        return "piano or violin, expressive lyrical melody, emotional rubato, no bass drum, no low drone"
+        return "solo felt piano, expressive lyrical melody, emotional rubato, no bass drum, no low drone"
     if any(keyword in text for keyword in ["배움", "새벽", "지혜", "여백", "마루", "정원", "대나무", "자연", "산", "바람", "하늘", "고요"]):
-        return "harp gentle arpeggios or piano sparse upper notes, meditative, pure tone, no bass, no low end"
+        return "solo piano gentle arpeggios, sparse upper notes, meditative, pure tone, no bass, no low end"
     if any(keyword in text for keyword in ["용기", "도전", "희망", "의지", "극복", "성장", "변화", "열정"]):
-        return "violin bright melody, or piano uplifting arpeggios, hopeful, light bowing, no bass rumble"
+        return "solo piano uplifting arpeggios, hopeful, light and bright, no bass rumble"
     if any(keyword in text for keyword in ["시간", "인생", "삶", "죽음", "운명", "철학", "존재", "의미"]):
-        return "cello upper register or piano, sparse melody, contemplative, timeless, no heavy bass"
-    return "piano or guitar or violin, warm melodic upper register, light and clear, no bass, no low frequency drone"
+        return "solo piano upper register, sparse melody, contemplative, timeless, no heavy bass"
+    return "solo piano warm melodic upper register, light and clear, no bass, no low frequency drone"
 
 
 def _transcode_pcm_to_m4a(raw_path: Path, output_path: Path, duration: float) -> None:
@@ -364,7 +364,8 @@ def _transcode_pcm_to_m4a(raw_path: Path, output_path: Path, duration: float) ->
 
 
 def _generate_music_locally(script: VideoScript, signature: str, output_dir: Path) -> Path:
-    output_path = output_dir / f"{signature}_local-v3_bgm.m4a"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{signature}_local-piano-v4_bgm.m4a"
 
     seed = int(sha1(signature.encode()).hexdigest()[:8], 16)
     rng = random.Random(seed)
@@ -374,14 +375,20 @@ def _generate_music_locally(script: VideoScript, signature: str, output_dir: Pat
     freqs = [profile["freqs"][index % len(profile["freqs"])] for index in range(note_count)]
     rng.shuffle(freqs)
     cmd = [resolve_ffmpeg(), "-y"]
-    note_duration = 0.82
+    note_duration = 1.08
     step = max(script.total_duration / note_count, 0.68)
     for freq in freqs:
         f = round(freq * (1 + rng.uniform(-0.003, 0.003)), 2)
-        cmd.extend(["-f", "lavfi", "-i", f"sine=frequency={f}:sample_rate=44100:duration={note_duration:.2f}"])
+        tone = (
+            f"aevalsrc=(0.78*sin(2*PI*{f}*t)"
+            f"+0.24*sin(2*PI*{round(f * 2.01, 2)}*t)"
+            f"+0.10*sin(2*PI*{round(f * 3.02, 2)}*t))*exp(-3.15*t)"
+            f":s=44100:d={note_duration:.2f}"
+        )
+        cmd.extend(["-f", "lavfi", "-i", tone])
     tone_chains = []
     for index in range(len(freqs)):
-        volume = round(profile["tone_volume"] * rng.uniform(0.82, 0.98), 3)
+        volume = round(profile["tone_volume"] * rng.uniform(0.90, 1.12), 3)
         delay_ms = int(index * step * 1000)
         left = round(rng.uniform(0.50, 0.88), 2)
         right = round(rng.uniform(0.50, 0.88), 2)
@@ -389,7 +396,7 @@ def _generate_music_locally(script: VideoScript, signature: str, output_dir: Pat
             f"[{index}:a]highpass=f={profile['highpass']},"
             f"lowpass=f={profile['lowpass']},"
             f"volume={volume},"
-            "afade=t=in:st=0:d=0.015,afade=t=out:st=0.22:d=0.58,"
+            "afade=t=in:st=0:d=0.012,afade=t=out:st=0.34:d=0.72,"
             f"adelay={delay_ms}|{delay_ms},"
             f"pan=stereo|c0={left}*c0|c1={right}*c0[t{index}]"
         )
@@ -404,8 +411,8 @@ def _generate_music_locally(script: VideoScript, signature: str, output_dir: Pat
         "equalizer=f=180:t=q:w=1.2:g=-14,"
         "equalizer=f=260:t=q:w=1.0:g=-10,"
         "equalizer=f=2400:t=q:w=1.0:g=2.0,"
-        "alimiter=limit=0.80,"
-        "volume=1.05[aout]"
+        "alimiter=limit=0.82,"
+        "volume=1.12[aout]"
     )
     cmd.extend([
         "-filter_complex",
@@ -413,7 +420,7 @@ def _generate_music_locally(script: VideoScript, signature: str, output_dir: Pat
         "-map",
         "[aout]",
         "-t",
-        "34",
+        f"{script.total_duration:.2f}",
         "-c:a",
         "aac",
         "-b:a",
