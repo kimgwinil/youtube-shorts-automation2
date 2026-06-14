@@ -124,18 +124,7 @@ def generate_music(
         except Exception as exc:
             print(f"[music] Gemini 음악 생성 실패, 로컬 fallback 사용: {exc}")
 
-    library_track = _pick_library_track(music_dir=music_dir, mood=script.quote.bgm_mood, signature=signature)
-    if library_track:
-        varied_track = _render_library_variation(
-            source_track=library_track,
-            script=script,
-            signature=signature,
-            output_dir=output_dir,
-        )
-        print(f"[music] 라이브러리 음원 변주 사용: {varied_track} (source: {library_track})")
-        return varied_track
-
-    print("[music] 라이브러리 음원이 없어 로컬 합성 fallback 사용")
+    print("[music] 로컬 피아노 합성 fallback 사용")
     return _generate_music_locally(script=script, signature=signature, output_dir=output_dir)
 
 
