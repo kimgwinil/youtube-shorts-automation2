@@ -56,10 +56,10 @@
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
+    "dfce9e1d2c80b33252c447d2361aa1d6c974726c"
   ],
   "recent_titles": [
-    "창가의 책, 마음을 비추다",
     "도심 속 고요한 성찰의 밤",
     "고요한 항구의 힘",
     "이른 아침, 섬세한 손길의 작업대",
@@ -78,10 +78,10 @@
     "순간을 담는 흰 벽의 이야기",
     "고즈넉한 대나무 숲에서의 깨달음",
     "새벽 기차역의 용기 있는 한 걸음",
-    "별빛 아래 우리의 선택"
+    "별빛 아래 우리의 선택",
+    "빈티지 서재의 차가운 새벽빛 속에서"
   ],
   "recent_quote_ids": [
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "af371bb42ecea9ec54725e42a4530022034adc9a",
@@ -100,10 +100,10 @@
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
+    "dfce9e1d2c80b33252c447d2361aa1d6c974726c"
   ],
   "recent_image_fingerprints": [
-    "d30288e785108406",
     "6fced3418af9b8d2",
     "cdad8590ff02d0cb",
     "b5ce93083d3ede64",
@@ -122,16 +122,16 @@
     "c250838bb3efc63c",
     "16e2a68e806b4d9f",
     "4986c739545ba39c",
-    "1cc3bef8a744c0c6"
+    "1cc3bef8a744c0c6",
+    "5970cbb279fa7b23"
   ],
   "recent_visual_styles": [
-    "watercolor",
     "ink",
     "photoreal",
-    "calligraphy"
+    "calligraphy",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "85b2803b6bb7",
     "391face98ec5",
     "d3d6c93c65cd",
     "160e98388064",
@@ -150,7 +150,8 @@
     "de2286b6487d",
     "eabb9ccf2d4b",
     "12d6dadb41f6",
-    "e336e07824cd"
+    "e336e07824cd",
+    "e05a521e9d3a"
   ],
   "recent_music_assets": [],
   "recent_dates": [
