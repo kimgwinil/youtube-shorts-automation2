@@ -25,9 +25,9 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.5,
         "mute_drums": True,
         "prompts": [
-            ("classical solo instrument, piano or harp or guitar, no bass, no sub-bass, no low frequencies", 1.2),
-            ("acoustic piano upper register, gentle sparse melody, or harp arpeggios, no vocals, no drums", 1.0),
-            ("serene classical chamber, dawn stillness, pure tone, no bass rumble, no low drone", 0.8),
+            ("calm solo piano instrumental, gentle upper register melody, soft felt piano, no bass, no sub-bass", 1.5),
+            ("peaceful acoustic piano arpeggios, sparse warm notes, no vocals, no drums, no low drone", 1.2),
+            ("serene piano background music, delicate touch, bright midrange, no rumble, no ambient bass", 0.9),
         ],
     },
     "reflective": {
@@ -36,9 +36,9 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.3,
         "mute_drums": True,
         "prompts": [
-            ("classical solo or duet, piano violin or cello upper register, no bass drum, no sub-bass", 1.2),
-            ("acoustic piano melody, or violin legato, or guitar fingerpicking, no vocals, no percussion", 1.0),
-            ("introspective classical, warm midrange tone, no bass drone, no low rumble, restrained", 0.8),
+            ("soft solo piano instrumental, reflective melody, warm upper register, no bass, no sub-bass", 1.5),
+            ("gentle acoustic piano, emotional sparse arpeggios, no vocals, no percussion, no drone", 1.2),
+            ("introspective piano background music, clear midrange, restrained, no low rumble", 0.9),
         ],
     },
     "focused": {
@@ -47,9 +47,9 @@ _GEMINI_MOOD_PROFILES: dict = {
         "guidance": 4.0,
         "mute_drums": False,
         "prompts": [
-            ("classical piano or guitar, clear bright melody, light rhythmic pulse, no heavy bass", 1.2),
-            ("acoustic piano bright arpeggios, or guitar clean picking, forward motion, no vocals", 1.0),
-            ("uplifting classical chamber, crisp upper register, disciplined, no bass rumble", 0.7),
+            ("bright calm solo piano instrumental, light arpeggio pulse, no bass, no drums, no sub-bass", 1.5),
+            ("acoustic piano bright upper register, gentle forward motion, no vocals, no percussion", 1.2),
+            ("uplifting piano background music, crisp melody, clear tone, no low rumble", 0.8),
         ],
     },
 }
@@ -57,57 +57,45 @@ _GEMINI_MOOD_PROFILES: dict = {
 _INSTRUMENT_POOLS: dict[str, list[str]] = {
     "meditative": [
         "solo piano, gentle upper register melody, sparse soft touch, pianissimo, no bass notes",
-        "classical harp, delicate arpeggios, shimmering harmonics, ethereal, no low strings",
-        "nylon string guitar, slow fingerpicking, warm midrange, solo, no bass strings",
-        "solo violin, soft sustained melody, pianissimo bowing, serene, no accompaniment",
-        "cello playing in upper register, lyrical bow strokes, warm mid-tone, no low drone",
-        "piano and harp duet, gentle interplay, upper register only, peaceful, no bass",
+        "felt piano, delicate arpeggios, warm midrange, sparse and peaceful, no low notes",
+        "acoustic piano, slow broken chords, soft sustain, upper register only, no bass",
+        "solo piano, light melodic fragments, clean resonance, meditative, no drone",
     ],
     "reflective": [
         "grand piano, expressive rubato melody, mid and upper register, no heavy bass pedal",
-        "violin, singing legato melody, heartfelt bowing, warm tone, solo, no percussion",
-        "cello, lyrical mid-register melody, expressive, no low open strings, bowed gently",
-        "classical guitar, fingerpicked arpeggios, warm nylon tone, melancholic, no bass strings",
-        "harp, flowing arpeggios, shimmering texture, emotional, mid and upper register only",
-        "piano and violin duet, tender intertwining melody, upper register, no bass drum",
+        "felt piano, reflective sparse melody, soft pedal, clear upper notes, no bass",
+        "acoustic piano, emotional arpeggios, tender touch, no low drone, no percussion",
+        "solo piano, warm lyrical upper register, restrained and calm, no bass notes",
     ],
     "focused": [
         "piano, clear bright articulate melody, upper register, steady gentle pulse, no bass",
-        "classical guitar, clean bright fingerpicking, forward motion, positive, no bass strings",
-        "violin, bright clear bowing, light staccato phrases, energetic but delicate, no bass",
-        "harp, rhythmic bright arpeggios, uplifting, clear tone, mid and upper register",
-        "piano and cello duet, bright mid-register melody, disciplined, clear, no low drone",
-        "guitar and violin, complementary bright melody, warm, forward moving, no bass",
+        "bright felt piano, gentle repeated arpeggios, clean attack, no bass, no drums",
+        "acoustic piano, light rhythmic broken chords, optimistic but quiet, no low notes",
+        "solo piano, crisp upper register pattern, calm focused mood, no bass drone",
     ],
 }
 
 _LOCAL_MOOD_PROFILES: dict = {
     "meditative": {
         "freqs": [392.00, 523.25, 587.33, 659.25, 783.99],
-        "tone_volume": 0.12,
-        "noise_volume": 0.012,
-        "lowpass": 2400,
-        "highpass": 340,
-        "noise_highpass": 900,
-        "echo": "aecho=0.65:0.40:220|480:0.12|0.06",
+        "tone_volume": 0.085,
+        "lowpass": 6400,
+        "highpass": 520,
+        "echo": "aecho=0.45:0.28:180|360:0.08|0.04",
     },
     "reflective": {
         "freqs": [440.00, 523.25, 659.25, 698.46, 880.00],
-        "tone_volume": 0.11,
-        "noise_volume": 0.010,
-        "lowpass": 2200,
-        "highpass": 380,
-        "noise_highpass": 1050,
-        "echo": "aecho=0.60:0.36:260|560:0.10|0.05",
+        "tone_volume": 0.080,
+        "lowpass": 6200,
+        "highpass": 540,
+        "echo": "aecho=0.42:0.26:220|440:0.08|0.04",
     },
     "focused": {
         "freqs": [493.88, 587.33, 659.25, 783.99, 987.77],
-        "tone_volume": 0.10,
-        "noise_volume": 0.008,
-        "lowpass": 2800,
-        "highpass": 420,
-        "noise_highpass": 1200,
-        "echo": "aecho=0.50:0.30:150|320:0.09|0.04",
+        "tone_volume": 0.075,
+        "lowpass": 6800,
+        "highpass": 560,
+        "echo": "aecho=0.38:0.24:160|320:0.07|0.035",
     },
 }
 
@@ -209,19 +197,19 @@ def _library_filter_profile(script: VideoScript, signature: str) -> str:
     style_seed = int(sha1(f"{signature}|{script.visual_style}|{script.quote.quote_id}".encode("utf-8")).hexdigest()[:8], 16)
     variants = {
         "meditative": [
-            "highpass=f=340,lowpass=f=5400,equalizer=f=200:t=q:w=1.5:g=-10,equalizer=f=260:t=q:w=1.1:g=-6,aecho=0.7:0.35:180|360:0.08|0.04,volume=0.92",
-            "highpass=f=360,lowpass=f=5000,atempo=0.97,equalizer=f=180:t=q:w=1.3:g=-12,equalizer=f=2400:t=q:w=1.0:g=1.8,volume=0.90",
-            "highpass=f=350,lowpass=f=5600,equalizer=f=200:t=q:w=1.4:g=-10,chorus=0.5:0.9:20|30:0.10|0.08:0.25|0.20:0.4|0.3,volume=0.88",
+            "highpass=f=520,lowpass=f=7600,equalizer=f=180:t=q:w=1.4:g=-16,equalizer=f=300:t=q:w=1.1:g=-10,equalizer=f=2300:t=q:w=1.0:g=1.8,aecho=0.45:0.28:180|360:0.07|0.035,volume=0.86",
+            "highpass=f=540,lowpass=f=7400,atempo=0.98,equalizer=f=200:t=q:w=1.3:g=-15,equalizer=f=2600:t=q:w=1.0:g=2.0,volume=0.84",
+            "highpass=f=520,lowpass=f=7800,equalizer=f=220:t=q:w=1.4:g=-14,equalizer=f=3000:t=q:w=0.9:g=1.8,volume=0.83",
         ],
         "reflective": [
-            "highpass=f=350,lowpass=f=5200,equalizer=f=200:t=q:w=1.5:g=-10,equalizer=f=260:t=q:w=1.2:g=-7,equalizer=f=2200:t=q:w=1.0:g=2.0,aecho=0.68:0.4:240|480:0.10|0.05,volume=0.93",
-            "highpass=f=370,lowpass=f=5600,atempo=0.99,equalizer=f=180:t=q:w=1.3:g=-12,equalizer=f=3000:t=q:w=0.9:g=2.5,volume=0.91",
-            "highpass=f=380,lowpass=f=5000,equalizer=f=200:t=q:w=1.5:g=-10,extrastereo=m=1.8,equalizer=f=250:t=q:w=1.1:g=-6,volume=0.89",
+            "highpass=f=540,lowpass=f=7600,equalizer=f=180:t=q:w=1.5:g=-16,equalizer=f=280:t=q:w=1.2:g=-10,equalizer=f=2200:t=q:w=1.0:g=1.8,aecho=0.42:0.26:220|440:0.07|0.035,volume=0.86",
+            "highpass=f=560,lowpass=f=7800,atempo=0.99,equalizer=f=200:t=q:w=1.3:g=-15,equalizer=f=3000:t=q:w=0.9:g=2.0,volume=0.84",
+            "highpass=f=540,lowpass=f=7400,equalizer=f=220:t=q:w=1.4:g=-14,extrastereo=m=1.25,equalizer=f=2600:t=q:w=1.1:g=1.6,volume=0.83",
         ],
         "focused": [
-            "highpass=f=370,lowpass=f=6200,atempo=1.02,equalizer=f=200:t=q:w=1.4:g=-9,equalizer=f=240:t=q:w=1.0:g=-5,equalizer=f=3200:t=q:w=0.8:g=2.2,volume=0.94",
-            "highpass=f=390,lowpass=f=6500,atempo=1.01,equalizer=f=180:t=q:w=1.3:g=-11,extrastereo=m=1.4,equalizer=f=2800:t=q:w=1.1:g=2.0,volume=0.92",
-            "highpass=f=360,lowpass=f=6000,equalizer=f=200:t=q:w=1.4:g=-9,chorus=0.4:0.8:18|24:0.08|0.06:0.20|0.18:0.3|0.25,equalizer=f=260:t=q:w=1.0:g=-5,volume=0.90",
+            "highpass=f=560,lowpass=f=8200,atempo=1.01,equalizer=f=200:t=q:w=1.4:g=-15,equalizer=f=300:t=q:w=1.0:g=-9,equalizer=f=3200:t=q:w=0.8:g=2.0,volume=0.86",
+            "highpass=f=580,lowpass=f=8400,atempo=1.01,equalizer=f=180:t=q:w=1.3:g=-15,extrastereo=m=1.2,equalizer=f=2800:t=q:w=1.1:g=1.8,volume=0.84",
+            "highpass=f=560,lowpass=f=8000,equalizer=f=220:t=q:w=1.4:g=-14,equalizer=f=2600:t=q:w=1.0:g=1.7,volume=0.83",
         ],
     }
     base_profile = variants.get(script.quote.bgm_mood, variants["meditative"])
@@ -321,8 +309,8 @@ def _build_gemini_prompts(script: VideoScript, base_prompts: list[tuple[str, flo
     prompts.append((f"theme: {script.quote.context}", 0.40))
     prompts.append((script.bgm_prompt_en, 1.1))
     prompts.append((_quote_music_direction(script), 0.60))
-    prompts.append(("no sub-bass, no low frequency drone, no bass rumble, clean high-mid spectrum only", 0.80))
-    prompts.append(("background score for short inspirational video, varied melodic arrangement, airy and clear", 0.55))
+    prompts.append(("solo calm piano only, no bass instrument, no synthesizer drone, no low frequency rumble", 1.00))
+    prompts.append(("background score for short inspirational video, gentle piano arpeggios, airy and clear", 0.55))
     return prompts
 
 
@@ -355,10 +343,12 @@ def _transcode_pcm_to_m4a(raw_path: Path, output_path: Path, duration: float) ->
         str(raw_path),
         "-af",
         (
-            "highpass=f=440,lowpass=f=5400,"
+            "highpass=f=520,lowpass=f=7600,"
             "equalizer=f=100:t=q:w=1.5:g=-20,"
             "equalizer=f=160:t=q:w=1.5:g=-18,"
-            "equalizer=f=280:t=q:w=2:g=-12,"
+            "equalizer=f=280:t=q:w=2:g=-16,"
+            "equalizer=f=360:t=q:w=1.8:g=-10,"
+            "equalizer=f=2200:t=q:w=1.0:g=2.0,"
             "dynaudnorm=f=500:g=3,alimiter=limit=0.84,"
             f"afade=t=in:st=0:d=1.8,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2.0"
         ),
@@ -380,52 +370,42 @@ def _generate_music_locally(script: VideoScript, signature: str, output_dir: Pat
     rng = random.Random(seed)
     profile = _LOCAL_MOOD_PROFILES.get(script.quote.bgm_mood, _LOCAL_MOOD_PROFILES["meditative"])
 
-    freqs = rng.sample(profile["freqs"], 3)
+    note_count = max(10, min(34, int(script.total_duration / 1.05) + 2))
+    freqs = [profile["freqs"][index % len(profile["freqs"])] for index in range(note_count)]
+    rng.shuffle(freqs)
     cmd = [resolve_ffmpeg(), "-y"]
+    note_duration = 0.82
+    step = max(script.total_duration / note_count, 0.68)
     for freq in freqs:
-        f = round(freq * (1 + rng.uniform(-0.004, 0.004)), 2)
-        cmd.extend(["-f", "lavfi", "-i", f"sine=frequency={f}:sample_rate=44100:duration=36"])
-    cmd.extend(["-f", "lavfi", "-i", "anoisesrc=color=pink:amplitude=0.25:sample_rate=44100:d=36"])
-
-    noise_index = len(freqs)
-    noise_chain = (
-        f"[{noise_index}:a]highpass=f={profile['noise_highpass']},"
-        "lowpass=f=3200,"
-        f"volume={profile['noise_volume'] * 0.7:.4f},"
-        "afade=t=in:st=0:d=3,"
-        "afade=t=out:st=29:d=5,"
-        "pan=stereo|c0=0.72*c0|c1=0.72*c0[n0]"
-    )
-
+        f = round(freq * (1 + rng.uniform(-0.003, 0.003)), 2)
+        cmd.extend(["-f", "lavfi", "-i", f"sine=frequency={f}:sample_rate=44100:duration={note_duration:.2f}"])
     tone_chains = []
     for index in range(len(freqs)):
         volume = round(profile["tone_volume"] * rng.uniform(0.82, 0.98), 3)
-        vibrato_freq = round(rng.uniform(2.2, 3.6), 2)
-        vibrato_depth = round(rng.uniform(0.015, 0.028), 3)
+        delay_ms = int(index * step * 1000)
         left = round(rng.uniform(0.50, 0.88), 2)
         right = round(rng.uniform(0.50, 0.88), 2)
         tone_chains.append(
             f"[{index}:a]highpass=f={profile['highpass']},"
-            f"lowpass=f={profile['lowpass'] + 500},"
+            f"lowpass=f={profile['lowpass']},"
             f"volume={volume},"
-            f"vibrato=f={vibrato_freq}:d={vibrato_depth},"
-            "afade=t=in:st=0:d=2.5,"
-            "afade=t=out:st=29:d=5,"
+            "afade=t=in:st=0:d=0.015,afade=t=out:st=0.22:d=0.58,"
+            f"adelay={delay_ms}|{delay_ms},"
             f"pan=stereo|c0={left}*c0|c1={right}*c0[t{index}]"
         )
 
-    mix_inputs = "".join(f"[t{index}]" for index in range(len(freqs))) + "[n0]"
+    mix_inputs = "".join(f"[t{index}]" for index in range(len(freqs)))
     fc = (
-        ";".join([*tone_chains, noise_chain])
+        ";".join(tone_chains)
         + ";"
-        + f"{mix_inputs}amix=inputs={len(freqs) + 1}:normalize=0,"
+        + f"{mix_inputs}amix=inputs={len(freqs)}:normalize=0,"
         f"{profile['echo']},"
-        "equalizer=f=220:t=q:w=1.2:g=-7,"
-        "equalizer=f=320:t=q:w=1.0:g=-5,"
-        "equalizer=f=2600:t=q:w=1.0:g=2.5,"
-        "dynaudnorm=f=120:g=3,"
+        "highpass=f=520,lowpass=f=7200,"
+        "equalizer=f=180:t=q:w=1.2:g=-14,"
+        "equalizer=f=260:t=q:w=1.0:g=-10,"
+        "equalizer=f=2400:t=q:w=1.0:g=2.0,"
         "alimiter=limit=0.80,"
-        "volume=1.10[aout]"
+        "volume=1.05[aout]"
     )
     cmd.extend([
         "-filter_complex",

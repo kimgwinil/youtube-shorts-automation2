@@ -276,11 +276,13 @@ def _filter_graph(
 
     if bgm_index is not None:
         bgm_chain = (
-            f"[{bgm_index}:a]highpass=f=420,lowpass=f=5200,"
-            "equalizer=f=120:t=q:w=1.5:g=-16,equalizer=f=200:t=q:w=2:g=-12,"
+            f"[{bgm_index}:a]highpass=f=520,lowpass=f=7600,"
+            "equalizer=f=120:t=q:w=1.5:g=-20,"
+            "equalizer=f=200:t=q:w=2:g=-16,"
+            "equalizer=f=320:t=q:w=1.5:g=-10,"
         )
         if has_narration:
-            bgm_chain += "equalizer=f=2400:t=q:w=2.0:g=-6,"
+            bgm_chain += "equalizer=f=2200:t=q:w=1.2:g=1.5,"
             bgm_chain += (
                 f"volume={bgm_volume:.3f},"
                 f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(duration - 2.0, 0):.2f}:d=2,"
