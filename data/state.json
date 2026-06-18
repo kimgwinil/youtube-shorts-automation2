@@ -26,7 +26,6 @@
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
@@ -59,10 +58,10 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
-    "4a0dcbbd0907c038214445cb201bbfb10e96a743"
+    "4a0dcbbd0907c038214445cb201bbfb10e96a743",
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
   ],
   "recent_titles": [
-    "새벽 기차역, 미래를 향한 출발",
     "정원의 적막, 시간의 경이로움",
     "새벽 서재의 고요한 성찰",
     "새벽 플랫폼의 결의",
@@ -81,10 +80,10 @@
     "새로운 미래를 여는 아침의 창",
     "도시의 공기 속 생산적 고민",
     "창의력의 햇살 가득한 스튜디오",
-    "고요한 아침, 지혜의 서재로의 초대"
+    "고요한 아침, 지혜의 서재로의 초대",
+    "새벽 벤치의 고요한 서약"
   ],
   "recent_quote_ids": [
-    "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
@@ -103,10 +102,10 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
-    "4a0dcbbd0907c038214445cb201bbfb10e96a743"
+    "4a0dcbbd0907c038214445cb201bbfb10e96a743",
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
   ],
   "recent_image_fingerprints": [
-    "4375d6e0198515e7",
     "eb4788f65b0b3545",
     "f8b505d5ad6ffc02",
     "3b5722ae061e13e4",
@@ -125,7 +124,8 @@
     "afb64d84302be1da",
     "9e8f6cba6dc2c627",
     "ec43cc1fb660eba5",
-    "4eef2b5c2ce1a8e5"
+    "4eef2b5c2ce1a8e5",
+    "99cb285aa209b7d4"
   ],
   "recent_visual_styles": [
     "photoreal",
@@ -134,7 +134,6 @@
     "watercolor"
   ],
   "recent_music_signatures": [
-    "9e037883eb4c",
     "7e44aaf9b44e",
     "8dfd8809e96b",
     "8c97e246aab4",
@@ -153,11 +152,11 @@
     "489c44c71553",
     "9774577a4f30",
     "3cba78666f83",
-    "b1a053acaa4c"
+    "b1a053acaa4c",
+    "a5994d96ad16"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-28",
     "2026-05-29",
     "2026-05-30",
     "2026-05-31",
@@ -176,6 +175,7 @@
     "2026-06-15",
     "2026-06-16",
     "2026-06-17",
-    "2026-06-18"
+    "2026-06-18",
+    "2026-06-19"
   ]
 }
