@@ -59,10 +59,10 @@
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
+    "04f6a176290a383a576e94664d0186f27cb4c597"
   ],
   "recent_titles": [
-    "정원의 적막, 시간의 경이로움",
     "새벽 서재의 고요한 성찰",
     "새벽 플랫폼의 결의",
     "사랑방의 고요한 서예, 마음의 닻을 내리다",
@@ -81,10 +81,10 @@
     "도시의 공기 속 생산적 고민",
     "창의력의 햇살 가득한 스튜디오",
     "고요한 아침, 지혜의 서재로의 초대",
-    "새벽 벤치의 고요한 서약"
+    "새벽 벤치의 고요한 서약",
+    "빗속에서 발견한 마음의 길"
   ],
   "recent_quote_ids": [
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
@@ -103,10 +103,10 @@
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3"
+    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
+    "04f6a176290a383a576e94664d0186f27cb4c597"
   ],
   "recent_image_fingerprints": [
-    "eb4788f65b0b3545",
     "f8b505d5ad6ffc02",
     "3b5722ae061e13e4",
     "58b65fc44432bc77",
@@ -125,16 +125,16 @@
     "9e8f6cba6dc2c627",
     "ec43cc1fb660eba5",
     "4eef2b5c2ce1a8e5",
-    "99cb285aa209b7d4"
+    "99cb285aa209b7d4",
+    "b3a108cdb008cc1a"
   ],
   "recent_visual_styles": [
     "photoreal",
     "calligraphy",
-    "ink",
-    "watercolor"
+    "watercolor",
+    "ink"
   ],
   "recent_music_signatures": [
-    "7e44aaf9b44e",
     "8dfd8809e96b",
     "8c97e246aab4",
     "a037f732c978",
@@ -153,11 +153,11 @@
     "9774577a4f30",
     "3cba78666f83",
     "b1a053acaa4c",
-    "a5994d96ad16"
+    "a5994d96ad16",
+    "3c571460fe96"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-05-29",
     "2026-05-30",
     "2026-05-31",
     "2026-06-01",
@@ -176,6 +176,7 @@
     "2026-06-16",
     "2026-06-17",
     "2026-06-18",
-    "2026-06-19"
+    "2026-06-19",
+    "2026-06-20"
   ]
 }
