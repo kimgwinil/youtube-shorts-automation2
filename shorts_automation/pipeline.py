@@ -36,20 +36,27 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
 
     if config.enable_ai_generation and config.openai_api_key:
         variation_seed = str(int(time.time())) if force else ""
-        package = build_daily_package(
-            quotes_file=config.quotes_file,
-            state_file=config.state_file,
-            output_dir=config.output_dir,
-            openai_api_key=config.openai_api_key,
-            text_model=config.openai_text_model,
-            image_model=config.gemini_image_model,
-            gemini_api_key=config.gemini_api_key,
-            context=context,
-            variation_seed=variation_seed,
-        )
-        script = package.script
-        background_override = package.background_path
-        bgm_signature = package.bgm_signature
+        try:
+            package = build_daily_package(
+                quotes_file=config.quotes_file,
+                state_file=config.state_file,
+                output_dir=config.output_dir,
+                openai_api_key=config.openai_api_key,
+                text_model=config.openai_text_model,
+                image_model=config.gemini_image_model,
+                gemini_api_key=config.gemini_api_key,
+                context=context,
+                variation_seed=variation_seed,
+            )
+            script = package.script
+            background_override = package.background_path
+            bgm_signature = package.bgm_signature
+        except Exception as exc:
+            print(f"[text] AI daily package generation failed; using quote fallback: {exc}")
+            quote = pick_next_quote(config.quotes_file, config.state_file)
+            selected_visual_style = _select_non_ai_visual_style(quote=quote, state=state, date_iso=context.date_iso)
+            script = build_script(quote, visual_style_override=selected_visual_style)
+            bgm_signature = f"{today}_{script.quote.quote_id[:12]}"
     else:
         quote = pick_next_quote(config.quotes_file, config.state_file)
         selected_visual_style = _select_non_ai_visual_style(quote=quote, state=state, date_iso=context.date_iso)
