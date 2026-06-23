@@ -34,7 +34,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
     if not force and not dry_run and today in state.get("recent_dates", []):
         return {"skipped": True, "reason": f"이미 오늘({today}) 영상이 업로드되었습니다. --force로 강제 실행 가능."}
 
-    if config.enable_ai_generation and config.openai_api_key:
+    if config.enable_ai_generation and (config.openai_api_key or config.gemini_api_key):
         variation_seed = str(int(time.time())) if force else ""
         try:
             package = build_daily_package(

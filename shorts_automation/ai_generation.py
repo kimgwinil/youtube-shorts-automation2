@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from hashlib import sha1
 import json
+import os
 from pathlib import Path
 import random
 from typing import Any, Dict, List
@@ -48,7 +49,13 @@ def build_daily_package(
 ) -> DailyPackage:
     state = load_state(state_file)
     quote = _choose_quote(quotes_file, state, context, variation_seed=variation_seed)
-    direction = _classify_creative_direction(quote, state, openai_api_key, text_model, context, variation_seed=variation_seed)
+    try:
+        direction = _classify_creative_direction(quote, state, openai_api_key, text_model, context, variation_seed=variation_seed)
+    except Exception as exc:
+        print(f"[text] OpenAI creative direction failed; trying Gemini fallback: {exc}")
+        direction = _classify_creative_direction_with_gemini(
+            quote, state, gemini_api_key, context, variation_seed=variation_seed
+        )
     # 배경 이미지: GPT-4o 생성 프롬프트를 거치지 않고 scene_hint를 Imagen에 직접 전달
     background_path: Path | None = None
     try:
@@ -58,7 +65,11 @@ def build_daily_package(
         )
     except Exception as exc:
         print(f"[image] Gemini/Imagen 배경 생성 실패, 로컬 fallback 사용: {exc}")
-    script = _generate_unique_script(quote, direction, state, openai_api_key, text_model, context)
+    try:
+        script = _generate_unique_script(quote, direction, state, openai_api_key, text_model, context)
+    except Exception as exc:
+        print(f"[text] OpenAI script generation failed; trying Gemini fallback: {exc}")
+        script = _generate_unique_script_with_gemini(quote, direction, state, gemini_api_key, context)
     bgm_signature = _music_signature(script, context)
 
     _append_unique(state, "used_quotes", quote.quote_id, 120)
@@ -103,6 +114,39 @@ def _generate_unique_script(
         )
     if script is None:
         raise RuntimeError("AI 스크립트 생성에 실패했습니다.")
+    return script
+
+
+def _generate_unique_script_with_gemini(
+    quote: QuoteEntry,
+    direction: CreativeDirection,
+    state: Dict[str, Any],
+    api_key: str,
+    context: DailyContext,
+) -> VideoScript:
+    if not api_key:
+        raise RuntimeError("Gemini API key is not configured.")
+    recent_titles = set(state.get("recent_titles", [])[-12:])
+    recent_fingerprints = set(state.get("recent_image_fingerprints", [])[-12:])
+    avoid_note = ""
+    script: VideoScript | None = None
+    for _ in range(3):
+        script = _generate_script_with_gemini(
+            quote,
+            direction,
+            state,
+            api_key,
+            context,
+            avoid_note=avoid_note,
+        )
+        if script.title not in recent_titles and _image_fingerprint(script) not in recent_fingerprints:
+            return script
+        avoid_note = (
+            "이전 결과와 너무 비슷합니다. 제목 표현과 시각 묘사를 더 다르게 바꾸고, "
+            "도입 문장과 마무리 문장도 전혀 다른 리듬으로 작성하세요."
+        )
+    if script is None:
+        raise RuntimeError("Gemini 스크립트 생성에 실패했습니다.")
     return script
 
 
@@ -227,6 +271,124 @@ def _generate_script_with_ai(
     )
     raw = response.choices[0].message.content or ""
     parsed = json.loads(raw)
+    return VideoScript(
+        quote=quote,
+        title=parsed["title"][:90],
+        description=parsed["description"],
+        tags=parsed["tags"],
+        lines=parsed["lines"],
+        author_line=parsed["author_line"],
+        source_line=parsed["source_line"],
+        visual_prompt=parsed["visual_prompt"],
+        image_prompt_en=parsed.get(
+            "image_prompt_en",
+            _build_image_prompt_en(parsed["visual_prompt"], direction.visual_style, direction.scene_prompt_en),
+        ),
+        bgm_prompt_en=parsed.get("bgm_prompt_en", direction.bgm_prompt_en),
+        visual_style=parsed.get("visual_style", direction.visual_style),
+        total_duration=float(parsed.get("total_duration", max(24.0, len(parsed["lines"]) * 3.8))),
+    )
+
+
+def _generate_script_with_gemini(
+    quote: QuoteEntry,
+    direction: CreativeDirection,
+    state: Dict[str, Any],
+    api_key: str,
+    context: DailyContext,
+    avoid_note: str = "",
+) -> VideoScript:
+    from google import genai
+    from google.genai import types
+
+    recent_titles = state.get("recent_titles", [])[-8:]
+    recent_visual_fingerprints = state.get("recent_image_fingerprints", [])[-8:]
+    recent_visual_styles = state.get("recent_visual_styles", [])[-6:]
+    prompt = f"""
+너는 한국어 유튜브 쇼츠 작가다.
+다음 고정 명언을 바탕으로 오늘 업로드할 한국어 쇼츠용 결과를 JSON으로만 출력하라.
+
+오늘 정보:
+- 날짜: {context.date_iso}
+- 요일: {context.weekday_name_ko}
+- 계절: {context.season_ko}
+- 날씨 공기감: {context.weather_summary_ko}
+- 추천 분위기: {context.mood_hint}
+
+고정 명언 정보:
+- author: {quote.author}
+- source: {quote.source}
+- quote: {quote.quote}
+- interpretation: {quote.interpretation}
+- mood: {quote.mood}
+- visual_style: {direction.visual_style}
+- bgm_mood: {quote.bgm_mood}
+- context: {quote.context}
+
+최근 제목:
+{json.dumps(recent_titles, ensure_ascii=False)}
+
+최근 시각 fingerprint:
+{json.dumps(recent_visual_fingerprints, ensure_ascii=False)}
+
+최근 사용 스타일:
+{json.dumps(recent_visual_styles, ensure_ascii=False)}
+
+이번 장면 힌트:
+- style: {direction.visual_style}
+- scene_ko: {direction.scene_hint_ko}
+- scene_en: {direction.scene_prompt_en}
+
+분류 트랙 결과:
+- theme: {direction.theme}
+- emotion: {direction.emotion}
+- bgm_mode: {direction.bgm_mode}
+- bgm_prompt_en: {direction.bgm_prompt_en}
+- avoid: {json.dumps(direction.avoid, ensure_ascii=False)}
+
+규칙:
+1. 명언 원문은 바꾸지 말 것.
+2. lines는 6개, 7개, 또는 8개.
+3. 모든 문장은 한국어.
+4. 첫 줄은 구체적 장면이나 질문으로 시작할 것.
+5. 명언 원문 또는 그 번역은 반드시 한 줄로 독립 배치할 것.
+6. 마지막 줄은 감각적 문장으로 끝낼 것.
+7. title은 최근 제목과 겹치지 않게 작성할 것.
+8. visual_prompt는 배경 중심 장면이어야 하며 인물 중심 캐릭터, 얼굴 클로즈업, 애니풍 주인공은 금지한다.
+9. visual_style은 반드시 `{direction.visual_style}`로 유지할 것.
+10. image_prompt_en과 bgm_prompt_en은 자연스러운 영어 한 문단으로 작성할 것.
+11. JSON 외 다른 텍스트 금지.
+
+추가 지시:
+{avoid_note or "없음"}
+
+필수 JSON 스키마:
+{{
+  "title": "...",
+  "description": "...",
+  "tags": ["...", "..."],
+  "lines": ["...", "..."],
+  "author_line": "...",
+  "source_line": "...",
+  "visual_prompt": "...",
+  "image_prompt_en": "...",
+  "bgm_prompt_en": "...",
+  "visual_style": "{direction.visual_style}",
+  "bgm_mood": "{quote.bgm_mood}",
+  "total_duration": 24.0
+}}
+"""
+    client = genai.Client(api_key=api_key)
+    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-2.5-flash")
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.85,
+            response_mime_type="application/json",
+        ),
+    )
+    parsed = json.loads(response.text or "{}")
     return VideoScript(
         quote=quote,
         title=parsed["title"][:90],
@@ -575,6 +737,94 @@ JSON 스키마:
     )
 
 
+def _classify_creative_direction_with_gemini(
+    quote: QuoteEntry,
+    state: Dict[str, Any],
+    api_key: str,
+    context: DailyContext,
+    variation_seed: str = "",
+) -> CreativeDirection:
+    if not api_key:
+        raise RuntimeError("Gemini API key is not configured.")
+    from google import genai
+    from google.genai import types
+
+    recent_styles = state.get("recent_visual_styles", [])[-4:]
+    recent_titles = state.get("recent_titles", [])[-6:]
+    fallback_style = _choose_visual_style(quote, state, context, variation_seed=variation_seed)
+    fallback_scene = _choose_scene_hint(quote, context, variation_seed=variation_seed)
+    prompt = f"""
+너는 쇼츠 제작을 위한 분류기다. 아래 명언에 대해 생성 트랙이 바로 사용할 JSON만 출력하라.
+
+오늘 정보:
+- 날짜: {context.date_iso}
+- 요일: {context.weekday_name_ko}
+- 계절: {context.season_ko}
+- 날씨 공기감: {context.weather_summary_ko}
+
+명언 정보:
+- author: {quote.author}
+- source: {quote.source}
+- quote: {quote.quote}
+- interpretation: {quote.interpretation}
+- mood: {quote.mood}
+- visual_style default: {quote.visual_style}
+- bgm_mood default: {quote.bgm_mood}
+- context: {quote.context}
+
+최근 스타일:
+{json.dumps(recent_styles, ensure_ascii=False)}
+
+최근 제목:
+{json.dumps(recent_titles, ensure_ascii=False)}
+
+규칙:
+1. 이미지와 음악 생성에 모두 쓸 수 있는 결정값만 출력.
+2. 특정 도시 랜드마크·스카이라인·도시명을 scene에 넣지 말 것.
+3. 실사, 수채화, 수묵화, 서화 중 하나를 고르고 최근 스타일과 반복을 피할 것.
+4. scene_hint_ko는 한국어 한 문장, scene_prompt_en과 bgm_prompt_en은 반드시 영어로만 작성할 것.
+5. scene_prompt_en에 사람·얼굴·캐릭터 묘사를 넣지 말 것. 배경·빛·소품·자연 묘사만 사용할 것.
+6. avoid에는 반복을 막을 금지 요소 3~5개를 넣을 것.
+7. JSON 외 다른 텍스트 금지.
+
+JSON 스키마:
+{{
+  "theme": "...",
+  "emotion": "...",
+  "visual_style": "{fallback_style}",
+  "scene_hint_ko": "{fallback_scene}",
+  "scene_prompt_en": "...",
+  "bgm_mode": "{quote.bgm_mood}",
+  "bgm_prompt_en": "...",
+  "avoid": ["...", "..."]
+}}
+"""
+    client = genai.Client(api_key=api_key)
+    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-2.5-flash")
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.8,
+            response_mime_type="application/json",
+        ),
+    )
+    parsed = json.loads(response.text or "{}")
+    return CreativeDirection(
+        theme=parsed.get("theme", quote.mood),
+        emotion=parsed.get("emotion", quote.bgm_mood),
+        visual_style=parsed.get("visual_style", fallback_style),
+        scene_hint_ko=parsed.get("scene_hint_ko", fallback_scene),
+        scene_prompt_en=parsed.get("scene_prompt_en", fallback_scene),
+        bgm_mode=parsed.get("bgm_mode", quote.bgm_mood),
+        bgm_prompt_en=parsed.get(
+            "bgm_prompt_en",
+            f"inspirational instrumental background score, {quote.interpretation}, no heavy bass, no vocals",
+        ),
+        avoid=parsed.get("avoid", ["Seoul skyline", "repeated character", "heavy bass drone"]),
+    )
+
+
 def _music_signature(script: VideoScript, context: DailyContext) -> str:
     raw = (
         f"{script.quote.quote_id}|{script.title}|{script.quote.bgm_mood}|"
@@ -655,5 +905,3 @@ def _choose_scene_hint(quote: QuoteEntry, context: DailyContext, variation_seed:
     pool = scene_map.get(quote.mood, scene_map[context.mood_hint if context.mood_hint in scene_map else "dawn"])
     seeded = random.Random(f"{quote.quote_id}|{context.date_iso}|scene-hint|{variation_seed}")
     return seeded.choice(pool)
-
-
