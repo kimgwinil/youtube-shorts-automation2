@@ -28,7 +28,6 @@
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "d5b654ba2aaecdf56e54f31171425fafc31e7593",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
@@ -61,10 +60,10 @@
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
   ],
   "recent_titles": [
-    "이른 아침의 정원 산책",
     "고요한 서재의 지혜, 일상 속 깨달음",
     "도시 광장, 일상의 융화",
     "흰 벽에 씌어진 질문의 답변",
@@ -83,10 +82,10 @@
     "빗속에서 발견한 마음의 길",
     "고요한 아침, 책의 향기 속으로",
     "고요 속에서 새롭게 나아가는 발걸음",
-    "고요한 아침, 내면의 질서를 찾아서"
+    "고요한 아침, 내면의 질서를 찾아서",
+    "저무는 도시, 미루었던 발자국"
   ],
   "recent_quote_ids": [
-    "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
@@ -105,10 +104,10 @@
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
   ],
   "recent_image_fingerprints": [
-    "1beb768d968478c9",
     "29384ba5dc048b9c",
     "b9f77ba7061950f0",
     "4c7121c983ec92dd",
@@ -127,16 +126,17 @@
     "b3a108cdb008cc1a",
     "2666a291418ce39f",
     "e6bd2e44554fb9a3",
-    "24bc4655db9c2849"
+    "24bc4655db9c2849",
+    "6f982e804ed75fb6"
   ],
   "recent_visual_styles": [
     "calligraphy",
     "watercolor",
     "ink",
-    "photoreal"
+    "photoreal",
+    "Sumi-e"
   ],
   "recent_music_signatures": [
-    "9ed3207573b2",
     "e2d2dda82228",
     "1d4cce718c4e",
     "f9fa51346c66",
@@ -155,11 +155,11 @@
     "3c571460fe96",
     "c3cef1182f1d",
     "5cac3ce7a4a9",
-    "bbe9ed4e4dad"
+    "bbe9ed4e4dad",
+    "84ba3e6b8dd2"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-03",
     "2026-06-04",
     "2026-06-05",
     "2026-06-06",
@@ -178,6 +178,7 @@
     "2026-06-20",
     "2026-06-21",
     "2026-06-23",
-    "2026-06-24"
+    "2026-06-24",
+    "2026-06-25"
   ]
 }
