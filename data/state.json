@@ -61,10 +61,10 @@
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "ebba16c7bc661d474493fdea345062ab09228038"
   ],
   "recent_titles": [
-    "고요한 서재의 지혜, 일상 속 깨달음",
     "도시 광장, 일상의 융화",
     "흰 벽에 씌어진 질문의 답변",
     "갈림길에서의 명확한 선택",
@@ -83,10 +83,10 @@
     "고요한 아침, 책의 향기 속으로",
     "고요 속에서 새롭게 나아가는 발걸음",
     "고요한 아침, 내면의 질서를 찾아서",
-    "저무는 도시, 미루었던 발자국"
+    "저무는 도시, 미루었던 발자국",
+    "매일의 습관, 내면의 빛"
   ],
   "recent_quote_ids": [
-    "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
@@ -105,10 +105,10 @@
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "ebba16c7bc661d474493fdea345062ab09228038"
   ],
   "recent_image_fingerprints": [
-    "29384ba5dc048b9c",
     "b9f77ba7061950f0",
     "4c7121c983ec92dd",
     "63aa3c73c60ec5c7",
@@ -127,17 +127,18 @@
     "2666a291418ce39f",
     "e6bd2e44554fb9a3",
     "24bc4655db9c2849",
-    "6f982e804ed75fb6"
+    "6f982e804ed75fb6",
+    "fc24b38ba1f7ffa8"
   ],
   "recent_visual_styles": [
     "calligraphy",
     "watercolor",
     "ink",
     "photoreal",
-    "Sumi-e"
+    "Sumi-e",
+    "Seohwa"
   ],
   "recent_music_signatures": [
-    "e2d2dda82228",
     "1d4cce718c4e",
     "f9fa51346c66",
     "dd18df8ab8b2",
@@ -156,11 +157,11 @@
     "c3cef1182f1d",
     "5cac3ce7a4a9",
     "bbe9ed4e4dad",
-    "84ba3e6b8dd2"
+    "84ba3e6b8dd2",
+    "4fa575a43ebe"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-04",
     "2026-06-05",
     "2026-06-06",
     "2026-06-07",
@@ -179,6 +180,7 @@
     "2026-06-21",
     "2026-06-23",
     "2026-06-24",
-    "2026-06-25"
+    "2026-06-25",
+    "2026-06-26"
   ]
 }
