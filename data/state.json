@@ -38,7 +38,6 @@
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
@@ -63,10 +62,10 @@
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
-    "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29"
+    "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
+    "55e3030758a7e78df354fa0a6045fc1826b6db97"
   ],
   "recent_titles": [
-    "갈림길에서의 명확한 선택",
     "순간을 담는 흰 벽의 이야기",
     "고즈넉한 대나무 숲에서의 깨달음",
     "새벽 기차역의 용기 있는 한 걸음",
@@ -85,10 +84,10 @@
     "저무는 도시, 미루었던 발자국",
     "매일의 습관, 내면의 빛",
     "새벽 서재, 지식의 끊임없는 샘",
-    "아침 정원, 삶을 가꾸는 지혜"
+    "아침 정원, 삶을 가꾸는 지혜",
+    "흐린 새벽, 멈추지 않는 발걸음"
   ],
   "recent_quote_ids": [
-    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
@@ -107,10 +106,10 @@
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
-    "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29"
+    "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
+    "55e3030758a7e78df354fa0a6045fc1826b6db97"
   ],
   "recent_image_fingerprints": [
-    "63aa3c73c60ec5c7",
     "c250838bb3efc63c",
     "16e2a68e806b4d9f",
     "4986c739545ba39c",
@@ -129,18 +128,18 @@
     "6f982e804ed75fb6",
     "fc24b38ba1f7ffa8",
     "9e3dfc0d2c958f95",
-    "22d735d9f85d93b4"
+    "22d735d9f85d93b4",
+    "9478783d8323a4e0"
   ],
   "recent_visual_styles": [
     "ink",
-    "photoreal",
     "Sumi-e",
     "Seohwa",
     "watercolor",
-    "calligraphy"
+    "calligraphy",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "dd18df8ab8b2",
     "de2286b6487d",
     "eabb9ccf2d4b",
     "12d6dadb41f6",
@@ -159,11 +158,11 @@
     "84ba3e6b8dd2",
     "4fa575a43ebe",
     "91ba6b6a1df0",
-    "3123c0334697"
+    "3123c0334697",
+    "258099483120"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-07",
     "2026-06-08",
     "2026-06-09",
     "2026-06-10",
@@ -182,6 +181,7 @@
     "2026-06-25",
     "2026-06-26",
     "2026-06-27",
-    "2026-06-28"
+    "2026-06-28",
+    "2026-06-29"
   ]
 }
