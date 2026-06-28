@@ -257,7 +257,7 @@ def _filter_graph(
         )
     else:
         timings = _line_timings(num_line_overlays)
-    parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[v0]"]
+    parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[v0]"]
     current = "[v0]"
     for index, (start, end) in enumerate(timings, start=1):
         next_label = f"[v{index}]"

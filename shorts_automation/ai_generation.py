@@ -447,6 +447,28 @@ def _dalle3_prompt(style_desc: str, scene: str) -> str:
     )
 
 
+TARGET_RESOLUTION = (1080, 1920)  # 9:16 세로 쇼츠
+
+
+def _normalize_to_9_16(image_path: Path, target: tuple[int, int] = TARGET_RESOLUTION) -> None:
+    """생성된 배경 이미지를 정확한 9:16(1080x1920) 프레임으로 맞춘다.
+
+    DALL-E(gpt-image-1)는 1024x1536(=2:3), Imagen은 모델별로 미세하게 다른
+    크기를 반환하므로, 중앙 기준 cover-crop으로 9:16 비율을 보장한다.
+    이렇게 하면 저장되는 배경 자체가 9:16이 되어 렌더 단계의 추가 크롭이
+    예측 가능해지고, 배경 비율이 9:16이 아닌 문제를 방지한다.
+    """
+    try:
+        from PIL import Image, ImageOps
+
+        with Image.open(image_path) as im:
+            im = im.convert("RGB")
+            fitted = ImageOps.fit(im, target, method=Image.LANCZOS, centering=(0.5, 0.5))
+            fitted.save(image_path)
+    except Exception as exc:  # 정규화 실패 시 원본을 그대로 두고 렌더 단계 크롭에 위임
+        print(f"[image] 9:16 정규화 실패(원본 유지): {exc}")
+
+
 def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
     if not openai_api_key:
         return False
@@ -463,6 +485,7 @@ def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
         )
         image_bytes = base64.b64decode(resp.data[0].b64_json)
         output_path.write_bytes(image_bytes)
+        _normalize_to_9_16(output_path)
         return True
     except Exception as exc:
         print(f"[image] DALL-E 3 실패: {exc}")
@@ -556,6 +579,7 @@ def _generate_background_from_direction(
         raise RuntimeError("배경 이미지 생성 결과가 비어 있습니다. (3회 재시도 모두 실패)")
 
     filename.write_bytes(image_bytes)
+    _normalize_to_9_16(filename)
     retry_note = f" (재시도 {used_attempt}회)" if used_attempt > 1 else ""
     print(f"[image] Gemini Imagen 배경 생성 완료{retry_note}: {filename.name} / scene: {direction.scene_hint_ko}")
     return filename
@@ -590,6 +614,7 @@ def _generate_background_image(
     if not image or not image.image_bytes:
         raise RuntimeError("배경 이미지 생성 결과가 비어 있습니다.")
     filename.write_bytes(image.image_bytes)
+    _normalize_to_9_16(filename)
     return filename
 
 
