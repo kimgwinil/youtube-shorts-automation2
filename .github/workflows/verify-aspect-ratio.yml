@@ -1,0 +1,52 @@
+name: Verify 9:16 Aspect Ratio
+
+# 업로드/AI 호출 없이, 실제 프로덕션 코드(_normalize_to_9_16 → render_short)를
+# GitHub 러너에서 구동해 출력 영상이 1080x1920 / DAR 9:16 인지 검증한다.
+# 수동 실행(workflow_dispatch)으로만 동작하며, 통과 시 초록색 체크 +
+# 영상/프레임/리포트를 아티팩트로 남긴다.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FFMPEG_BIN: /usr/bin/ffmpeg
+      FONT_FILE: ${{ github.workspace }}/runtime-assets/NotoSansCJKkr-Regular.otf
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg (ffprobe 포함)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Prepare font
+        run: |
+          mkdir -p runtime-assets
+          curl -L https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/Korean/NotoSansCJKkr-Regular.otf -o runtime-assets/NotoSansCJKkr-Regular.otf
+
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify 9:16 rendering
+        run: python scripts/verify_aspect_ratio.py
+
+      - name: Upload verification artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aspect-ratio-verification
+          path: output/verify/
+          if-no-files-found: error
