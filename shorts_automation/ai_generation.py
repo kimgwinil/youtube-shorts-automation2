@@ -474,6 +474,7 @@ def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
         return False
     try:
         import base64
+        import urllib.request
         from openai import OpenAI
         client = OpenAI(api_key=openai_api_key)
         resp = client.images.generate(
@@ -481,10 +482,18 @@ def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
             prompt=prompt,
             size="1024x1792",
             quality="hd",
-            response_format="b64_json",
             n=1,
         )
-        image_bytes = base64.b64decode(resp.data[0].b64_json)
+        image_data = resp.data[0]
+        b64_json = getattr(image_data, "b64_json", None)
+        if b64_json:
+            image_bytes = base64.b64decode(b64_json)
+        else:
+            image_url = getattr(image_data, "url", None)
+            if not image_url:
+                raise ValueError("이미지 응답에 b64_json/url이 없습니다.")
+            with urllib.request.urlopen(image_url, timeout=60) as response:
+                image_bytes = response.read()
         output_path.write_bytes(image_bytes)
         _normalize_to_9_16(output_path)
         return True
