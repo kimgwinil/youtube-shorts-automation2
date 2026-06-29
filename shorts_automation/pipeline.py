@@ -22,6 +22,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
     background_override = None
     bgm_override = None
     bgm_signature = None
+    image_generation_state = None
     context = build_daily_context(
         timezone_name=config.timezone_name,
         location_name=config.location_name,
@@ -51,12 +52,10 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
             script = package.script
             background_override = package.background_path
             bgm_signature = package.bgm_signature
+            image_generation_state = package.image_request_state
         except Exception as exc:
-            print(f"[pipeline] AI 생성 실패, fallback 사용: {exc}")
-            quote = pick_next_quote(config.quotes_file, config.state_file)
-            selected_visual_style = _select_non_ai_visual_style(quote=quote, state=state, date_iso=context.date_iso)
-            script = build_script(quote, visual_style_override=selected_visual_style)
-            bgm_signature = f"{today}_{script.quote.quote_id[:12]}"
+            print(f"[pipeline] AI 생성 실패, 전체 생성 실패로 처리: {exc}")
+            raise
     else:
         quote = pick_next_quote(config.quotes_file, config.state_file)
         selected_visual_style = _select_non_ai_visual_style(quote=quote, state=state, date_iso=context.date_iso)
@@ -103,6 +102,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
             "metadata_path": str(render_result.metadata_path),
             "youtube_video_id": None,
             "uploaded": False,
+            "imageGeneration": image_generation_state,
         }
     upload_result = upload_video(
         video_path=render_result.video_path,
@@ -125,6 +125,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
         "metadata_path": str(render_result.metadata_path),
         "youtube_video_id": upload_result["id"],
         "uploaded": True,
+        "imageGeneration": image_generation_state,
     }
 
 

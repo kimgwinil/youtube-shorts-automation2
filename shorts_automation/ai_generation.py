@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import random
+import uuid
 from typing import Any, Dict, List
 
 from openai import OpenAI
@@ -22,6 +23,7 @@ class DailyPackage:
     script: VideoScript
     background_path: Path | None
     bgm_signature: str
+    image_request_state: dict | None
 
 
 @dataclass
@@ -56,15 +58,10 @@ def build_daily_package(
         direction = _classify_creative_direction_with_gemini(
             quote, state, gemini_api_key, context, variation_seed=variation_seed
         )
-    # 배경 이미지: GPT-4o 생성 프롬프트를 거치지 않고 scene_hint를 Imagen에 직접 전달
-    background_path: Path | None = None
-    try:
-        background_path = _generate_background_from_direction(
-            direction, quote, output_dir, gemini_api_key, image_model,
-            openai_api_key=openai_api_key, variation_seed=variation_seed,
-        )
-    except Exception as exc:
-        print(f"[image] Gemini/Imagen 배경 생성 실패, 로컬 fallback 사용: {exc}")
+    background_path, image_request_state = _generate_background_from_direction(
+        direction, quote, output_dir, gemini_api_key, image_model,
+        openai_api_key=openai_api_key, variation_seed=variation_seed,
+    )
     try:
         script = _generate_unique_script(quote, direction, state, openai_api_key, text_model, context)
     except Exception as exc:
@@ -81,7 +78,12 @@ def build_daily_package(
     _append_unique(state, "recent_dates", context.date_iso, 20)
     save_state(state_file, state)
 
-    return DailyPackage(script=script, background_path=background_path, bgm_signature=bgm_signature)
+    return DailyPackage(
+        script=script,
+        background_path=background_path,
+        bgm_signature=bgm_signature,
+        image_request_state=image_request_state,
+    )
 
 
 def _generate_unique_script(
@@ -469,49 +471,153 @@ def _normalize_to_9_16(image_path: Path, target: tuple[int, int] = TARGET_RESOLU
         print(f"[image] 9:16 정규화 실패(원본 유지): {exc}")
 
 
-def _try_openai_image(prompt: str, output_path: Path, openai_api_key: str) -> str | None:
-    if not openai_api_key:
-        return None
+def _read_openai_image_response(resp) -> bytes:
     import base64
     import urllib.request
-    from openai import OpenAI
 
-    client = OpenAI(api_key=openai_api_key)
-    preferred_model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
+    image_data = resp.data[0]
+    b64_json = getattr(image_data, "b64_json", None)
+    if b64_json:
+        return base64.b64decode(b64_json)
+    image_url = getattr(image_data, "url", None)
+    if not image_url:
+        raise ValueError("이미지 응답에 b64_json/url이 없습니다.")
+    with urllib.request.urlopen(image_url, timeout=60) as response:
+        return response.read()
+
+
+def generateWithGptImage1(prompt: str, options: dict) -> dict:
+    openai_api_key = options.get("openai_api_key", "")
+    if not openai_api_key:
+        raise RuntimeError("OPENAI_API_KEY is not configured")
+    output_path: Path = options["output_path"]
     quality = os.environ.get("OPENAI_IMAGE_QUALITY", "low")
-    ordered_models = [preferred_model, "gpt-image-1", "gpt-image-1-mini", "dall-e-3", "dall-e-2"]
-    candidates: list[tuple[str, dict[str, str]]] = []
-    for model in ordered_models:
-        if any(existing == model for existing, _ in candidates):
-            continue
-        if model.startswith("gpt-image-"):
-            candidates.append((model, {"size": "1024x1536", "quality": quality}))
-        elif model == "dall-e-3":
-            candidates.append((model, {"size": "1024x1792", "quality": "hd"}))
-        elif model == "dall-e-2":
-            candidates.append((model, {"size": "1024x1024"}))
-        else:
-            candidates.append((model, {"size": "1024x1536", "quality": quality}))
+    client = OpenAI(api_key=openai_api_key)
+    resp = client.images.generate(model="gpt-image-1", prompt=prompt, n=1, size="1024x1536", quality=quality)
+    output_path.write_bytes(_read_openai_image_response(resp))
+    _normalize_to_9_16(output_path)
+    return {"outputUrl": str(output_path)}
 
-    for model, params in candidates:
-        try:
-            resp = client.images.generate(model=model, prompt=prompt, n=1, **params)
-            image_data = resp.data[0]
-            b64_json = getattr(image_data, "b64_json", None)
-            if b64_json:
-                image_bytes = base64.b64decode(b64_json)
-            else:
-                image_url = getattr(image_data, "url", None)
-                if not image_url:
-                    raise ValueError("이미지 응답에 b64_json/url이 없습니다.")
-                with urllib.request.urlopen(image_url, timeout=60) as response:
-                    image_bytes = response.read()
-            output_path.write_bytes(image_bytes)
-            _normalize_to_9_16(output_path)
-            return model
-        except Exception as exc:
-            print(f"[image] OpenAI 이미지 모델 실패 ({model}): {exc}")
-    return None
+
+def generateWithNanoBanana(prompt: str, options: dict) -> dict:
+    gemini_api_key = options.get("gemini_api_key", "")
+    if not gemini_api_key:
+        raise RuntimeError("GEMINI_API_KEY is not configured")
+    import base64
+    import urllib.request
+
+    output_path: Path = options["output_path"]
+    model = os.environ.get("NANO_BANANA_IMAGE_MODEL", "gemini-3.1-flash-image")
+    payload = {
+        "model": model,
+        "input": [{"type": "text", "text": prompt}],
+        "response_format": {
+            "type": "image",
+            "mime_type": "image/png",
+            "aspect_ratio": "9:16",
+        },
+    }
+    request = urllib.request.Request(
+        "https://generativelanguage.googleapis.com/v1beta/interactions",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json", "x-goog-api-key": gemini_api_key},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=120) as response:
+        response_json = json.loads(response.read().decode("utf-8"))
+    image_block = response_json.get("output_image") or {}
+    image_data = image_block.get("data")
+    if not image_data:
+        raise ValueError("nano-banana returned no output_image.data")
+    output_path.write_bytes(base64.b64decode(image_data))
+    _normalize_to_9_16(output_path)
+    return {"outputUrl": str(output_path)}
+
+
+def generateWithDalle3(prompt: str, options: dict) -> dict:
+    openai_api_key = options.get("openai_api_key", "")
+    if not openai_api_key:
+        raise RuntimeError("OPENAI_API_KEY is not configured")
+    output_path: Path = options["output_path"]
+    client = OpenAI(api_key=openai_api_key)
+    resp = client.images.generate(model="dall-e-3", prompt=prompt, n=1, size="1024x1792", quality="hd")
+    output_path.write_bytes(_read_openai_image_response(resp))
+    _normalize_to_9_16(output_path)
+    return {"outputUrl": str(output_path)}
+
+
+def _utc_now_iso() -> str:
+    from datetime import datetime, timezone
+
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _create_image_request_state(prompt: str) -> dict:
+    return {
+        "requestId": str(uuid.uuid4()),
+        "originalPrompt": prompt,
+        "finalPrompt": prompt,
+        "currentModel": None,
+        "attempts": [],
+        "finalStatus": "pending",
+    }
+
+
+def generateImageOrVideoSource(prompt: str, options: dict) -> dict:
+    models = [
+        {"name": "gpt-image-1", "handler": generateWithGptImage1},
+        {"name": "nano-banana", "handler": generateWithNanoBanana},
+        {"name": "dall-e-3", "handler": generateWithDalle3},
+    ]
+    request_state = _create_image_request_state(prompt)
+
+    for order, model in enumerate(models, start=1):
+        for retry_index in range(2):
+            try:
+                request_state["currentModel"] = model["name"]
+                print(
+                    f"[image] requestId={request_state['requestId']} "
+                    f"call_order={order} retry={retry_index + 1} model={model['name']}"
+                )
+                result = model["handler"](prompt, options)
+                if not result or not result.get("outputUrl"):
+                    raise ValueError(f"{model['name']} returned no output")
+                request_state["attempts"].append({
+                    "model": model["name"],
+                    "status": "success",
+                    "outputUrl": result["outputUrl"],
+                    "createdAt": _utc_now_iso(),
+                })
+                request_state["finalStatus"] = "success"
+                request_state["finalModel"] = model["name"]
+                request_state["finalOutputUrl"] = result["outputUrl"]
+                print(f"[image] requestState={json.dumps(request_state, ensure_ascii=False)}")
+                return {
+                    "success": True,
+                    "model": model["name"],
+                    "outputUrl": result["outputUrl"],
+                    "requestState": request_state,
+                }
+            except Exception as exc:
+                request_state["attempts"].append({
+                    "model": model["name"],
+                    "status": "failed",
+                    "errorMessage": str(exc),
+                    "createdAt": _utc_now_iso(),
+                })
+                print(
+                    f"[image] requestId={request_state['requestId']} "
+                    f"model={model['name']} retry={retry_index + 1} failed: {exc}"
+                )
+        print(f"[image] requestId={request_state['requestId']} fallback_to_next_model_after={model['name']}")
+
+    request_state["finalStatus"] = "failed"
+    print(f"[image] requestState={json.dumps(request_state, ensure_ascii=False)}")
+    return {
+        "success": False,
+        "message": "All image generation models failed.",
+        "requestState": request_state,
+    }
 
 
 def _generate_background_from_direction(
@@ -522,10 +628,7 @@ def _generate_background_from_direction(
     image_model: str,
     openai_api_key: str = "",
     variation_seed: str = "",
-) -> Path:
-    if not api_key:
-        raise RuntimeError("Gemini API 키가 없어 배경 이미지를 생성할 수 없습니다.")
-    client = genai.Client(api_key=api_key)
+) -> tuple[Path, dict]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     seed = sha1(
@@ -560,51 +663,24 @@ def _generate_background_from_direction(
         "If a person appears, keep them tiny, distant, or shown from behind only."
     )
 
-    # ── 1차: OpenAI 이미지 모델 (GPT Image 우선, DALL-E는 fallback) ──
-    openai_prompt = _dalle3_prompt(style_desc, direction.scene_prompt_en)
-    openai_model = _try_openai_image(openai_prompt, filename, openai_api_key)
-    if openai_model:
-        print(f"[image] OpenAI 배경 생성 완료 ({openai_model}): {filename.name} / scene: {direction.scene_hint_ko}")
-        return filename
-
-    # ── 2차 fallback: Imagen ──
-    safe_prompts = [
-        f"{style_desc}. {direction.scene_prompt_en}. {base_suffix}",
-        f"{style_desc}. {direction.scene_prompt_en[:180].rstrip()}. {no_collage} {no_text} {layout} Atmospheric background, no people, vertical 9:16.",
-        f"{style_desc}. {theme_fallback}. {no_collage} {no_text} {layout} Peaceful atmosphere, no figures, vertical 9:16.",
-    ]
-
-    image_bytes: bytes | None = None
-    used_attempt = 0
-    for attempt, attempt_prompt in enumerate(safe_prompts):
-        try:
-            response = client.models.generate_images(
-                model=image_model,
-                prompt=attempt_prompt,
-                config=types.GenerateImagesConfig(
-                    number_of_images=1,
-                    aspect_ratio="9:16",
-                    output_mime_type="image/png",
-                    person_generation="dont_allow",
-                ),
-            )
-            generated = response.generated_images[0] if response.generated_images else None
-            image = generated.image if generated else None
-            if image and image.image_bytes:
-                image_bytes = image.image_bytes
-                used_attempt = attempt + 1
-                break
-        except Exception as exc:
-            print(f"[image] Imagen 시도 {attempt + 1} 실패: {exc}")
-
-    if not image_bytes:
-        raise RuntimeError("배경 이미지 생성 결과가 비어 있습니다. (3회 재시도 모두 실패)")
-
-    filename.write_bytes(image_bytes)
-    _normalize_to_9_16(filename)
-    retry_note = f" (재시도 {used_attempt}회)" if used_attempt > 1 else ""
-    print(f"[image] Gemini Imagen 배경 생성 완료{retry_note}: {filename.name} / scene: {direction.scene_hint_ko}")
-    return filename
+    openai_prompt = _dalle3_prompt(style_desc, f"{direction.scene_prompt_en}. {base_suffix}")
+    result = generateImageOrVideoSource(
+        openai_prompt,
+        {
+            "output_path": filename,
+            "openai_api_key": openai_api_key,
+            "gemini_api_key": api_key,
+            "legacy_gemini_image_model": image_model,
+            "theme_fallback": theme_fallback,
+        },
+    )
+    if not result["success"]:
+        raise RuntimeError(json.dumps(result["requestState"], ensure_ascii=False))
+    print(
+        f"[image] 배경 생성 완료 ({result['model']}): {filename.name} / "
+        f"scene: {direction.scene_hint_ko} / requestId={result['requestState']['requestId']}"
+    )
+    return filename, result["requestState"]
 
 
 def _generate_background_image(
