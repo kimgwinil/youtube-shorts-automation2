@@ -416,7 +416,7 @@ _STYLE_DESC: dict[str, str] = {
     ),
     "watercolor": "soft watercolor illustration with delicate brushwork and paper texture, single unified composition",
     "ink": "East Asian ink wash painting with expressive brushwork and generous empty space, single unified composition",
-    "calligraphy": "East Asian ink wash painting style with elegant brushwork and serene empty space, no calligraphy, no script, no glyph-like marks, single unified composition",
+    "calligraphy": "East Asian ink wash painting style with elegant brushwork and serene empty space, no fake script or unreadable glyph-like marks, single unified composition",
 }
 
 _THEME_SCENE_FALLBACK: dict[str, str] = {
@@ -430,11 +430,10 @@ def _dalle3_prompt(style_desc: str, scene: str) -> str:
     return (
         f"Background image for a Korean inspirational quote short video. "
         f"Style: {style_desc}. Scene: {scene}. "
-        "CRITICAL — ABSOLUTE RULE: zero text anywhere in the image. "
-        "No Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
-        "no Latin letters, no Arabic numerals, no calligraphy, no fake letters, no glyph-like marks, no brush strokes that resemble writing, "
+        "Do not invent any background text or symbols. "
+        "No inaccurate Korean, no pseudo-letters, no unreadable glyph-like marks, no brush strokes that resemble writing, "
         "no signs, no banners, no stamps, no watermarks, no captions, no labels. "
-        "Pure visual scene only — if any character or glyph appears, the image is rejected. "
+        "Korean title/subtitle text will be rendered later by the video pipeline, not inside the background image. "
         "LAYOUT ZONES (strict): "
         "① BOTTOM 40% of frame: kept completely plain, calm, and empty — "
         "no objects, no detail, no text — reserved for subtitle text overlay. "
@@ -453,8 +452,9 @@ TARGET_RESOLUTION = (1080, 1920)  # 9:16 세로 쇼츠
 def _normalize_to_9_16(image_path: Path, target: tuple[int, int] = TARGET_RESOLUTION) -> None:
     """생성된 배경 이미지를 정확한 9:16(1080x1920) 프레임으로 맞춘다.
 
-    DALL-E 3 uses 1024x1792 for portrait 9:16; Imagen can still return
-    slightly different dimensions by model, so this enforces the final frame.
+    GPT Image portrait output uses 1024x1536 and DALL-E 3 uses 1024x1792;
+    Imagen can still return slightly different dimensions by model, so this
+    enforces the final frame.
     이렇게 하면 저장되는 배경 자체가 9:16이 되어 렌더 단계의 추가 크롭이
     예측 가능해지고, 배경 비율이 9:16이 아닌 문제를 방지한다.
     """
@@ -469,37 +469,49 @@ def _normalize_to_9_16(image_path: Path, target: tuple[int, int] = TARGET_RESOLU
         print(f"[image] 9:16 정규화 실패(원본 유지): {exc}")
 
 
-def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
+def _try_openai_image(prompt: str, output_path: Path, openai_api_key: str) -> str | None:
     if not openai_api_key:
-        return False
-    try:
-        import base64
-        import urllib.request
-        from openai import OpenAI
-        client = OpenAI(api_key=openai_api_key)
-        resp = client.images.generate(
-            model="dall-e-3",
-            prompt=prompt,
-            size="1024x1792",
-            quality="hd",
-            n=1,
-        )
-        image_data = resp.data[0]
-        b64_json = getattr(image_data, "b64_json", None)
-        if b64_json:
-            image_bytes = base64.b64decode(b64_json)
+        return None
+    import base64
+    import urllib.request
+    from openai import OpenAI
+
+    client = OpenAI(api_key=openai_api_key)
+    preferred_model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
+    quality = os.environ.get("OPENAI_IMAGE_QUALITY", "low")
+    ordered_models = [preferred_model, "gpt-image-1", "gpt-image-1-mini", "dall-e-3", "dall-e-2"]
+    candidates: list[tuple[str, dict[str, str]]] = []
+    for model in ordered_models:
+        if any(existing == model for existing, _ in candidates):
+            continue
+        if model.startswith("gpt-image-"):
+            candidates.append((model, {"size": "1024x1536", "quality": quality}))
+        elif model == "dall-e-3":
+            candidates.append((model, {"size": "1024x1792", "quality": "hd"}))
+        elif model == "dall-e-2":
+            candidates.append((model, {"size": "1024x1024"}))
         else:
-            image_url = getattr(image_data, "url", None)
-            if not image_url:
-                raise ValueError("이미지 응답에 b64_json/url이 없습니다.")
-            with urllib.request.urlopen(image_url, timeout=60) as response:
-                image_bytes = response.read()
-        output_path.write_bytes(image_bytes)
-        _normalize_to_9_16(output_path)
-        return True
-    except Exception as exc:
-        print(f"[image] DALL-E 3 실패: {exc}")
-        return False
+            candidates.append((model, {"size": "1024x1536", "quality": quality}))
+
+    for model, params in candidates:
+        try:
+            resp = client.images.generate(model=model, prompt=prompt, n=1, **params)
+            image_data = resp.data[0]
+            b64_json = getattr(image_data, "b64_json", None)
+            if b64_json:
+                image_bytes = base64.b64decode(b64_json)
+            else:
+                image_url = getattr(image_data, "url", None)
+                if not image_url:
+                    raise ValueError("이미지 응답에 b64_json/url이 없습니다.")
+                with urllib.request.urlopen(image_url, timeout=60) as response:
+                    image_bytes = response.read()
+            output_path.write_bytes(image_bytes)
+            _normalize_to_9_16(output_path)
+            return model
+        except Exception as exc:
+            print(f"[image] OpenAI 이미지 모델 실패 ({model}): {exc}")
+    return None
 
 
 def _generate_background_from_direction(
@@ -525,9 +537,8 @@ def _generate_background_from_direction(
     theme_fallback = _THEME_SCENE_FALLBACK.get(direction.theme, _THEME_SCENE_FALLBACK["dawn"])
 
     no_text = (
-        "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
-        "no Latin letters, no Arabic numerals, no calligraphy script, "
-        "no fake letters, no glyph-like marks, no brush strokes resembling writing or glyphs, no signage, "
+        "Do not invent any background text or symbols. No inaccurate Korean, no fake letters, "
+        "no unreadable glyph-like marks, no brush strokes resembling writing or glyphs, no signage, "
         "no watermark, no stamp, no label, no caption. Pure image only."
     )
     no_collage = (
@@ -549,10 +560,11 @@ def _generate_background_from_direction(
         "If a person appears, keep them tiny, distant, or shown from behind only."
     )
 
-    # ── 1차: DALL-E 3 (텍스트 미생성 신뢰도 높음) ──
-    dalle3_prompt = _dalle3_prompt(style_desc, direction.scene_prompt_en)
-    if _try_dalle3(dalle3_prompt, filename, openai_api_key):
-        print(f"[image] DALL-E 3 배경 생성 완료: {filename.name} / scene: {direction.scene_hint_ko}")
+    # ── 1차: OpenAI 이미지 모델 (GPT Image 우선, DALL-E는 fallback) ──
+    openai_prompt = _dalle3_prompt(style_desc, direction.scene_prompt_en)
+    openai_model = _try_openai_image(openai_prompt, filename, openai_api_key)
+    if openai_model:
+        print(f"[image] OpenAI 배경 생성 완료 ({openai_model}): {filename.name} / scene: {direction.scene_hint_ko}")
         return filename
 
     # ── 2차 fallback: Imagen ──
@@ -646,8 +658,8 @@ def _build_image_prompt(script: VideoScript) -> str:
         f"Render this in {script.visual_style} style. "
         "Background for a Korean quote short video. "
         "Single unified scene — no collage, no double exposure, no montage, no split frame. "
-        "CRITICAL — zero text anywhere in the image: no Korean hangul, no Chinese hanja, no kanji, "
-        "no Latin letters, no numerals, no calligraphy script, no fake letters, no glyph-like marks, "
+        "Do not invent any background text or symbols: no inaccurate Korean, "
+        "no fake letters, no unreadable glyph-like marks, "
         "no signage, no watermark, no label. "
         "LAYOUT ZONES: "
         "top-left (55% wide, 14% tall) kept plain and empty — author name overlay goes here; "
