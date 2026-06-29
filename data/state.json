@@ -44,7 +44,6 @@
     "85661b85057484d01768b7cc8383a1737744c71e",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
-    "6297e1290da7926c4568a898da2116c84083ddf2",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
@@ -66,10 +65,10 @@
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "8432aa60d5587ae7536c81f1aa467d0f8aea9fd5",
-    "bbf11947363178b06a0ff3608b5f4f282a188087"
+    "bbf11947363178b06a0ff3608b5f4f282a188087",
+    "6297e1290da7926c4568a898da2116c84083ddf2"
   ],
   "recent_titles": [
-    "새벽 기차역의 용기 있는 한 걸음",
     "별빛 아래 우리의 선택",
     "빈티지 서재의 차가운 새벽빛 속에서",
     "우주에 두드리는 파도",
@@ -88,10 +87,10 @@
     "아침 정원, 삶을 가꾸는 지혜",
     "흐린 새벽, 멈추지 않는 발걸음",
     "도시의 밤, 별들이 속삭이는 진리",
-    "밤하늘에 숨겨진 연결의 비밀"
+    "밤하늘에 숨겨진 연결의 비밀",
+    "새벽 골목, 그림자가 말하는 이야기"
   ],
   "recent_quote_ids": [
-    "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
@@ -110,10 +109,10 @@
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
-    "bbf11947363178b06a0ff3608b5f4f282a188087"
+    "bbf11947363178b06a0ff3608b5f4f282a188087",
+    "6297e1290da7926c4568a898da2116c84083ddf2"
   ],
   "recent_image_fingerprints": [
-    "4986c739545ba39c",
     "1cc3bef8a744c0c6",
     "5970cbb279fa7b23",
     "d7db8755b0dc009f",
@@ -132,7 +131,8 @@
     "22d735d9f85d93b4",
     "9478783d8323a4e0",
     "1fc44b7e892c155a",
-    "4bacd5d3c7c3086f"
+    "4bacd5d3c7c3086f",
+    "23366f2ad289201e"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -143,7 +143,6 @@
     "watercolor"
   ],
   "recent_music_signatures": [
-    "12d6dadb41f6",
     "e336e07824cd",
     "e05a521e9d3a",
     "1313b45ff0e8",
@@ -162,7 +161,8 @@
     "3123c0334697",
     "258099483120",
     "0b1b5f9fc89f",
-    "13ec85900251"
+    "13ec85900251",
+    "bfecd5af1348"
   ],
   "recent_music_assets": [],
   "recent_dates": [
