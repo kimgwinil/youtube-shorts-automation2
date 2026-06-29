@@ -63,10 +63,10 @@
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18"
   ],
   "recent_titles": [
-    "순간을 담는 흰 벽의 이야기",
     "고즈넉한 대나무 숲에서의 깨달음",
     "새벽 기차역의 용기 있는 한 걸음",
     "별빛 아래 우리의 선택",
@@ -85,10 +85,10 @@
     "매일의 습관, 내면의 빛",
     "새벽 서재, 지식의 끊임없는 샘",
     "아침 정원, 삶을 가꾸는 지혜",
-    "흐린 새벽, 멈추지 않는 발걸음"
+    "흐린 새벽, 멈추지 않는 발걸음",
+    "도시의 밤, 별들이 속삭이는 진리"
   ],
   "recent_quote_ids": [
-    "6297e1290da7926c4568a898da2116c84083ddf2",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
@@ -107,10 +107,10 @@
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18"
   ],
   "recent_image_fingerprints": [
-    "c250838bb3efc63c",
     "16e2a68e806b4d9f",
     "4986c739545ba39c",
     "1cc3bef8a744c0c6",
@@ -129,18 +129,18 @@
     "fc24b38ba1f7ffa8",
     "9e3dfc0d2c958f95",
     "22d735d9f85d93b4",
-    "9478783d8323a4e0"
+    "9478783d8323a4e0",
+    "1fc44b7e892c155a"
   ],
   "recent_visual_styles": [
-    "ink",
     "Sumi-e",
     "Seohwa",
     "watercolor",
     "calligraphy",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "de2286b6487d",
     "eabb9ccf2d4b",
     "12d6dadb41f6",
     "e336e07824cd",
@@ -159,11 +159,11 @@
     "4fa575a43ebe",
     "91ba6b6a1df0",
     "3123c0334697",
-    "258099483120"
+    "258099483120",
+    "0b1b5f9fc89f"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-08",
     "2026-06-09",
     "2026-06-10",
     "2026-06-11",
@@ -182,6 +182,7 @@
     "2026-06-26",
     "2026-06-27",
     "2026-06-28",
-    "2026-06-29"
+    "2026-06-29",
+    "2026-06-30"
   ]
 }
