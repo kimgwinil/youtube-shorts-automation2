@@ -52,7 +52,7 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
             background_override = package.background_path
             bgm_signature = package.bgm_signature
         except Exception as exc:
-            print(f"[text] AI daily package generation failed; using quote fallback: {exc}")
+            print(f"[pipeline] AI 생성 실패, fallback 사용: {exc}")
             quote = pick_next_quote(config.quotes_file, config.state_file)
             selected_visual_style = _select_non_ai_visual_style(quote=quote, state=state, date_iso=context.date_iso)
             script = build_script(quote, visual_style_override=selected_visual_style)
@@ -130,11 +130,11 @@ def run_pipeline(project_root: Path, dry_run: bool = False, force: bool = False)
 
 def _select_non_ai_visual_style(quote, state: dict, date_iso: str) -> str:
     style_pools = {
-        "dawn": ["photoreal", "watercolor", "ink", "calligraphy"],
-        "rain": ["ink", "watercolor", "photoreal", "calligraphy"],
-        "city": ["photoreal", "watercolor", "ink", "calligraphy"],
+        "dawn": ["photoreal", "watercolor", "ink"],
+        "rain": ["ink", "watercolor", "photoreal"],
+        "city": ["photoreal", "watercolor", "ink"],
     }
-    pool = style_pools.get(quote.mood, ["photoreal", "watercolor", "ink", "calligraphy"])
+    pool = style_pools.get(quote.mood, ["photoreal", "watercolor", "ink"])
     recent_styles = state.get("recent_visual_styles", [])[-3:]
     candidates = [style for style in pool if style not in recent_styles]
     seeded = random.Random(f"{quote.quote_id}|{date_iso}|non-ai-visual-style")

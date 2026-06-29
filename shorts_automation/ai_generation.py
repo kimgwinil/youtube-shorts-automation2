@@ -416,7 +416,7 @@ _STYLE_DESC: dict[str, str] = {
     ),
     "watercolor": "soft watercolor illustration with delicate brushwork and paper texture, single unified composition",
     "ink": "East Asian ink wash painting with expressive brushwork and generous empty space, single unified composition",
-    "calligraphy": "East Asian calligraphy painting style with elegant brushwork and serene empty space, single unified composition",
+    "calligraphy": "East Asian ink wash painting style with elegant brushwork and serene empty space, no calligraphy, no script, no glyph-like marks, single unified composition",
 }
 
 _THEME_SCENE_FALLBACK: dict[str, str] = {
@@ -432,7 +432,7 @@ def _dalle3_prompt(style_desc: str, scene: str) -> str:
         f"Style: {style_desc}. Scene: {scene}. "
         "CRITICAL — ABSOLUTE RULE: zero text anywhere in the image. "
         "No Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
-        "no Latin letters, no Arabic numerals, no calligraphy, no brush strokes that resemble writing, "
+        "no Latin letters, no Arabic numerals, no calligraphy, no fake letters, no glyph-like marks, no brush strokes that resemble writing, "
         "no signs, no banners, no stamps, no watermarks, no captions, no labels. "
         "Pure visual scene only — if any character or glyph appears, the image is rejected. "
         "LAYOUT ZONES (strict): "
@@ -453,8 +453,8 @@ TARGET_RESOLUTION = (1080, 1920)  # 9:16 세로 쇼츠
 def _normalize_to_9_16(image_path: Path, target: tuple[int, int] = TARGET_RESOLUTION) -> None:
     """생성된 배경 이미지를 정확한 9:16(1080x1920) 프레임으로 맞춘다.
 
-    DALL-E(gpt-image-1)는 1024x1536(=2:3), Imagen은 모델별로 미세하게 다른
-    크기를 반환하므로, 중앙 기준 cover-crop으로 9:16 비율을 보장한다.
+    DALL-E 3 uses 1024x1792 for portrait 9:16; Imagen can still return
+    slightly different dimensions by model, so this enforces the final frame.
     이렇게 하면 저장되는 배경 자체가 9:16이 되어 렌더 단계의 추가 크롭이
     예측 가능해지고, 배경 비율이 9:16이 아닌 문제를 방지한다.
     """
@@ -477,10 +477,11 @@ def _try_dalle3(prompt: str, output_path: Path, openai_api_key: str) -> bool:
         from openai import OpenAI
         client = OpenAI(api_key=openai_api_key)
         resp = client.images.generate(
-            model="gpt-image-1",
+            model="dall-e-3",
             prompt=prompt,
-            size="1024x1536",
-            quality="high",
+            size="1024x1792",
+            quality="hd",
+            response_format="b64_json",
             n=1,
         )
         image_bytes = base64.b64decode(resp.data[0].b64_json)
@@ -517,7 +518,7 @@ def _generate_background_from_direction(
     no_text = (
         "CRITICAL: zero text anywhere — no Korean hangul, no Chinese hanja, no Japanese kanji or kana, "
         "no Latin letters, no Arabic numerals, no calligraphy script, "
-        "no brush strokes resembling writing or glyphs, no signage, "
+        "no fake letters, no glyph-like marks, no brush strokes resembling writing or glyphs, no signage, "
         "no watermark, no stamp, no label, no caption. Pure image only."
     )
     no_collage = (
@@ -637,7 +638,8 @@ def _build_image_prompt(script: VideoScript) -> str:
         "Background for a Korean quote short video. "
         "Single unified scene — no collage, no double exposure, no montage, no split frame. "
         "CRITICAL — zero text anywhere in the image: no Korean hangul, no Chinese hanja, no kanji, "
-        "no Latin letters, no numerals, no calligraphy script, no signage, no watermark, no label. "
+        "no Latin letters, no numerals, no calligraphy script, no fake letters, no glyph-like marks, "
+        "no signage, no watermark, no label. "
         "LAYOUT ZONES: "
         "top-left (55% wide, 14% tall) kept plain and empty — author name overlay goes here; "
         "bottom 38% kept plain, calm, and empty — subtitle text overlay goes here; "
@@ -658,12 +660,13 @@ def _build_image_prompt_en(visual_prompt_ko: str, visual_style: str, scene_hint:
         "photoreal": "photorealistic cinematic image",
         "watercolor": "soft watercolor illustration",
         "ink": "East Asian ink wash painting",
-        "calligraphy": "East Asian calligraphy painting",
+        "calligraphy": "East Asian ink wash painting without calligraphy, script, or glyph-like marks",
     }
     return (
         f"{style_map.get(visual_style, 'background-focused image')}, "
         f"{scene_hint}, inspired by this Korean brief: {visual_prompt_ko}. "
-        "Atmospheric background only, no central character, no portrait, clean subtitle-safe lower center."
+        "Atmospheric background only, no central character, no portrait, clean subtitle-safe lower center. "
+        "Zero text anywhere, no fake letters, no glyph-like marks, no calligraphy script, no signage."
     )
 
 
@@ -871,11 +874,11 @@ def _append_unique(state: Dict[str, Any], key: str, value: str, limit: int) -> N
 
 def _choose_visual_style(quote: QuoteEntry, state: Dict[str, Any], context: DailyContext, variation_seed: str = "") -> str:
     style_pools = {
-        "dawn": ["photoreal", "watercolor", "ink", "calligraphy"],
-        "rain": ["ink", "watercolor", "photoreal", "calligraphy"],
-        "city": ["photoreal", "watercolor", "ink", "calligraphy"],
+        "dawn": ["photoreal", "watercolor", "ink"],
+        "rain": ["ink", "watercolor", "photoreal"],
+        "city": ["photoreal", "watercolor", "ink"],
     }
-    pool = style_pools.get(quote.mood, ["photoreal", "watercolor", "ink", "calligraphy"])
+    pool = style_pools.get(quote.mood, ["photoreal", "watercolor", "ink"])
     recent_styles = state.get("recent_visual_styles", [])[-3:]
     candidates = [style for style in pool if style not in recent_styles]
     candidates = candidates or pool

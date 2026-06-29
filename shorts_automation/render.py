@@ -8,7 +8,7 @@ import random
 import subprocess
 from typing import List, Sequence, Tuple
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from .ffmpeg_utils import resolve_ffmpeg
 from .narration import NarrationResult, SUBTITLE_LEAD, SUBTITLE_TAIL
@@ -47,6 +47,7 @@ def render_short(
     stem = f"{timestamp}_{script.quote.author.lower().replace(' ', '_')}"
     video_path = output_dir / f"{stem}.mp4"
     metadata_path = output_dir / f"{stem}.json"
+    render_background = _prepare_background_for_render(background, output_dir, stem)
 
     line_overlays = [
         output_dir / f"{stem}_line_{index + 1}.png"
@@ -98,6 +99,7 @@ def render_short(
                 "image_prompt_en": script.image_prompt_en,
                 "bgm_prompt_en": script.bgm_prompt_en,
                 "background": str(background),
+                "render_background": str(render_background),
                 "bgm": str(bgm) if bgm else None,
                 "narration": [str(p) for p in narration.line_audio_paths] if narration else None,
                 "narration_starts": list(narration.line_start_times) if narration else None,
@@ -112,7 +114,7 @@ def render_short(
     )
 
     cmd = _build_render_cmd(
-        background=background,
+        background=render_background,
         bgm=bgm,
         line_overlays=line_overlays,
         author_overlay=author_overlay,
@@ -126,7 +128,8 @@ def render_short(
 
 def _pick_background(background_dir: Path, script: VideoScript) -> Path:
     candidates = []
-    preferred_dir = background_dir / script.quote.mood / script.visual_style
+    visual_style = _safe_background_style(script.visual_style)
+    preferred_dir = background_dir / script.quote.mood / visual_style
     fallback_dir = background_dir / script.quote.mood
 
     for candidate_dir in [preferred_dir, fallback_dir]:
@@ -144,6 +147,12 @@ def _pick_background(background_dir: Path, script: VideoScript) -> Path:
     if not candidates:
         raise RuntimeError(f"배경 파일이 없습니다: {preferred_dir} 또는 {fallback_dir}")
     return random.choice(candidates)
+
+
+def _safe_background_style(visual_style: str) -> str:
+    if visual_style == "calligraphy":
+        return "ink"
+    return visual_style
 
 
 def _pick_bgm(music_dir: Path, mood: str) -> Path | None:
@@ -257,7 +266,7 @@ def _filter_graph(
         )
     else:
         timings = _line_timings(num_line_overlays)
-    parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[v0]"]
+    parts = ["[0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1[v0]"]
     current = "[v0]"
     for index, (start, end) in enumerate(timings, start=1):
         next_label = f"[v{index}]"
@@ -324,6 +333,30 @@ def _filter_graph(
         audio_map = "[aout]"
 
     return ";".join(parts), final_label, audio_map
+
+
+def _prepare_background_for_render(background: Path, output_dir: Path, stem: str) -> Path:
+    if background.suffix.lower() not in IMAGE_EXTS:
+        return background
+
+    target_size = (1080, 1920)
+    with Image.open(background) as source:
+        source = ImageOps.exif_transpose(source).convert("RGB")
+        if source.size == target_size:
+            return background
+
+        fill = ImageOps.fit(source, target_size, method=Image.Resampling.LANCZOS)
+        fill = fill.filter(ImageFilter.GaussianBlur(28))
+        fill = ImageOps.autocontrast(fill)
+
+        foreground = ImageOps.contain(source, target_size, method=Image.Resampling.LANCZOS)
+        x = (target_size[0] - foreground.width) // 2
+        y = (target_size[1] - foreground.height) // 2
+        fill.paste(foreground, (x, y))
+
+    prepared_path = output_dir / f"{stem}_background_9x16.png"
+    fill.save(prepared_path)
+    return prepared_path
 
 
 def _line_timings(num_lines: int) -> List[Tuple[float, float]]:

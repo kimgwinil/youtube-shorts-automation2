@@ -156,7 +156,7 @@ def _build_visual_prompt_en(quote: QuoteEntry, visual_style: str) -> str:
         "photoreal": "photorealistic cinematic photography",
         "watercolor": "soft watercolor illustration with visible paper texture",
         "ink": "East Asian ink wash painting with expressive brushwork",
-        "calligraphy": "East Asian calligraphy painting style with elegant empty space",
+        "calligraphy": "East Asian ink wash painting with elegant empty space, without calligraphy, script, or glyph-like marks",
     }
     mood_desc = {
         "dawn": "dawn light, mist, calm air",
@@ -167,7 +167,7 @@ def _build_visual_prompt_en(quote: QuoteEntry, visual_style: str) -> str:
     return (
         f"{style_map.get(visual_style, style_map['photoreal'])}, "
         f"{mood_desc}, {subject}, vertical 9:16 composition, "
-        "background-focused scene, no central character, clean lower center for subtitles"
+        "background-focused scene, no central character, clean lower center for subtitles, no text or glyph-like marks"
     )
 
 
