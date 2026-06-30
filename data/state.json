@@ -35,7 +35,6 @@
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
@@ -66,10 +65,10 @@
     "8432aa60d5587ae7536c81f1aa467d0f8aea9fd5",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "6297e1290da7926c4568a898da2116c84083ddf2",
-    "8c8769f32739dc1a1270cc860a5ce31731198bec"
+    "8c8769f32739dc1a1270cc860a5ce31731198bec",
+    "598bcd7d2c545682f1b10afd21ae326ef0d2824d"
   ],
   "recent_titles": [
-    "빈티지 서재의 차가운 새벽빛 속에서",
     "우주에 두드리는 파도",
     "새로운 미래를 여는 아침의 창",
     "도시의 공기 속 생산적 고민",
@@ -88,10 +87,10 @@
     "도시의 밤, 별들이 속삭이는 진리",
     "밤하늘에 숨겨진 연결의 비밀",
     "새벽 골목, 그림자가 말하는 이야기",
-    "고요한 서재, 내면의 이야기"
+    "고요한 서재, 내면의 이야기",
+    "조용한 아침, 사무실에서의 집중"
   ],
   "recent_quote_ids": [
-    "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
@@ -110,10 +109,10 @@
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "6297e1290da7926c4568a898da2116c84083ddf2",
-    "8c8769f32739dc1a1270cc860a5ce31731198bec"
+    "8c8769f32739dc1a1270cc860a5ce31731198bec",
+    "598bcd7d2c545682f1b10afd21ae326ef0d2824d"
   ],
   "recent_image_fingerprints": [
-    "5970cbb279fa7b23",
     "d7db8755b0dc009f",
     "afb64d84302be1da",
     "9e8f6cba6dc2c627",
@@ -132,18 +131,18 @@
     "1fc44b7e892c155a",
     "4bacd5d3c7c3086f",
     "23366f2ad289201e",
-    "24d56e1c499f31fe"
+    "24d56e1c499f31fe",
+    "da0b6477df3c68ed"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
-    "photoreal",
     "ink",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "e05a521e9d3a",
     "1313b45ff0e8",
     "489c44c71553",
     "9774577a4f30",
@@ -162,11 +161,11 @@
     "0b1b5f9fc89f",
     "13ec85900251",
     "bfecd5af1348",
-    "688db00bec59"
+    "688db00bec59",
+    "57b7205830bb"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-09",
     "2026-06-10",
     "2026-06-11",
     "2026-06-12",
@@ -185,6 +184,7 @@
     "2026-06-27",
     "2026-06-28",
     "2026-06-29",
-    "2026-06-30"
+    "2026-06-30",
+    "2026-07-01"
   ]
 }
