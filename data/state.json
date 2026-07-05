@@ -42,7 +42,6 @@
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
@@ -67,10 +66,10 @@
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "af371bb42ecea9ec54725e42a4530022034adc9a",
     "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
-    "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3"
+    "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_titles": [
-    "고요한 아침, 지혜의 서재로의 초대",
     "새벽 벤치의 고요한 서약",
     "빗속에서 발견한 마음의 길",
     "고요한 아침, 책의 향기 속으로",
@@ -89,10 +88,10 @@
     "오전 사무실, 일깨우는 한 권의 힘",
     "아침 햇살 속의 창작",
     "새벽 정원의 섬세한 숨결 속으로",
-    "서재의 빛과 나 자신을 마주하다"
+    "서재의 빛과 나 자신을 마주하다",
+    "별빛 아래 돌아보는 순간"
   ],
   "recent_quote_ids": [
-    "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "07374f20ac4361831e80019d99223af56a1ba321",
@@ -111,10 +110,10 @@
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "af371bb42ecea9ec54725e42a4530022034adc9a",
     "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
-    "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3"
+    "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_image_fingerprints": [
-    "4eef2b5c2ce1a8e5",
     "99cb285aa209b7d4",
     "b3a108cdb008cc1a",
     "2666a291418ce39f",
@@ -133,7 +132,8 @@
     "660c694cf58898eb",
     "1a4fcbfea79cde0f",
     "7b0debf698acca9e",
-    "741f7bb73565caf6"
+    "741f7bb73565caf6",
+    "03940a2194efa721"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -144,7 +144,6 @@
     "photoreal"
   ],
   "recent_music_signatures": [
-    "b1a053acaa4c",
     "a5994d96ad16",
     "3c571460fe96",
     "c3cef1182f1d",
@@ -163,11 +162,11 @@
     "6bbc6b888388",
     "c073261d3140",
     "71d8910699bf",
-    "49a7eaee6c6c"
+    "49a7eaee6c6c",
+    "3dbfe23b46bd"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-15",
     "2026-06-16",
     "2026-06-17",
     "2026-06-18",
@@ -186,6 +185,7 @@
     "2026-07-02",
     "2026-07-03",
     "2026-07-04",
-    "2026-07-05"
+    "2026-07-05",
+    "2026-07-06"
   ]
 }
