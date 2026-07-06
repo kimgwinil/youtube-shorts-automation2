@@ -67,10 +67,10 @@
     "af371bb42ecea9ec54725e42a4530022034adc9a",
     "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
+    "13026a2f95f385bc527a87c0a06de37f47603e23"
   ],
   "recent_titles": [
-    "새벽 벤치의 고요한 서약",
     "빗속에서 발견한 마음의 길",
     "고요한 아침, 책의 향기 속으로",
     "고요 속에서 새롭게 나아가는 발걸음",
@@ -89,10 +89,10 @@
     "아침 햇살 속의 창작",
     "새벽 정원의 섬세한 숨결 속으로",
     "서재의 빛과 나 자신을 마주하다",
-    "별빛 아래 돌아보는 순간"
+    "별빛 아래 돌아보는 순간",
+    "고요한 여름날의 단순함 탐구"
   ],
   "recent_quote_ids": [
-    "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
@@ -111,10 +111,10 @@
     "af371bb42ecea9ec54725e42a4530022034adc9a",
     "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
+    "13026a2f95f385bc527a87c0a06de37f47603e23"
   ],
   "recent_image_fingerprints": [
-    "99cb285aa209b7d4",
     "b3a108cdb008cc1a",
     "2666a291418ce39f",
     "e6bd2e44554fb9a3",
@@ -133,18 +133,18 @@
     "1a4fcbfea79cde0f",
     "7b0debf698acca9e",
     "741f7bb73565caf6",
-    "03940a2194efa721"
+    "03940a2194efa721",
+    "bed437621ab15c37"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
     "watercolor",
-    "ink",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "a5994d96ad16",
     "3c571460fe96",
     "c3cef1182f1d",
     "5cac3ce7a4a9",
@@ -163,11 +163,11 @@
     "c073261d3140",
     "71d8910699bf",
     "49a7eaee6c6c",
-    "3dbfe23b46bd"
+    "3dbfe23b46bd",
+    "eb1dca2d3823"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-16",
     "2026-06-17",
     "2026-06-18",
     "2026-06-19",
@@ -186,6 +186,7 @@
     "2026-07-03",
     "2026-07-04",
     "2026-07-05",
-    "2026-07-06"
+    "2026-07-06",
+    "2026-07-07"
   ]
 }
