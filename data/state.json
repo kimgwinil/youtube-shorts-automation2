@@ -69,10 +69,10 @@
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2"
+    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
+    "db5282fdb5e0ca36ccd7fce21de565749e118b0d"
   ],
   "recent_titles": [
-    "고요한 아침, 책의 향기 속으로",
     "고요 속에서 새롭게 나아가는 발걸음",
     "고요한 아침, 내면의 질서를 찾아서",
     "저무는 도시, 미루었던 발자국",
@@ -91,10 +91,10 @@
     "서재의 빛과 나 자신을 마주하다",
     "별빛 아래 돌아보는 순간",
     "고요한 여름날의 단순함 탐구",
-    "비 내리는 날, 당신의 내면에 귀 기울이세요"
+    "비 내리는 날, 당신의 내면에 귀 기울이세요",
+    "빗속의 회랑, 두려움을 넘어"
   ],
   "recent_quote_ids": [
-    "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
@@ -113,10 +113,10 @@
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2"
+    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
+    "db5282fdb5e0ca36ccd7fce21de565749e118b0d"
   ],
   "recent_image_fingerprints": [
-    "2666a291418ce39f",
     "e6bd2e44554fb9a3",
     "24bc4655db9c2849",
     "6f982e804ed75fb6",
@@ -135,7 +135,8 @@
     "741f7bb73565caf6",
     "03940a2194efa721",
     "bed437621ab15c37",
-    "b80b9efa1794a452"
+    "b80b9efa1794a452",
+    "e4a30b65661b8041"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -146,7 +147,6 @@
     "watercolor"
   ],
   "recent_music_signatures": [
-    "c3cef1182f1d",
     "5cac3ce7a4a9",
     "bbe9ed4e4dad",
     "84ba3e6b8dd2",
@@ -165,11 +165,11 @@
     "49a7eaee6c6c",
     "3dbfe23b46bd",
     "eb1dca2d3823",
-    "afcf1c17790a"
+    "afcf1c17790a",
+    "bff9b6730b18"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-18",
     "2026-06-19",
     "2026-06-20",
     "2026-06-21",
@@ -188,6 +188,7 @@
     "2026-07-05",
     "2026-07-06",
     "2026-07-07",
-    "2026-07-08"
+    "2026-07-08",
+    "2026-07-10"
   ]
 }
