@@ -31,7 +31,6 @@
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
-    "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
@@ -70,10 +69,10 @@
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
-    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878",
+    "4aa01f106afcb148402cac72011ac64b751f1d7e"
   ],
   "recent_titles": [
-    "고요한 아침, 내면의 질서를 찾아서",
     "저무는 도시, 미루었던 발자국",
     "매일의 습관, 내면의 빛",
     "새벽 서재, 지식의 끊임없는 샘",
@@ -92,10 +91,10 @@
     "고요한 여름날의 단순함 탐구",
     "비 내리는 날, 당신의 내면에 귀 기울이세요",
     "빗속의 회랑, 두려움을 넘어",
-    "대나무숲 어귀, 마음의 새벽을 걷다"
+    "대나무숲 어귀, 마음의 새벽을 걷다",
+    "구름 사이로 비치는 새벽의 비밀"
   ],
   "recent_quote_ids": [
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
@@ -114,10 +113,10 @@
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
-    "a42223bff26e76b57876f7a079d0ed4a19cb1878"
+    "a42223bff26e76b57876f7a079d0ed4a19cb1878",
+    "4aa01f106afcb148402cac72011ac64b751f1d7e"
   ],
   "recent_image_fingerprints": [
-    "24bc4655db9c2849",
     "6f982e804ed75fb6",
     "fc24b38ba1f7ffa8",
     "9e3dfc0d2c958f95",
@@ -136,7 +135,8 @@
     "bed437621ab15c37",
     "b80b9efa1794a452",
     "e4a30b65661b8041",
-    "a28f3bd43847b2ef"
+    "a28f3bd43847b2ef",
+    "97f9d250953bc073"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -147,7 +147,6 @@
     "photoreal"
   ],
   "recent_music_signatures": [
-    "bbe9ed4e4dad",
     "84ba3e6b8dd2",
     "4fa575a43ebe",
     "91ba6b6a1df0",
@@ -166,11 +165,11 @@
     "eb1dca2d3823",
     "afcf1c17790a",
     "bff9b6730b18",
-    "7e84f9305cee"
+    "7e84f9305cee",
+    "4c1c9e9aabbc"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-20",
     "2026-06-21",
     "2026-06-23",
     "2026-06-24",
@@ -189,6 +188,7 @@
     "2026-07-07",
     "2026-07-08",
     "2026-07-10",
-    "2026-07-11"
+    "2026-07-11",
+    "2026-07-12"
   ]
 }
