@@ -42,7 +42,6 @@
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "04f6a176290a383a576e94664d0186f27cb4c597",
@@ -70,10 +69,10 @@
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
-    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb"
+    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
   ],
   "recent_titles": [
-    "매일의 습관, 내면의 빛",
     "새벽 서재, 지식의 끊임없는 샘",
     "아침 정원, 삶을 가꾸는 지혜",
     "흐린 새벽, 멈추지 않는 발걸음",
@@ -92,10 +91,10 @@
     "빗속의 회랑, 두려움을 넘어",
     "대나무숲 어귀, 마음의 새벽을 걷다",
     "구름 사이로 비치는 새벽의 비밀",
-    "여름 아침, 책 속에서 찾은 얼굴"
+    "여름 아침, 책 속에서 찾은 얼굴",
+    "혁신, 창문을 여는 순간"
   ],
   "recent_quote_ids": [
-    "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
@@ -114,10 +113,10 @@
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
-    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb"
+    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
   ],
   "recent_image_fingerprints": [
-    "fc24b38ba1f7ffa8",
     "9e3dfc0d2c958f95",
     "22d735d9f85d93b4",
     "9478783d8323a4e0",
@@ -136,18 +135,18 @@
     "e4a30b65661b8041",
     "a28f3bd43847b2ef",
     "97f9d250953bc073",
-    "ca3a986d857c864a"
+    "ca3a986d857c864a",
+    "b4585a6950880ced"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
     "ink",
-    "photoreal",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "4fa575a43ebe",
     "91ba6b6a1df0",
     "3123c0334697",
     "258099483120",
@@ -166,11 +165,11 @@
     "bff9b6730b18",
     "7e84f9305cee",
     "4c1c9e9aabbc",
-    "4b1844a3b345"
+    "4b1844a3b345",
+    "1c816ff4acbb"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-23",
     "2026-06-24",
     "2026-06-25",
     "2026-06-26",
@@ -189,6 +188,7 @@
     "2026-07-10",
     "2026-07-11",
     "2026-07-12",
-    "2026-07-13"
+    "2026-07-13",
+    "2026-07-14"
   ]
 }
