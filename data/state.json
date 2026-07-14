@@ -27,7 +27,6 @@
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "d5b654ba2aaecdf56e54f31171425fafc31e7593",
-    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
@@ -70,10 +69,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
+    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675"
   ],
   "recent_titles": [
-    "새벽 서재, 지식의 끊임없는 샘",
     "아침 정원, 삶을 가꾸는 지혜",
     "흐린 새벽, 멈추지 않는 발걸음",
     "도시의 밤, 별들이 속삭이는 진리",
@@ -92,10 +91,10 @@
     "대나무숲 어귀, 마음의 새벽을 걷다",
     "구름 사이로 비치는 새벽의 비밀",
     "여름 아침, 책 속에서 찾은 얼굴",
-    "혁신, 창문을 여는 순간"
+    "혁신, 창문을 여는 순간",
+    "하늘에 피어난 작은 약속"
   ],
   "recent_quote_ids": [
-    "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
@@ -114,10 +113,10 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
+    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675"
   ],
   "recent_image_fingerprints": [
-    "9e3dfc0d2c958f95",
     "22d735d9f85d93b4",
     "9478783d8323a4e0",
     "1fc44b7e892c155a",
@@ -136,18 +135,18 @@
     "a28f3bd43847b2ef",
     "97f9d250953bc073",
     "ca3a986d857c864a",
-    "b4585a6950880ced"
+    "b4585a6950880ced",
+    "0ae7198f3129b7c7"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
-    "ink",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "91ba6b6a1df0",
     "3123c0334697",
     "258099483120",
     "0b1b5f9fc89f",
@@ -166,11 +165,11 @@
     "7e84f9305cee",
     "4c1c9e9aabbc",
     "4b1844a3b345",
-    "1c816ff4acbb"
+    "1c816ff4acbb",
+    "9994bb6e0d8a"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-24",
     "2026-06-25",
     "2026-06-26",
     "2026-06-27",
@@ -189,6 +188,7 @@
     "2026-07-11",
     "2026-07-12",
     "2026-07-13",
-    "2026-07-14"
+    "2026-07-14",
+    "2026-07-15"
   ]
 }
