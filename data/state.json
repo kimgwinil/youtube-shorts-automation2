@@ -46,7 +46,6 @@
     "07374f20ac4361831e80019d99223af56a1ba321",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
@@ -70,10 +69,10 @@
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
-    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93"
+    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
   ],
   "recent_titles": [
-    "흐린 새벽, 멈추지 않는 발걸음",
     "도시의 밤, 별들이 속삭이는 진리",
     "밤하늘에 숨겨진 연결의 비밀",
     "새벽 골목, 그림자가 말하는 이야기",
@@ -92,10 +91,10 @@
     "여름 아침, 책 속에서 찾은 얼굴",
     "혁신, 창문을 여는 순간",
     "하늘에 피어난 작은 약속",
-    "새벽 빛 속에서 삶을 그리다"
+    "새벽 빛 속에서 삶을 그리다",
+    "여름날의 저녁, 미완성 이야기"
   ],
   "recent_quote_ids": [
-    "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "6297e1290da7926c4568a898da2116c84083ddf2",
@@ -114,10 +113,10 @@
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
-    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93"
+    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
   ],
   "recent_image_fingerprints": [
-    "9478783d8323a4e0",
     "1fc44b7e892c155a",
     "4bacd5d3c7c3086f",
     "23366f2ad289201e",
@@ -136,7 +135,8 @@
     "ca3a986d857c864a",
     "b4585a6950880ced",
     "0ae7198f3129b7c7",
-    "4760fe8f64a33546"
+    "4760fe8f64a33546",
+    "adb5443a40c71ba9"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -147,7 +147,6 @@
     "watercolor"
   ],
   "recent_music_signatures": [
-    "258099483120",
     "0b1b5f9fc89f",
     "13ec85900251",
     "bfecd5af1348",
@@ -166,11 +165,11 @@
     "4b1844a3b345",
     "1c816ff4acbb",
     "9994bb6e0d8a",
-    "8baa55dc69ce"
+    "8baa55dc69ce",
+    "3018b893495c"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-26",
     "2026-06-27",
     "2026-06-28",
     "2026-06-29",
@@ -189,6 +188,7 @@
     "2026-07-13",
     "2026-07-14",
     "2026-07-15",
-    "2026-07-16"
+    "2026-07-16",
+    "2026-07-17"
   ]
 }
