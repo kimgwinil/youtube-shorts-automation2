@@ -71,10 +71,10 @@
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
-    "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef"
+    "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
+    "4f29ba4e626f6e440ee2b8faa8634e1e62004b70"
   ],
   "recent_titles": [
-    "밤하늘에 숨겨진 연결의 비밀",
     "새벽 골목, 그림자가 말하는 이야기",
     "고요한 서재, 내면의 이야기",
     "조용한 아침, 사무실에서의 집중",
@@ -93,10 +93,10 @@
     "하늘에 피어난 작은 약속",
     "새벽 빛 속에서 삶을 그리다",
     "여름날의 저녁, 미완성 이야기",
-    "비가 내리는 회랑, 그리움의 깊이"
+    "비가 내리는 회랑, 그리움의 깊이",
+    "새벽 서재에서 피어난 고요"
   ],
   "recent_quote_ids": [
-    "bbf11947363178b06a0ff3608b5f4f282a188087",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
@@ -115,10 +115,10 @@
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
-    "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef"
+    "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
+    "4f29ba4e626f6e440ee2b8faa8634e1e62004b70"
   ],
   "recent_image_fingerprints": [
-    "4bacd5d3c7c3086f",
     "23366f2ad289201e",
     "24d56e1c499f31fe",
     "da0b6477df3c68ed",
@@ -137,7 +137,8 @@
     "0ae7198f3129b7c7",
     "4760fe8f64a33546",
     "adb5443a40c71ba9",
-    "868589c491da8ac6"
+    "868589c491da8ac6",
+    "6330aed698cc4d1a"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -148,7 +149,6 @@
     "ink"
   ],
   "recent_music_signatures": [
-    "13ec85900251",
     "bfecd5af1348",
     "688db00bec59",
     "57b7205830bb",
@@ -167,11 +167,11 @@
     "9994bb6e0d8a",
     "8baa55dc69ce",
     "3018b893495c",
-    "cca59d63d2dc"
+    "cca59d63d2dc",
+    "04aef1ca7a4e"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-06-28",
     "2026-06-29",
     "2026-06-30",
     "2026-07-01",
@@ -190,6 +190,7 @@
     "2026-07-15",
     "2026-07-16",
     "2026-07-17",
-    "2026-07-18"
+    "2026-07-18",
+    "2026-07-19"
   ]
 }
