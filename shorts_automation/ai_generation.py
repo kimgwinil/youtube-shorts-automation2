@@ -523,8 +523,12 @@ def generateWithNanoBanana(prompt: str, options: dict) -> dict:
         headers={"Content-Type": "application/json", "x-goog-api-key": gemini_api_key},
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=120) as response:
-        response_json = json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=120) as response:
+            response_json = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", "ignore")
+        raise RuntimeError(f"nano-banana HTTP {exc.code}: {body}") from exc
     image_block = response_json.get("output_image") or {}
     image_data = image_block.get("data")
     if not image_data:
@@ -534,13 +538,15 @@ def generateWithNanoBanana(prompt: str, options: dict) -> dict:
     return {"outputUrl": str(output_path)}
 
 
-def generateWithDalle3(prompt: str, options: dict) -> dict:
+def generateWithGptImage1Mini(prompt: str, options: dict) -> dict:
+    # dall-e-3 was retired by OpenAI on 2026-05-12; gpt-image-1-mini is the
+    # official replacement for the low-cost fallback tier.
     openai_api_key = options.get("openai_api_key", "")
     if not openai_api_key:
         raise RuntimeError("OPENAI_API_KEY is not configured")
     output_path: Path = options["output_path"]
     client = OpenAI(api_key=openai_api_key)
-    resp = client.images.generate(model="dall-e-3", prompt=prompt, n=1, size="1024x1792", quality="hd")
+    resp = client.images.generate(model="gpt-image-1-mini", prompt=prompt, n=1, size="1024x1536", quality="high")
     output_path.write_bytes(_read_openai_image_response(resp))
     _normalize_to_9_16(output_path)
     return {"outputUrl": str(output_path)}
@@ -567,7 +573,7 @@ def generateImageOrVideoSource(prompt: str, options: dict) -> dict:
     models = [
         {"name": "gpt-image-1", "handler": generateWithGptImage1},
         {"name": "nano-banana", "handler": generateWithNanoBanana},
-        {"name": "dall-e-3", "handler": generateWithDalle3},
+        {"name": "gpt-image-1-mini", "handler": generateWithGptImage1Mini},
     ]
     request_state = _create_image_request_state(prompt)
 
