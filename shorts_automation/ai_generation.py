@@ -529,10 +529,16 @@ def generateWithNanoBanana(prompt: str, options: dict) -> dict:
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", "ignore")
         raise RuntimeError(f"nano-banana HTTP {exc.code}: {body}") from exc
-    image_block = response_json.get("output_image") or {}
-    image_data = image_block.get("data")
+    image_data = None
+    for step in response_json.get("steps", []):
+        for item in step.get("content", []):
+            if item.get("type") == "image" and item.get("data"):
+                image_data = item["data"]
+                break
+        if image_data:
+            break
     if not image_data:
-        raise ValueError("nano-banana returned no output_image.data")
+        raise ValueError("nano-banana returned no image content in steps")
     output_path.write_bytes(base64.b64decode(image_data))
     _normalize_to_9_16(output_path)
     return {"outputUrl": str(output_path)}
