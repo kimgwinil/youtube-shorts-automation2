@@ -32,7 +32,6 @@
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
-    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
@@ -76,10 +75,10 @@
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "c430decabbdcd788e1b5649c26215911f6ce628e",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "e7dffc8a216812f16cad4d8b226f44765c01c2a4"
+    "e7dffc8a216812f16cad4d8b226f44765c01c2a4",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_titles": [
-    "구름 사이로 비치는 새벽의 비밀",
     "여름 아침, 책 속에서 찾은 얼굴",
     "혁신, 창문을 여는 순간",
     "하늘에 피어난 작은 약속",
@@ -98,10 +97,10 @@
     "하늘빛 속의 연결된 순간들",
     "흐린 도시의 고요한 책상",
     "안개 속에서 찾아낸 나만의 정원",
-    "안개 낀 산길, 새벽의 첫 계단"
+    "안개 낀 산길, 새벽의 첫 계단",
+    "여름 도시, 성과를 위한 현명한 선택"
   ],
   "recent_quote_ids": [
-    "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
@@ -120,10 +119,10 @@
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "c430decabbdcd788e1b5649c26215911f6ce628e",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
-    "e7dffc8a216812f16cad4d8b226f44765c01c2a4"
+    "e7dffc8a216812f16cad4d8b226f44765c01c2a4",
+    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13"
   ],
   "recent_image_fingerprints": [
-    "97f9d250953bc073",
     "ca3a986d857c864a",
     "b4585a6950880ced",
     "0ae7198f3129b7c7",
@@ -142,18 +141,18 @@
     "a161ac6d20244d0b",
     "f4b03fcf2010b0d0",
     "88a148cd379c0fe3",
-    "6779c57e24243782"
+    "6779c57e24243782",
+    "554f340ff5a6ce81"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
-    "ink",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "4c1c9e9aabbc",
     "4b1844a3b345",
     "1c816ff4acbb",
     "9994bb6e0d8a",
@@ -172,11 +171,11 @@
     "4bf022f87ecd",
     "5acfe1f54f3d",
     "cda71bbc68ae",
-    "506bc665b9cd"
+    "506bc665b9cd",
+    "0689513f12ea"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-12",
     "2026-07-13",
     "2026-07-14",
     "2026-07-15",
@@ -195,6 +194,7 @@
     "2026-07-30",
     "2026-07-31",
     "2026-08-01",
-    "2026-08-02"
+    "2026-08-02",
+    "2026-08-03"
   ]
 }
