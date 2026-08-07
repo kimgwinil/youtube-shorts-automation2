@@ -14,7 +14,6 @@
     "1f4da7b7074e0521a0e38b2250b0d1d221f59a45",
     "5c258b3e679190dcbc8dc8a5665148f9573a6277",
     "28d59344521642a898142450d68d80115d340d4f",
-    "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "a8d3280e673a76fd628c0ecbd378f82f80c85675",
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
@@ -76,10 +75,10 @@
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "61c750a67b59ce71b1d81b80de5cfcecc8de302b"
   ],
   "recent_titles": [
-    "여름날의 저녁, 미완성 이야기",
     "비가 내리는 회랑, 그리움의 깊이",
     "새벽 서재에서 피어난 고요",
     "빛 속을 거닐다, 내일로 한 걸음",
@@ -98,10 +97,10 @@
     "도시의 발걸음, 마음의 뿌리",
     "도시의 시간, 집중의 밀도를 높이다",
     "새벽 골목, 용기의 발자국",
-    "도시의 새벽, 정돈된 책상 위의 지혜"
+    "도시의 새벽, 정돈된 책상 위의 지혜",
+    "여백의 새벽, 명료한 앎의 시작"
   ],
   "recent_quote_ids": [
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
     "4f29ba4e626f6e440ee2b8faa8634e1e62004b70",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
@@ -120,10 +119,10 @@
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "61c750a67b59ce71b1d81b80de5cfcecc8de302b"
   ],
   "recent_image_fingerprints": [
-    "adb5443a40c71ba9",
     "868589c491da8ac6",
     "6330aed698cc4d1a",
     "6f32cd3421493f0d",
@@ -142,18 +141,18 @@
     "29ff6f66a73c57f4",
     "46643395862b2c25",
     "5fa9e7239b437f05",
-    "13e515d7627d95d9"
+    "13e515d7627d95d9",
+    "29bfec0b7231ae41"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "calligraphy",
     "photoreal",
-    "ink",
-    "watercolor"
+    "watercolor",
+    "ink"
   ],
   "recent_music_signatures": [
-    "3018b893495c",
     "cca59d63d2dc",
     "04aef1ca7a4e",
     "f278c37cfd4a",
@@ -172,11 +171,11 @@
     "90c912f559c5",
     "bb6cc9fcbf8a",
     "6a7562659385",
-    "8c5540e3f8ac"
+    "8c5540e3f8ac",
+    "2e178f0d909b"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-17",
     "2026-07-18",
     "2026-07-19",
     "2026-07-20",
@@ -195,6 +194,7 @@
     "2026-08-04",
     "2026-08-05",
     "2026-08-06",
-    "2026-08-07"
+    "2026-08-07",
+    "2026-08-08"
   ]
 }
