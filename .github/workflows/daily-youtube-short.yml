@@ -9,6 +9,10 @@ on:
         description: "오늘 이미 업로드된 경우 강제 실행 (true/false)"
         required: false
         default: "false"
+      openai_health_check:
+        description: "OpenAI API key and Responses API only"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -18,7 +22,31 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  openai-health-check:
+    if: github.event_name == 'workflow_dispatch' && inputs.openai_health_check == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_TEXT_MODEL: gpt-5.6-luna
+    steps:
+      - name: Verify API key authentication
+        run: |
+          set -euo pipefail
+          test -n "${OPENAI_API_KEY:-}" || { echo "OPENAI_API_KEY is not configured"; exit 1; }
+          status="$(curl -sS -o models.json -w '%{http_code}' -H "Authorization: Bearer ${OPENAI_API_KEY}" https://api.openai.com/v1/models)"
+          echo "OpenAI authentication HTTP status: ${status}"
+          test "${status}" = "200" || { jq -r '{type:.error.type,code:.error.code,message:.error.message}' models.json; exit 1; }
+      - name: Verify Responses API and target model
+        run: |
+          set -euo pipefail
+          status="$(curl -sS -o response.json -w '%{http_code}' -H "Authorization: Bearer ${OPENAI_API_KEY}" -H 'Content-Type: application/json' --data "$(jq -nc --arg model "${OPENAI_TEXT_MODEL}" '{model:$model,input:"Reply with exactly OK.",max_output_tokens:32,reasoning:{effort:"none"},store:false}')" https://api.openai.com/v1/responses)"
+          echo "OpenAI Responses API HTTP status: ${status}"
+          test "${status}" = "200" || { jq -r '{type:.error.type,code:.error.code,message:.error.message}' response.json; exit 1; }
+          jq -r '{model,status,output_text:([.output[]?.content[]?|select(.type=="output_text")|.text]|join(""))}' response.json
+
   daily-short:
+    if: github.event_name != 'workflow_dispatch' || inputs.openai_health_check != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
