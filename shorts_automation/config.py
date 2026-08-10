@@ -61,7 +61,7 @@ def load_config(project_root: Path) -> AppConfig:
         location_latitude=float(os.environ.get("LOCATION_LATITUDE", "37.5665")),
         location_longitude=float(os.environ.get("LOCATION_LONGITUDE", "126.9780")),
         openai_api_key=os.environ.get("OPENAI_API_KEY", ""),
-        openai_text_model=os.environ.get("OPENAI_TEXT_MODEL", "gpt-4o"),
+        openai_text_model=os.environ.get("OPENAI_TEXT_MODEL", "gpt-5.6-luna"),
         enable_ai_generation=os.environ.get("ENABLE_AI_GENERATION", "true").lower() == "true",
         gemini_api_key=os.environ.get("GEMINI_API_KEY", ""),
         gemini_image_model=os.environ.get("GEMINI_IMAGE_MODEL", "imagen-4.0-fast-generate-001"),

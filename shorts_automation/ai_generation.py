@@ -266,12 +266,14 @@ def _generate_script_with_ai(
   "total_duration": 24.0
 }}
 """
-    response = client.chat.completions.create(
+    response = client.responses.create(
         model=text_model,
-        messages=[{"role": "user", "content": prompt}],
-        response_format={"type": "json_object"},
+        input=[{"role": "user", "content": prompt}],
+        text={"format": {"type": "json_object"}},
+        reasoning={"effort": "none"},
+        store=False,
     )
-    raw = response.choices[0].message.content or ""
+    raw = response.output_text or ""
     parsed = json.loads(raw)
     return VideoScript(
         quote=quote,
@@ -853,12 +855,14 @@ JSON 스키마:
   "avoid": ["...", "..."]
 }}
 """
-    response = client.chat.completions.create(
+    response = client.responses.create(
         model=text_model,
-        messages=[{"role": "user", "content": prompt}],
-        response_format={"type": "json_object"},
+        input=[{"role": "user", "content": prompt}],
+        text={"format": {"type": "json_object"}},
+        reasoning={"effort": "none"},
+        store=False,
     )
-    parsed = json.loads(response.choices[0].message.content or "{}")
+    parsed = json.loads(response.output_text or "{}")
     return CreativeDirection(
         theme=parsed.get("theme", quote.mood),
         emotion=parsed.get("emotion", quote.bgm_mood),
