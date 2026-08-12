@@ -49,7 +49,6 @@
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
-    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
@@ -76,10 +75,10 @@
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb"
   ],
   "recent_titles": [
-    "새벽이 깨어나는 순간, 다짐을 새기다",
     "도시의 조용한 뒷골목에서 중심을 찾다",
     "책방의 노을빛 군무",
     "책장에 스며든 새벽의 빛",
@@ -98,10 +97,10 @@
     "새벽 정원, 흔들리지 않는 지혜",
     "도시의 거울, 내면을 비추다",
     "덜어낼수록 선명해지는 실력",
-    "닫힌 문 앞에서, 아직 늦지 않은 이유"
+    "닫힌 문 앞에서, 아직 늦지 않은 이유",
+    "거울 앞에 남는 것은 오늘의 얼굴이다"
   ],
   "recent_quote_ids": [
-    "4ff3071f59f37665227dcbe3926e59b85120eda9",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
@@ -120,10 +119,10 @@
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "cc0b03fbc9a8846babed6a5912be0c9c75db4777"
+    "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
+    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb"
   ],
   "recent_image_fingerprints": [
-    "e9a6826a44ed8bbf",
     "d68253c96301c44e",
     "109f5f703db0e053",
     "77e546900094faea",
@@ -142,7 +141,8 @@
     "6b7e9e12c2ffd40a",
     "d9adf504f55ed670",
     "a92f59e406bc5e43",
-    "525936fd27889bb6"
+    "525936fd27889bb6",
+    "da7d21b3c7f9c85b"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -151,10 +151,10 @@
     "ink",
     "watercolor",
     "minimalist",
-    "calligraphy"
+    "calligraphy",
+    "photorealistic"
   ],
   "recent_music_signatures": [
-    "3019239d78bc",
     "bdeb199cb2c8",
     "2019cfa57bb6",
     "15e3960492ac",
@@ -173,11 +173,11 @@
     "b94cb06ab6d5",
     "d67d8577807c",
     "18ddc65a43ae",
-    "50fecd178fb1"
+    "50fecd178fb1",
+    "feb1a4fbe443"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-22",
     "2026-07-23",
     "2026-07-24",
     "2026-07-27",
@@ -196,6 +196,7 @@
     "2026-08-09",
     "2026-08-10",
     "2026-08-11",
-    "2026-08-12"
+    "2026-08-12",
+    "2026-08-13"
   ]
 }
