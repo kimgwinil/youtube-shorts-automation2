@@ -77,10 +77,10 @@
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
-    "1977f751979b3238b374891bb33d6e3623a82dde"
+    "1977f751979b3238b374891bb33d6e3623a82dde",
+    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c"
   ],
   "recent_titles": [
-    "책장에 스며든 새벽의 빛",
     "오래된 서가에서 들려오는 삶의 속삭임",
     "서가 속, 선택의 갈림길에서",
     "하늘빛 속의 연결된 순간들",
@@ -99,10 +99,10 @@
     "닫힌 문 앞에서, 아직 늦지 않은 이유",
     "거울 앞에 남는 것은 오늘의 얼굴이다",
     "별을 탓하기 전, 나침반을 보라",
-    "눈을 감은 뒤에야 열린 새벽"
+    "눈을 감은 뒤에야 열린 새벽",
+    "빗소리 속에서도, 배움은 멈추지 않는다"
   ],
   "recent_quote_ids": [
-    "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
@@ -121,10 +121,10 @@
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
-    "1977f751979b3238b374891bb33d6e3623a82dde"
+    "1977f751979b3238b374891bb33d6e3623a82dde",
+    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c"
   ],
   "recent_image_fingerprints": [
-    "77e546900094faea",
     "ee9e0209da97a35f",
     "479b4f7e170669b3",
     "a161ac6d20244d0b",
@@ -143,21 +143,21 @@
     "525936fd27889bb6",
     "da7d21b3c7f9c85b",
     "4a2d5e4225ff2c01",
-    "50877424ee016aa4"
+    "50877424ee016aa4",
+    "9bc0adae3cc3adea"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
-    "photoreal",
     "ink",
     "watercolor",
     "minimalist",
     "calligraphy",
     "photorealistic",
-    "ink wash"
+    "ink wash",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "15e3960492ac",
     "80db3bd14803",
     "ed94ff355601",
     "4bf022f87ecd",
@@ -176,11 +176,11 @@
     "50fecd178fb1",
     "feb1a4fbe443",
     "76b91af55230",
-    "eb660439deb5"
+    "eb660439deb5",
+    "d681b8edd2e4"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-27",
     "2026-07-28",
     "2026-07-29",
     "2026-07-30",
@@ -199,6 +199,7 @@
     "2026-08-12",
     "2026-08-13",
     "2026-08-14",
-    "2026-08-15"
+    "2026-08-15",
+    "2026-08-16"
   ]
 }
