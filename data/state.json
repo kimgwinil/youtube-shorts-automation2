@@ -28,7 +28,6 @@
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "85661b85057484d01768b7cc8383a1737744c71e",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
@@ -78,10 +77,10 @@
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
-    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c"
+    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_titles": [
-    "오래된 서가에서 들려오는 삶의 속삭임",
     "서가 속, 선택의 갈림길에서",
     "하늘빛 속의 연결된 순간들",
     "흐린 도시의 고요한 책상",
@@ -100,10 +99,10 @@
     "거울 앞에 남는 것은 오늘의 얼굴이다",
     "별을 탓하기 전, 나침반을 보라",
     "눈을 감은 뒤에야 열린 새벽",
-    "빗소리 속에서도, 배움은 멈추지 않는다"
+    "빗소리 속에서도, 배움은 멈추지 않는다",
+    "질문이 멈추는 순간, 생각도 멈춘다"
   ],
   "recent_quote_ids": [
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "c430decabbdcd788e1b5649c26215911f6ce628e",
@@ -122,10 +121,10 @@
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
-    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c"
+    "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_image_fingerprints": [
-    "ee9e0209da97a35f",
     "479b4f7e170669b3",
     "a161ac6d20244d0b",
     "f4b03fcf2010b0d0",
@@ -144,7 +143,8 @@
     "da7d21b3c7f9c85b",
     "4a2d5e4225ff2c01",
     "50877424ee016aa4",
-    "9bc0adae3cc3adea"
+    "9bc0adae3cc3adea",
+    "16b7a263daeb906a"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -154,11 +154,10 @@
     "minimalist",
     "calligraphy",
     "photorealistic",
-    "ink wash",
-    "photoreal"
+    "photoreal",
+    "ink wash"
   ],
   "recent_music_signatures": [
-    "80db3bd14803",
     "ed94ff355601",
     "4bf022f87ecd",
     "5acfe1f54f3d",
@@ -177,11 +176,11 @@
     "feb1a4fbe443",
     "76b91af55230",
     "eb660439deb5",
-    "d681b8edd2e4"
+    "d681b8edd2e4",
+    "5ae8a6403fae"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-28",
     "2026-07-29",
     "2026-07-30",
     "2026-07-31",
@@ -200,6 +199,7 @@
     "2026-08-13",
     "2026-08-14",
     "2026-08-15",
-    "2026-08-16"
+    "2026-08-16",
+    "2026-08-17"
   ]
 }
