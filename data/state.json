@@ -18,7 +18,6 @@
     "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "0f571748654087b515f12c03598f81b5ef5285dd",
-    "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "c48f31df757f189b55bec88b5af903da6ae2cc29",
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
@@ -78,10 +77,10 @@
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_titles": [
-    "서가 속, 선택의 갈림길에서",
     "하늘빛 속의 연결된 순간들",
     "흐린 도시의 고요한 책상",
     "안개 속에서 찾아낸 나만의 정원",
@@ -100,10 +99,10 @@
     "별을 탓하기 전, 나침반을 보라",
     "눈을 감은 뒤에야 열린 새벽",
     "빗소리 속에서도, 배움은 멈추지 않는다",
-    "질문이 멈추는 순간, 생각도 멈춘다"
+    "질문이 멈추는 순간, 생각도 멈춘다",
+    "숫자를 바라보는 순간, 변화가 시작된다"
   ],
   "recent_quote_ids": [
-    "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "c430decabbdcd788e1b5649c26215911f6ce628e",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
@@ -122,10 +121,10 @@
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_image_fingerprints": [
-    "479b4f7e170669b3",
     "a161ac6d20244d0b",
     "f4b03fcf2010b0d0",
     "88a148cd379c0fe3",
@@ -144,21 +143,21 @@
     "4a2d5e4225ff2c01",
     "50877424ee016aa4",
     "9bc0adae3cc3adea",
-    "16b7a263daeb906a"
+    "16b7a263daeb906a",
+    "21c0216f2a914251"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "ink",
-    "watercolor",
     "minimalist",
     "calligraphy",
     "photorealistic",
     "photoreal",
-    "ink wash"
+    "ink wash",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "ed94ff355601",
     "4bf022f87ecd",
     "5acfe1f54f3d",
     "cda71bbc68ae",
@@ -177,11 +176,11 @@
     "76b91af55230",
     "eb660439deb5",
     "d681b8edd2e4",
-    "5ae8a6403fae"
+    "5ae8a6403fae",
+    "62fa8e68c7b1"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-29",
     "2026-07-30",
     "2026-07-31",
     "2026-08-01",
@@ -200,6 +199,7 @@
     "2026-08-14",
     "2026-08-15",
     "2026-08-16",
-    "2026-08-17"
+    "2026-08-17",
+    "2026-08-18"
   ]
 }
