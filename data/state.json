@@ -34,7 +34,6 @@
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "07374f20ac4361831e80019d99223af56a1ba321",
-    "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
@@ -78,10 +77,10 @@
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
-    "44fa08de533da4a94a2c60c852743a73fdd688ab"
+    "44fa08de533da4a94a2c60c852743a73fdd688ab",
+    "223024c2adfb18dd8ab68bb305218fb144ba2241"
   ],
   "recent_titles": [
-    "흐린 도시의 고요한 책상",
     "안개 속에서 찾아낸 나만의 정원",
     "안개 낀 산길, 새벽의 첫 계단",
     "여름 도시, 성과를 위한 현명한 선택",
@@ -100,10 +99,10 @@
     "빗소리 속에서도, 배움은 멈추지 않는다",
     "질문이 멈추는 순간, 생각도 멈춘다",
     "숫자를 바라보는 순간, 변화가 시작된다",
-    "말보다 먼저, 신발을 문밖에 두는 사람"
+    "말보다 먼저, 신발을 문밖에 두는 사람",
+    "발걸음이 멈춘 자리에서, 마음을 확인하라"
   ],
   "recent_quote_ids": [
-    "c430decabbdcd788e1b5649c26215911f6ce628e",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "e7dffc8a216812f16cad4d8b226f44765c01c2a4",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
@@ -122,10 +121,10 @@
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
-    "44fa08de533da4a94a2c60c852743a73fdd688ab"
+    "44fa08de533da4a94a2c60c852743a73fdd688ab",
+    "223024c2adfb18dd8ab68bb305218fb144ba2241"
   ],
   "recent_image_fingerprints": [
-    "f4b03fcf2010b0d0",
     "88a148cd379c0fe3",
     "6779c57e24243782",
     "554f340ff5a6ce81",
@@ -144,21 +143,21 @@
     "9bc0adae3cc3adea",
     "16b7a263daeb906a",
     "21c0216f2a914251",
-    "98c272802347337b"
+    "98c272802347337b",
+    "558996fe234cba8e"
   ],
   "recent_visual_styles": [
     "Sumi-e",
     "Seohwa",
     "ink",
-    "calligraphy",
     "photorealistic",
     "photoreal",
     "ink wash",
     "watercolor",
-    "minimalist"
+    "minimalist",
+    "calligraphy"
   ],
   "recent_music_signatures": [
-    "5acfe1f54f3d",
     "cda71bbc68ae",
     "506bc665b9cd",
     "0689513f12ea",
@@ -177,11 +176,11 @@
     "d681b8edd2e4",
     "5ae8a6403fae",
     "62fa8e68c7b1",
-    "5e09fcda75cd"
+    "5e09fcda75cd",
+    "a77461278282"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-07-31",
     "2026-08-01",
     "2026-08-02",
     "2026-08-03",
@@ -200,6 +199,7 @@
     "2026-08-16",
     "2026-08-17",
     "2026-08-18",
-    "2026-08-19"
+    "2026-08-19",
+    "2026-08-20"
   ]
 }
