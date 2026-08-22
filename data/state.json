@@ -79,10 +79,10 @@
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
-    "4bb1a835a656b76f5b7a27608de144ef55a72fee"
+    "4bb1a835a656b76f5b7a27608de144ef55a72fee",
+    "580f6211ac6516040340087cb89a620f43a2c8dd"
   ],
   "recent_titles": [
-    "여름 도시, 성과를 위한 현명한 선택",
     "도시의 발걸음, 마음의 뿌리",
     "도시의 시간, 집중의 밀도를 높이다",
     "새벽 골목, 용기의 발자국",
@@ -101,10 +101,10 @@
     "말보다 먼저, 신발을 문밖에 두는 사람",
     "발걸음이 멈춘 자리에서, 마음을 확인하라",
     "바르게 하는 것과, 옳게 고르는 것",
-    "비 갠 물웅덩이에, 세상을 구하는 빛이 있었다"
+    "비 갠 물웅덩이에, 세상을 구하는 빛이 있었다",
+    "새벽의 한 줄이, 인생의 이자를 만든다"
   ],
   "recent_quote_ids": [
-    "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
@@ -123,10 +123,10 @@
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
-    "4bb1a835a656b76f5b7a27608de144ef55a72fee"
+    "4bb1a835a656b76f5b7a27608de144ef55a72fee",
+    "580f6211ac6516040340087cb89a620f43a2c8dd"
   ],
   "recent_image_fingerprints": [
-    "554f340ff5a6ce81",
     "29ff6f66a73c57f4",
     "46643395862b2c25",
     "5fa9e7239b437f05",
@@ -145,7 +145,8 @@
     "98c272802347337b",
     "558996fe234cba8e",
     "8be43552f7a67521",
-    "b4bd8f7d3b287ca0"
+    "b4bd8f7d3b287ca0",
+    "f25a13fe8d2c5f13"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -155,12 +156,11 @@
     "ink wash",
     "watercolor",
     "minimalist",
-    "calligraphy",
     "photoreal",
-    "ink_wash"
+    "ink_wash",
+    "calligraphy"
   ],
   "recent_music_signatures": [
-    "0689513f12ea",
     "90c912f559c5",
     "bb6cc9fcbf8a",
     "6a7562659385",
@@ -179,11 +179,11 @@
     "5e09fcda75cd",
     "a77461278282",
     "80e7f5179915",
-    "a9264a28ba79"
+    "a9264a28ba79",
+    "a7da84aff1df"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-03",
     "2026-08-04",
     "2026-08-05",
     "2026-08-06",
@@ -202,6 +202,7 @@
     "2026-08-19",
     "2026-08-20",
     "2026-08-21",
-    "2026-08-22"
+    "2026-08-22",
+    "2026-08-23"
   ]
 }
