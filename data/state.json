@@ -44,7 +44,6 @@
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
@@ -80,10 +79,10 @@
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
-    "580f6211ac6516040340087cb89a620f43a2c8dd"
+    "580f6211ac6516040340087cb89a620f43a2c8dd",
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
   ],
   "recent_titles": [
-    "도시의 발걸음, 마음의 뿌리",
     "도시의 시간, 집중의 밀도를 높이다",
     "새벽 골목, 용기의 발자국",
     "도시의 새벽, 정돈된 책상 위의 지혜",
@@ -102,10 +101,10 @@
     "발걸음이 멈춘 자리에서, 마음을 확인하라",
     "바르게 하는 것과, 옳게 고르는 것",
     "비 갠 물웅덩이에, 세상을 구하는 빛이 있었다",
-    "새벽의 한 줄이, 인생의 이자를 만든다"
+    "새벽의 한 줄이, 인생의 이자를 만든다",
+    "아이디어는 왜 시제품 앞에서 증명되는가"
   ],
   "recent_quote_ids": [
-    "6297e1290da7926c4568a898da2116c84083ddf2",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
@@ -124,10 +123,10 @@
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
-    "580f6211ac6516040340087cb89a620f43a2c8dd"
+    "580f6211ac6516040340087cb89a620f43a2c8dd",
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
   ],
   "recent_image_fingerprints": [
-    "29ff6f66a73c57f4",
     "46643395862b2c25",
     "5fa9e7239b437f05",
     "13e515d7627d95d9",
@@ -146,7 +145,8 @@
     "558996fe234cba8e",
     "8be43552f7a67521",
     "b4bd8f7d3b287ca0",
-    "f25a13fe8d2c5f13"
+    "f25a13fe8d2c5f13",
+    "6b86adeb98f042b4"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -154,14 +154,13 @@
     "ink",
     "photorealistic",
     "ink wash",
-    "watercolor",
     "minimalist",
     "photoreal",
     "ink_wash",
-    "calligraphy"
+    "calligraphy",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "90c912f559c5",
     "bb6cc9fcbf8a",
     "6a7562659385",
     "8c5540e3f8ac",
@@ -180,11 +179,11 @@
     "a77461278282",
     "80e7f5179915",
     "a9264a28ba79",
-    "a7da84aff1df"
+    "a7da84aff1df",
+    "0a0c286e8897"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-04",
     "2026-08-05",
     "2026-08-06",
     "2026-08-07",
@@ -203,6 +202,7 @@
     "2026-08-20",
     "2026-08-21",
     "2026-08-22",
-    "2026-08-23"
+    "2026-08-23",
+    "2026-08-24"
   ]
 }
