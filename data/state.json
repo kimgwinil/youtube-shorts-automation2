@@ -51,7 +51,6 @@
     "5125fb57415e7e7677f41321dbcef0f29dfbc32a",
     "4ff3071f59f37665227dcbe3926e59b85120eda9",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
-    "ebba16c7bc661d474493fdea345062ab09228038",
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
@@ -80,10 +79,10 @@
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
     "580f6211ac6516040340087cb89a620f43a2c8dd",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
+    "ebba16c7bc661d474493fdea345062ab09228038"
   ],
   "recent_titles": [
-    "도시의 시간, 집중의 밀도를 높이다",
     "새벽 골목, 용기의 발자국",
     "도시의 새벽, 정돈된 책상 위의 지혜",
     "여백의 새벽, 명료한 앎의 시작",
@@ -102,10 +101,10 @@
     "바르게 하는 것과, 옳게 고르는 것",
     "비 갠 물웅덩이에, 세상을 구하는 빛이 있었다",
     "새벽의 한 줄이, 인생의 이자를 만든다",
-    "아이디어는 왜 시제품 앞에서 증명되는가"
+    "아이디어는 왜 시제품 앞에서 증명되는가",
+    "탁월함은 새벽 20분에서 시작된다"
   ],
   "recent_quote_ids": [
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
@@ -124,10 +123,10 @@
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
     "580f6211ac6516040340087cb89a620f43a2c8dd",
-    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e"
+    "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
+    "ebba16c7bc661d474493fdea345062ab09228038"
   ],
   "recent_image_fingerprints": [
-    "46643395862b2c25",
     "5fa9e7239b437f05",
     "13e515d7627d95d9",
     "29bfec0b7231ae41",
@@ -146,7 +145,8 @@
     "8be43552f7a67521",
     "b4bd8f7d3b287ca0",
     "f25a13fe8d2c5f13",
-    "6b86adeb98f042b4"
+    "6b86adeb98f042b4",
+    "b5bde8918b95651e"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -155,13 +155,12 @@
     "photorealistic",
     "ink wash",
     "minimalist",
-    "photoreal",
     "ink_wash",
     "calligraphy",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "bb6cc9fcbf8a",
     "6a7562659385",
     "8c5540e3f8ac",
     "2e178f0d909b",
@@ -180,11 +179,11 @@
     "80e7f5179915",
     "a9264a28ba79",
     "a7da84aff1df",
-    "0a0c286e8897"
+    "0a0c286e8897",
+    "6b85e1620106"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-05",
     "2026-08-06",
     "2026-08-07",
     "2026-08-08",
@@ -203,6 +202,7 @@
     "2026-08-21",
     "2026-08-22",
     "2026-08-23",
-    "2026-08-24"
+    "2026-08-24",
+    "2026-08-25"
   ]
 }
