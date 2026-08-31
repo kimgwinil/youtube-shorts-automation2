@@ -81,10 +81,10 @@
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "4f29ba4e626f6e440ee2b8faa8634e1e62004b70",
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
-    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2"
+    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
+    "91ec69487bbc91c0c17c04e5745929eb5adf159f"
   ],
   "recent_titles": [
-    "거울 앞에 남는 것은 오늘의 얼굴이다",
     "별을 탓하기 전, 나침반을 보라",
     "눈을 감은 뒤에야 열린 새벽",
     "빗소리 속에서도, 배움은 멈추지 않는다",
@@ -103,10 +103,10 @@
     "폭풍이 지나간 뒤, 발걸음이 답이 된다",
     "모르는 사람만 발견하는 새벽의 문",
     "말보다 오래 남는 건, 그때의 온도였다",
-    "비 오는 날, 나는 제대로 살고 있는가"
+    "비 오는 날, 나는 제대로 살고 있는가",
+    "금이 간 마음에만 보이는 것"
   ],
   "recent_quote_ids": [
-    "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
@@ -125,10 +125,10 @@
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "4f29ba4e626f6e440ee2b8faa8634e1e62004b70",
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
-    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2"
+    "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
+    "91ec69487bbc91c0c17c04e5745929eb5adf159f"
   ],
   "recent_image_fingerprints": [
-    "da7d21b3c7f9c85b",
     "4a2d5e4225ff2c01",
     "50877424ee016aa4",
     "9bc0adae3cc3adea",
@@ -147,7 +147,8 @@
     "d27cc4c072942633",
     "0358fb27712f61ca",
     "8d4282f24073300c",
-    "e785ec73e0a060ff"
+    "e785ec73e0a060ff",
+    "e3b0f4eaf3efe00a"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -156,14 +157,13 @@
     "ink wash",
     "minimalist",
     "ink_wash",
-    "watercolor",
     "photoreal",
     "minimal",
     "ink",
-    "calligraphy"
+    "calligraphy",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "feb1a4fbe443",
     "76b91af55230",
     "eb660439deb5",
     "d681b8edd2e4",
@@ -182,11 +182,11 @@
     "5a550e8e08dd",
     "f18a9551a171",
     "6dd005aa7603",
-    "d602961f3484"
+    "d602961f3484",
+    "0254d3f6ecb9"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-12",
     "2026-08-13",
     "2026-08-14",
     "2026-08-15",
@@ -205,6 +205,7 @@
     "2026-08-28",
     "2026-08-29",
     "2026-08-30",
-    "2026-08-31"
+    "2026-08-31",
+    "2026-09-01"
   ]
 }
