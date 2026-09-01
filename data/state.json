@@ -42,7 +42,6 @@
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
-    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
     "5125fb57415e7e7677f41321dbcef0f29dfbc32a",
     "4ff3071f59f37665227dcbe3926e59b85120eda9",
@@ -83,10 +82,10 @@
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "91ec69487bbc91c0c17c04e5745929eb5adf159f",
-    "df7ae00048e14dc6edd4f670d6c426df2c000635"
+    "df7ae00048e14dc6edd4f670d6c426df2c000635",
+    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93"
   ],
   "recent_titles": [
-    "눈을 감은 뒤에야 열린 새벽",
     "빗소리 속에서도, 배움은 멈추지 않는다",
     "질문이 멈추는 순간, 생각도 멈춘다",
     "숫자를 바라보는 순간, 변화가 시작된다",
@@ -105,10 +104,10 @@
     "말보다 오래 남는 건, 그때의 온도였다",
     "비 오는 날, 나는 제대로 살고 있는가",
     "금이 간 마음에만 보이는 것",
-    "비바람이 나무를 꺾지 못한 이유"
+    "비바람이 나무를 꺾지 못한 이유",
+    "아직 오지 않은 날을 먼저 그리는 법"
   ],
   "recent_quote_ids": [
-    "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
@@ -127,10 +126,10 @@
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "91ec69487bbc91c0c17c04e5745929eb5adf159f",
-    "df7ae00048e14dc6edd4f670d6c426df2c000635"
+    "df7ae00048e14dc6edd4f670d6c426df2c000635",
+    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93"
   ],
   "recent_image_fingerprints": [
-    "50877424ee016aa4",
     "9bc0adae3cc3adea",
     "16b7a263daeb906a",
     "21c0216f2a914251",
@@ -149,7 +148,8 @@
     "8d4282f24073300c",
     "e785ec73e0a060ff",
     "e3b0f4eaf3efe00a",
-    "057e948934b635a1"
+    "057e948934b635a1",
+    "1d689b02c802809d"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -160,12 +160,11 @@
     "ink_wash",
     "minimal",
     "ink",
-    "calligraphy",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "calligraphy"
   ],
   "recent_music_signatures": [
-    "eb660439deb5",
     "d681b8edd2e4",
     "5ae8a6403fae",
     "62fa8e68c7b1",
@@ -184,11 +183,11 @@
     "6dd005aa7603",
     "d602961f3484",
     "0254d3f6ecb9",
-    "33d246cab730"
+    "33d246cab730",
+    "a92588898570"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-13",
     "2026-08-14",
     "2026-08-15",
     "2026-08-16",
@@ -207,6 +206,7 @@
     "2026-08-29",
     "2026-08-30",
     "2026-08-31",
-    "2026-09-01"
+    "2026-09-01",
+    "2026-09-02"
   ]
 }
