@@ -21,7 +21,6 @@
     "a404502307f0b894ce27d13db608af6c5f33db8c",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "d5b654ba2aaecdf56e54f31171425fafc31e7593",
-    "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
     "c8a215bb8fb2b7943a4d068c77129aba92ab2bfd",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
@@ -83,10 +82,10 @@
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8"
+    "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
+    "a410956f324ec26ac7933bd420fadd2104b6469b"
   ],
   "recent_titles": [
-    "숫자를 바라보는 순간, 변화가 시작된다",
     "말보다 먼저, 신발을 문밖에 두는 사람",
     "발걸음이 멈춘 자리에서, 마음을 확인하라",
     "바르게 하는 것과, 옳게 고르는 것",
@@ -105,10 +104,10 @@
     "비바람이 나무를 꺾지 못한 이유",
     "아직 오지 않은 날을 먼저 그리는 법",
     "덜어낼수록 선명해지는 순간",
-    "별이 많을수록 작아지는 밤, 우리는 왜 소중한가"
+    "별이 많을수록 작아지는 밤, 우리는 왜 소중한가",
+    "열두 척만 남은 새벽, 바다는 아직 끝나지 않았다"
   ],
   "recent_quote_ids": [
-    "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
@@ -127,10 +126,10 @@
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
-    "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8"
+    "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
+    "a410956f324ec26ac7933bd420fadd2104b6469b"
   ],
   "recent_image_fingerprints": [
-    "21c0216f2a914251",
     "98c272802347337b",
     "558996fe234cba8e",
     "8be43552f7a67521",
@@ -149,7 +148,8 @@
     "057e948934b635a1",
     "1d689b02c802809d",
     "27e7f0f035e62b6f",
-    "4a95d668d69dab41"
+    "4a95d668d69dab41",
+    "aa37185a1cfc2789"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -159,14 +159,13 @@
     "minimalist",
     "ink_wash",
     "minimal",
-    "watercolor",
     "photoreal",
     "calligraphy",
     "realistic",
-    "ink"
+    "ink",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "62fa8e68c7b1",
     "5e09fcda75cd",
     "a77461278282",
     "80e7f5179915",
@@ -185,11 +184,11 @@
     "33d246cab730",
     "a92588898570",
     "2b43e76c16bd",
-    "e0e066651677"
+    "e0e066651677",
+    "828d710d5119"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-15",
     "2026-08-16",
     "2026-08-17",
     "2026-08-18",
@@ -208,6 +207,7 @@
     "2026-08-31",
     "2026-09-01",
     "2026-09-02",
-    "2026-09-03"
+    "2026-09-03",
+    "2026-09-04"
   ]
 }
