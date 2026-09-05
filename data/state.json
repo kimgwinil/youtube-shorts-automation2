@@ -35,7 +35,6 @@
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "8432aa60d5587ae7536c81f1aa467d0f8aea9fd5",
     "af371bb42ecea9ec54725e42a4530022034adc9a",
-    "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
@@ -84,10 +83,10 @@
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
-    "d3485ee60b499337294e9184c6bcd2e43d0538ec"
+    "d3485ee60b499337294e9184c6bcd2e43d0538ec",
+    "f3739b137c0a8dc312e75e7ed75a5e04367d1d30"
   ],
   "recent_titles": [
-    "발걸음이 멈춘 자리에서, 마음을 확인하라",
     "바르게 하는 것과, 옳게 고르는 것",
     "비 갠 물웅덩이에, 세상을 구하는 빛이 있었다",
     "새벽의 한 줄이, 인생의 이자를 만든다",
@@ -106,10 +105,10 @@
     "덜어낼수록 선명해지는 순간",
     "별이 많을수록 작아지는 밤, 우리는 왜 소중한가",
     "열두 척만 남은 새벽, 바다는 아직 끝나지 않았다",
-    "더 높은 곳은 혼자 만든 풍경이 아니다"
+    "더 높은 곳은 혼자 만든 풍경이 아니다",
+    "새벽의 끝에서, 내가 찾던 것이 먼저 오고 있었다"
   ],
   "recent_quote_ids": [
-    "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
     "580f6211ac6516040340087cb89a620f43a2c8dd",
@@ -128,10 +127,10 @@
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
-    "d3485ee60b499337294e9184c6bcd2e43d0538ec"
+    "d3485ee60b499337294e9184c6bcd2e43d0538ec",
+    "f3739b137c0a8dc312e75e7ed75a5e04367d1d30"
   ],
   "recent_image_fingerprints": [
-    "558996fe234cba8e",
     "8be43552f7a67521",
     "b4bd8f7d3b287ca0",
     "f25a13fe8d2c5f13",
@@ -150,7 +149,8 @@
     "27e7f0f035e62b6f",
     "4a95d668d69dab41",
     "aa37185a1cfc2789",
-    "713f07d8c66a05fb"
+    "713f07d8c66a05fb",
+    "7091d92aaab83f43"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -160,14 +160,13 @@
     "minimalist",
     "ink_wash",
     "minimal",
-    "calligraphy",
     "realistic",
     "ink",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "calligraphy"
   ],
   "recent_music_signatures": [
-    "a77461278282",
     "80e7f5179915",
     "a9264a28ba79",
     "a7da84aff1df",
@@ -186,11 +185,11 @@
     "2b43e76c16bd",
     "e0e066651677",
     "828d710d5119",
-    "d53ba6e54006"
+    "d53ba6e54006",
+    "bc75d7cf1595"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-17",
     "2026-08-18",
     "2026-08-19",
     "2026-08-20",
@@ -209,6 +208,7 @@
     "2026-09-02",
     "2026-09-03",
     "2026-09-04",
-    "2026-09-05"
+    "2026-09-05",
+    "2026-09-06"
   ]
 }
