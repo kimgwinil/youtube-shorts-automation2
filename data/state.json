@@ -57,7 +57,6 @@
     "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
-    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
     "580f6211ac6516040340087cb89a620f43a2c8dd",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
@@ -85,10 +84,10 @@
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6"
   ],
   "recent_titles": [
-    "모르는 사람만 발견하는 새벽의 문",
     "말보다 오래 남는 건, 그때의 온도였다",
     "비 오는 날, 나는 제대로 살고 있는가",
     "금이 간 마음에만 보이는 것",
@@ -107,10 +106,10 @@
     "행복은 멀리 있지 않고, 오늘 손질한 잎에 머문다",
     "흔들리는 건 세상이 아니라, 내 마음일 때",
     "이기는 사람은 먼저 돌을 내려놓는다",
-    "답보다 먼저 도착하는 질문의 힘"
+    "답보다 먼저 도착하는 질문의 힘",
+    "바르게 하는 것보다 먼저 물어야 할 것"
   ],
   "recent_quote_ids": [
-    "4f29ba4e626f6e440ee2b8faa8634e1e62004b70",
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "91ec69487bbc91c0c17c04e5745929eb5adf159f",
@@ -129,10 +128,10 @@
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
+    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6"
   ],
   "recent_image_fingerprints": [
-    "0358fb27712f61ca",
     "8d4282f24073300c",
     "e785ec73e0a060ff",
     "e3b0f4eaf3efe00a",
@@ -151,7 +150,8 @@
     "786d5c63b6ac84e4",
     "82872698b97d674a",
     "f1cd1d0ea75d07ce",
-    "b76228c713352c76"
+    "b76228c713352c76",
+    "dddd180d3a476b61"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -163,12 +163,11 @@
     "minimal",
     "realistic",
     "ink",
-    "watercolor",
     "calligraphy",
-    "photoreal"
+    "photoreal",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "f18a9551a171",
     "6dd005aa7603",
     "d602961f3484",
     "0254d3f6ecb9",
@@ -187,11 +186,11 @@
     "5366f78af9f9",
     "51ef5e8c6bf2",
     "6bc3da615500",
-    "a47b82ae4547"
+    "a47b82ae4547",
+    "118794678a3c"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-27",
     "2026-08-28",
     "2026-08-29",
     "2026-08-30",
@@ -210,6 +209,7 @@
     "2026-09-12",
     "2026-09-13",
     "2026-09-14",
-    "2026-09-15"
+    "2026-09-15",
+    "2026-09-16"
   ]
 }
