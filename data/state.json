@@ -34,7 +34,6 @@
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
-    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
     "5125fb57415e7e7677f41321dbcef0f29dfbc32a",
     "4ff3071f59f37665227dcbe3926e59b85120eda9",
@@ -85,10 +84,10 @@
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
-    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6"
+    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
+    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675"
   ],
   "recent_titles": [
-    "말보다 오래 남는 건, 그때의 온도였다",
     "비 오는 날, 나는 제대로 살고 있는가",
     "금이 간 마음에만 보이는 것",
     "비바람이 나무를 꺾지 못한 이유",
@@ -107,10 +106,10 @@
     "흔들리는 건 세상이 아니라, 내 마음일 때",
     "이기는 사람은 먼저 돌을 내려놓는다",
     "답보다 먼저 도착하는 질문의 힘",
-    "바르게 하는 것보다 먼저 물어야 할 것"
+    "바르게 하는 것보다 먼저 물어야 할 것",
+    "출구의 빛은 끝까지 걷는 사람에게만 보인다"
   ],
   "recent_quote_ids": [
-    "b4761fd82438f6ddca69a23e41cf68da8b496646",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "91ec69487bbc91c0c17c04e5745929eb5adf159f",
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
@@ -129,10 +128,10 @@
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
-    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6"
+    "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
+    "30e1bd6bb34a39b81dbde46d32b0288e97fc4675"
   ],
   "recent_image_fingerprints": [
-    "8d4282f24073300c",
     "e785ec73e0a060ff",
     "e3b0f4eaf3efe00a",
     "057e948934b635a1",
@@ -151,7 +150,8 @@
     "82872698b97d674a",
     "f1cd1d0ea75d07ce",
     "b76228c713352c76",
-    "dddd180d3a476b61"
+    "dddd180d3a476b61",
+    "655ea5150514dfa7"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -168,7 +168,6 @@
     "watercolor"
   ],
   "recent_music_signatures": [
-    "6dd005aa7603",
     "d602961f3484",
     "0254d3f6ecb9",
     "33d246cab730",
@@ -187,11 +186,11 @@
     "51ef5e8c6bf2",
     "6bc3da615500",
     "a47b82ae4547",
-    "118794678a3c"
+    "118794678a3c",
+    "29abb8028916"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-08-28",
     "2026-08-29",
     "2026-08-30",
     "2026-08-31",
@@ -210,6 +209,7 @@
     "2026-09-13",
     "2026-09-14",
     "2026-09-15",
-    "2026-09-16"
+    "2026-09-16",
+    "2026-09-17"
   ]
 }
