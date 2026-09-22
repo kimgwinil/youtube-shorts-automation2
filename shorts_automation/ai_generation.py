@@ -383,7 +383,7 @@ def _generate_script_with_gemini(
 }}
 """
     client = genai.Client(api_key=api_key)
-    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-3.6-flash")
     response = client.models.generate_content(
         model=model,
         contents=prompt,
@@ -941,7 +941,7 @@ JSON 스키마:
 }}
 """
     client = genai.Client(api_key=api_key)
-    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-2.5-flash")
+    model = os.environ.get("GEMINI_TEXT_MODEL", "gemini-3.6-flash")
     response = client.models.generate_content(
         model=model,
         contents=prompt,
