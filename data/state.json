@@ -35,7 +35,6 @@
     "4aa01f106afcb148402cac72011ac64b751f1d7e",
     "d2aa55af6cf57dc9e86d1865ba167b34fe2090ef",
     "5125fb57415e7e7677f41321dbcef0f29dfbc32a",
-    "4ff3071f59f37665227dcbe3926e59b85120eda9",
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
@@ -85,10 +84,10 @@
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d"
+    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
+    "4ff3071f59f37665227dcbe3926e59b85120eda9"
   ],
   "recent_titles": [
-    "아직 오지 않은 날을 먼저 그리는 법",
     "덜어낼수록 선명해지는 순간",
     "별이 많을수록 작아지는 밤, 우리는 왜 소중한가",
     "열두 척만 남은 새벽, 바다는 아직 끝나지 않았다",
@@ -107,10 +106,10 @@
     "출구의 빛은 끝까지 걷는 사람에게만 보인다",
     "바쁘게 움직였는데, 왜 제자리일까?",
     "마음이 자꾸 흩어지는 새벽에 읽는 한 문장",
-    "하루가 허무하게 느껴질 때 떠올릴 한 문장"
+    "하루가 허무하게 느껴질 때 떠올릴 한 문장",
+    "아는 것만으로는 아무것도 바뀌지 않는다"
   ],
   "recent_quote_ids": [
-    "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
@@ -129,10 +128,10 @@
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
-    "598bcd7d2c545682f1b10afd21ae326ef0d2824d"
+    "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
+    "4ff3071f59f37665227dcbe3926e59b85120eda9"
   ],
   "recent_image_fingerprints": [
-    "1d689b02c802809d",
     "27e7f0f035e62b6f",
     "4a95d668d69dab41",
     "aa37185a1cfc2789",
@@ -151,7 +150,8 @@
     "655ea5150514dfa7",
     "dd6ab75a2a984f43",
     "7682707c01b698b8",
-    "ade8296408bd2b03"
+    "ade8296408bd2b03",
+    "3414966040c3b9fe"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -164,11 +164,10 @@
     "realistic",
     "ink",
     "calligraphy",
-    "photoreal",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "a92588898570",
     "2b43e76c16bd",
     "e0e066651677",
     "828d710d5119",
@@ -187,11 +186,11 @@
     "29abb8028916",
     "ffa9497a0305",
     "4cea2003ac4e",
-    "d540cb3d759d"
+    "d540cb3d759d",
+    "6d5920e42cd3"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-01",
     "2026-09-02",
     "2026-09-03",
     "2026-09-04",
@@ -210,6 +209,7 @@
     "2026-09-17",
     "2026-09-18",
     "2026-09-19",
-    "2026-09-23"
+    "2026-09-23",
+    "2026-09-24"
   ]
 }
