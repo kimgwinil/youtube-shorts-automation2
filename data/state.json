@@ -49,7 +49,6 @@
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
-    "742d9b5facb691aa9b560853aa30a44abbce10e5",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "223024c2adfb18dd8ab68bb305218fb144ba2241",
     "4bb1a835a656b76f5b7a27608de144ef55a72fee",
@@ -85,10 +84,10 @@
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
-    "4ff3071f59f37665227dcbe3926e59b85120eda9"
+    "4ff3071f59f37665227dcbe3926e59b85120eda9",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_titles": [
-    "덜어낼수록 선명해지는 순간",
     "별이 많을수록 작아지는 밤, 우리는 왜 소중한가",
     "열두 척만 남은 새벽, 바다는 아직 끝나지 않았다",
     "더 높은 곳은 혼자 만든 풍경이 아니다",
@@ -107,10 +106,10 @@
     "바쁘게 움직였는데, 왜 제자리일까?",
     "마음이 자꾸 흩어지는 새벽에 읽는 한 문장",
     "하루가 허무하게 느껴질 때 떠올릴 한 문장",
-    "아는 것만으로는 아무것도 바뀌지 않는다"
+    "아는 것만으로는 아무것도 바뀌지 않는다",
+    "흐릿한 노력을 또렷한 성장으로 바꾸는 법"
   ],
   "recent_quote_ids": [
-    "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "d3485ee60b499337294e9184c6bcd2e43d0538ec",
@@ -129,10 +128,10 @@
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
     "598bcd7d2c545682f1b10afd21ae326ef0d2824d",
-    "4ff3071f59f37665227dcbe3926e59b85120eda9"
+    "4ff3071f59f37665227dcbe3926e59b85120eda9",
+    "742d9b5facb691aa9b560853aa30a44abbce10e5"
   ],
   "recent_image_fingerprints": [
-    "27e7f0f035e62b6f",
     "4a95d668d69dab41",
     "aa37185a1cfc2789",
     "713f07d8c66a05fb",
@@ -151,7 +150,8 @@
     "dd6ab75a2a984f43",
     "7682707c01b698b8",
     "ade8296408bd2b03",
-    "3414966040c3b9fe"
+    "3414966040c3b9fe",
+    "e8f92f4081cc3ba6"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -162,13 +162,12 @@
     "ink_wash",
     "minimal",
     "realistic",
-    "ink",
     "calligraphy",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "2b43e76c16bd",
     "e0e066651677",
     "828d710d5119",
     "d53ba6e54006",
@@ -187,11 +186,11 @@
     "ffa9497a0305",
     "4cea2003ac4e",
     "d540cb3d759d",
-    "6d5920e42cd3"
+    "6d5920e42cd3",
+    "0b3b9f531b91"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-02",
     "2026-09-03",
     "2026-09-04",
     "2026-09-05",
@@ -210,6 +209,7 @@
     "2026-09-18",
     "2026-09-19",
     "2026-09-23",
-    "2026-09-24"
+    "2026-09-24",
+    "2026-09-25"
   ]
 }
