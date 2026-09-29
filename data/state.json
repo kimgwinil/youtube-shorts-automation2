@@ -43,7 +43,6 @@
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "cc0b03fbc9a8846babed6a5912be0c9c75db4777",
     "491dab4ddcf2f1578e8f9f4d5c00df6e0f47b6eb",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "1977f751979b3238b374891bb33d6e3623a82dde",
     "9bcecbb7571f3fa4722475e824b0ac7c94791c2c",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
@@ -85,10 +84,10 @@
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "ebba16c7bc661d474493fdea345062ab09228038"
+    "ebba16c7bc661d474493fdea345062ab09228038",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_titles": [
-    "아무도 없는 길에서야 들리는 선택",
     "흩어진 점들이 선이 되는 밤",
     "빈 의자 앞에서야 알게 되는 나의 자리",
     "넘어진 자만 아는 출발선의 온도",
@@ -107,10 +106,10 @@
     "차가운 세상에서 나를 다정하게 만드는 한 문장",
     "생각이 굳어갈 때 마음을 다시 깨우는 한 문장",
     "매일 가꾸지 않으면 마음도 생각도 녹슬어 간다",
-    "매일의 작은 행동이 차곡차곡 나를 만드는 순간"
+    "매일의 작은 행동이 차곡차곡 나를 만드는 순간",
+    "운명을 탓하기 전에 나를 돌아보는 지혜"
   ],
   "recent_quote_ids": [
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "bbf11947363178b06a0ff3608b5f4f282a188087",
     "daf4109241d98263155099d4ed5653e61494d10b",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
@@ -129,10 +128,10 @@
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "ebba16c7bc661d474493fdea345062ab09228038"
+    "ebba16c7bc661d474493fdea345062ab09228038",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_image_fingerprints": [
-    "e9cb2cd950ec90db",
     "2069d82335be4d4c",
     "4270c504d0e79a1c",
     "67c6f1f1cf96323f",
@@ -151,7 +150,8 @@
     "0e63c0450512e5a4",
     "8b0f52deb05846c6",
     "3bcf965b22bc829b",
-    "f9527307c2b04f92"
+    "f9527307c2b04f92",
+    "6054e3090f884a77"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -162,13 +162,12 @@
     "ink_wash",
     "minimal",
     "realistic",
-    "ink",
     "calligraphy",
     "watercolor",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "44378ef5687c",
     "7668ede6dc33",
     "0643c91e26ae",
     "392abca55100",
@@ -187,11 +186,11 @@
     "ce826f394982",
     "11a3397dc52a",
     "e975bae63f7f",
-    "358d052523ea"
+    "358d052523ea",
+    "40bf3f0569ae"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-07",
     "2026-09-08",
     "2026-09-09",
     "2026-09-10",
@@ -210,6 +209,7 @@
     "2026-09-26",
     "2026-09-27",
     "2026-09-28",
-    "2026-09-29"
+    "2026-09-29",
+    "2026-09-30"
   ]
 }
