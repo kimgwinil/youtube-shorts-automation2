@@ -61,7 +61,6 @@
     "c339f0f40a7c8b45a049e65df7fc1ef7469eca93",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
-    "a410956f324ec26ac7933bd420fadd2104b6469b",
     "d3485ee60b499337294e9184c6bcd2e43d0538ec",
     "f3739b137c0a8dc312e75e7ed75a5e04367d1d30",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
@@ -85,10 +84,10 @@
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "a410956f324ec26ac7933bd420fadd2104b6469b"
   ],
   "recent_titles": [
-    "빈 의자 앞에서야 알게 되는 나의 자리",
     "넘어진 자만 아는 출발선의 온도",
     "갈림길에서 이익을 내려놓는 순간",
     "행복은 멀리 있지 않고, 오늘 손질한 잎에 머문다",
@@ -107,10 +106,10 @@
     "매일 가꾸지 않으면 마음도 생각도 녹슬어 간다",
     "매일의 작은 행동이 차곡차곡 나를 만드는 순간",
     "운명을 탓하기 전에 나를 돌아보는 지혜",
-    "말하지 않아도 사람들이 따르는 사람의 아침"
+    "말하지 않아도 사람들이 따르는 사람의 아침",
+    "열두 척만 남은 새벽, 끝까지 나아가는 법"
   ],
   "recent_quote_ids": [
-    "daf4109241d98263155099d4ed5653e61494d10b",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
@@ -129,10 +128,10 @@
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775"
+    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
+    "a410956f324ec26ac7933bd420fadd2104b6469b"
   ],
   "recent_image_fingerprints": [
-    "4270c504d0e79a1c",
     "67c6f1f1cf96323f",
     "aff9bce90aa24751",
     "786d5c63b6ac84e4",
@@ -151,7 +150,8 @@
     "3bcf965b22bc829b",
     "f9527307c2b04f92",
     "6054e3090f884a77",
-    "4cc31779c990902b"
+    "4cc31779c990902b",
+    "ca74dfaa34a4c499"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -165,10 +165,10 @@
     "calligraphy",
     "watercolor",
     "photoreal",
-    "ink"
+    "ink",
+    "서화"
   ],
   "recent_music_signatures": [
-    "0643c91e26ae",
     "392abca55100",
     "52b539adccbc",
     "5366f78af9f9",
@@ -187,11 +187,11 @@
     "e975bae63f7f",
     "358d052523ea",
     "40bf3f0569ae",
-    "8c5dbfa192ea"
+    "8c5dbfa192ea",
+    "260405954d4c"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-09",
     "2026-09-10",
     "2026-09-11",
     "2026-09-12",
@@ -210,6 +210,7 @@
     "2026-09-28",
     "2026-09-29",
     "2026-09-30",
-    "2026-10-01"
+    "2026-10-01",
+    "2026-10-02"
   ]
 }
