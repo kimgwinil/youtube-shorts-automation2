@@ -22,7 +22,6 @@
     "c5e3b51855013ca1e8467a91579fb75084c1ef43",
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "04f6a176290a383a576e94664d0186f27cb4c597",
-    "07374f20ac4361831e80019d99223af56a1ba321",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "8432aa60d5587ae7536c81f1aa467d0f8aea9fd5",
@@ -85,10 +84,10 @@
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
-    "52ac49c876b8e60685653cbc34850e8ffe3450f7"
+    "52ac49c876b8e60685653cbc34850e8ffe3450f7",
+    "07374f20ac4361831e80019d99223af56a1ba321"
   ],
   "recent_titles": [
-    "갈림길에서 이익을 내려놓는 순간",
     "행복은 멀리 있지 않고, 오늘 손질한 잎에 머문다",
     "흔들리는 건 세상이 아니라, 내 마음일 때",
     "이기는 사람은 먼저 돌을 내려놓는다",
@@ -107,10 +106,10 @@
     "운명을 탓하기 전에 나를 돌아보는 지혜",
     "말하지 않아도 사람들이 따르는 사람의 아침",
     "열두 척만 남은 새벽, 끝까지 나아가는 법",
-    "세상이 달라지길 기다리기 전, 이 새벽에 할 일"
+    "세상이 달라지길 기다리기 전, 이 새벽에 할 일",
+    "아무렇지 않은 아침에 숨은 작은 기적"
   ],
   "recent_quote_ids": [
-    "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
@@ -129,10 +128,10 @@
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
-    "52ac49c876b8e60685653cbc34850e8ffe3450f7"
+    "52ac49c876b8e60685653cbc34850e8ffe3450f7",
+    "07374f20ac4361831e80019d99223af56a1ba321"
   ],
   "recent_image_fingerprints": [
-    "aff9bce90aa24751",
     "786d5c63b6ac84e4",
     "82872698b97d674a",
     "f1cd1d0ea75d07ce",
@@ -151,7 +150,8 @@
     "6054e3090f884a77",
     "4cc31779c990902b",
     "ca74dfaa34a4c499",
-    "50d4e51e4546b1ac"
+    "50d4e51e4546b1ac",
+    "dc7190f4ac97db8e"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -163,14 +163,13 @@
     "minimal",
     "realistic",
     "calligraphy",
-    "watercolor",
     "photoreal",
     "ink",
     "서화",
-    "실사"
+    "실사",
+    "watercolor"
   ],
   "recent_music_signatures": [
-    "52b539adccbc",
     "5366f78af9f9",
     "51ef5e8c6bf2",
     "6bc3da615500",
@@ -189,11 +188,11 @@
     "40bf3f0569ae",
     "8c5dbfa192ea",
     "260405954d4c",
-    "0cf437559abb"
+    "0cf437559abb",
+    "fd9b5518d9cd"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-11",
     "2026-09-12",
     "2026-09-13",
     "2026-09-14",
@@ -212,6 +211,7 @@
     "2026-09-30",
     "2026-10-01",
     "2026-10-02",
-    "2026-10-03"
+    "2026-10-03",
+    "2026-10-04"
   ]
 }
