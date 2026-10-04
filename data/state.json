@@ -49,7 +49,6 @@
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
     "85661b85057484d01768b7cc8383a1737744c71e",
     "6297e1290da7926c4568a898da2116c84083ddf2",
-    "c430decabbdcd788e1b5649c26215911f6ce628e",
     "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
     "4f29ba4e626f6e440ee2b8faa8634e1e62004b70",
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
@@ -85,10 +84,10 @@
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
-    "07374f20ac4361831e80019d99223af56a1ba321"
+    "07374f20ac4361831e80019d99223af56a1ba321",
+    "c430decabbdcd788e1b5649c26215911f6ce628e"
   ],
   "recent_titles": [
-    "행복은 멀리 있지 않고, 오늘 손질한 잎에 머문다",
     "흔들리는 건 세상이 아니라, 내 마음일 때",
     "이기는 사람은 먼저 돌을 내려놓는다",
     "답보다 먼저 도착하는 질문의 힘",
@@ -107,10 +106,10 @@
     "말하지 않아도 사람들이 따르는 사람의 아침",
     "열두 척만 남은 새벽, 끝까지 나아가는 법",
     "세상이 달라지길 기다리기 전, 이 새벽에 할 일",
-    "아무렇지 않은 아침에 숨은 작은 기적"
+    "아무렇지 않은 아침에 숨은 작은 기적",
+    "내일의 나에게 맡기기엔 너무 아까운 아침"
   ],
   "recent_quote_ids": [
-    "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "8ebdfc614c8251807c94526b307c9e240d057f50",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
     "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
@@ -129,10 +128,10 @@
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
-    "07374f20ac4361831e80019d99223af56a1ba321"
+    "07374f20ac4361831e80019d99223af56a1ba321",
+    "c430decabbdcd788e1b5649c26215911f6ce628e"
   ],
   "recent_image_fingerprints": [
-    "786d5c63b6ac84e4",
     "82872698b97d674a",
     "f1cd1d0ea75d07ce",
     "b76228c713352c76",
@@ -151,7 +150,8 @@
     "4cc31779c990902b",
     "ca74dfaa34a4c499",
     "50d4e51e4546b1ac",
-    "dc7190f4ac97db8e"
+    "dc7190f4ac97db8e",
+    "001b0807ced3393c"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -163,14 +163,13 @@
     "minimal",
     "realistic",
     "calligraphy",
-    "photoreal",
     "ink",
     "서화",
     "실사",
-    "watercolor"
+    "watercolor",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "5366f78af9f9",
     "51ef5e8c6bf2",
     "6bc3da615500",
     "a47b82ae4547",
@@ -189,11 +188,11 @@
     "8c5dbfa192ea",
     "260405954d4c",
     "0cf437559abb",
-    "fd9b5518d9cd"
+    "fd9b5518d9cd",
+    "7e7e40fb120e"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-12",
     "2026-09-13",
     "2026-09-14",
     "2026-09-15",
@@ -212,6 +211,7 @@
     "2026-10-01",
     "2026-10-02",
     "2026-10-03",
-    "2026-10-04"
+    "2026-10-04",
+    "2026-10-05"
   ]
 }
