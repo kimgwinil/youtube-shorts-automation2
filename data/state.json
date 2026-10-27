@@ -22,7 +22,6 @@
     "930cb2ee522fb24021eaae8015e6aba1cd8fde18",
     "04f6a176290a383a576e94664d0186f27cb4c597",
     "3e7bc155508adc4bc0a3a037e6f77cf541205861",
-    "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "8432aa60d5587ae7536c81f1aa467d0f8aea9fd5",
     "af371bb42ecea9ec54725e42a4530022034adc9a",
     "db5282fdb5e0ca36ccd7fce21de565749e118b0d",
@@ -85,10 +84,10 @@
     "e2399538de6458351a15ebb5787b72518d888a72",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18"
   ],
   "recent_titles": [
-    "생각이 굳어갈 때 마음을 다시 깨우는 한 문장",
     "매일 가꾸지 않으면 마음도 생각도 녹슬어 간다",
     "매일의 작은 행동이 차곡차곡 나를 만드는 순간",
     "운명을 탓하기 전에 나를 돌아보는 지혜",
@@ -107,10 +106,10 @@
     "비에 번진 문장을 다시 고치는 시간",
     "좋은 사람을 증명하는 가장 조용한 방법",
     "바쁘게 움직였는데, 왜 성과는 멀어졌을까",
-    "넘어진 자만 아는, 다시 뛰는 순간"
+    "넘어진 자만 아는, 다시 뛰는 순간",
+    "별을 올려다본 순간, 마음이 조용해졌다"
   ],
   "recent_quote_ids": [
-    "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
     "ebba16c7bc661d474493fdea345062ab09228038",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
@@ -129,10 +128,10 @@
     "e2399538de6458351a15ebb5787b72518d888a72",
     "44fa08de533da4a94a2c60c852743a73fdd688ab",
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
-    "55e3030758a7e78df354fa0a6045fc1826b6db97"
+    "55e3030758a7e78df354fa0a6045fc1826b6db97",
+    "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18"
   ],
   "recent_image_fingerprints": [
-    "8b0f52deb05846c6",
     "3bcf965b22bc829b",
     "f9527307c2b04f92",
     "6054e3090f884a77",
@@ -151,7 +150,8 @@
     "844083ff846158dc",
     "a0a2f36c4bf216c3",
     "29368f1e7e82d30f",
-    "a7af13db13a7ef88"
+    "a7af13db13a7ef88",
+    "795cf1c9417e3431"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -165,12 +165,11 @@
     "calligraphy",
     "실사",
     "watercolor",
-    "ink",
     "서화",
-    "photoreal"
+    "photoreal",
+    "ink"
   ],
   "recent_music_signatures": [
-    "11a3397dc52a",
     "e975bae63f7f",
     "358d052523ea",
     "40bf3f0569ae",
@@ -189,11 +188,11 @@
     "a64e07270682",
     "5c055dea033d",
     "9f519ecfad86",
-    "36a4c1392280"
+    "36a4c1392280",
+    "79f302c6dfec"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-27",
     "2026-09-28",
     "2026-09-29",
     "2026-09-30",
@@ -212,6 +211,7 @@
     "2026-10-13",
     "2026-10-14",
     "2026-10-15",
-    "2026-10-27"
+    "2026-10-27",
+    "2026-10-28"
   ]
 }
