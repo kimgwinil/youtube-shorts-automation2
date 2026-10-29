@@ -31,7 +31,6 @@
     "8c8769f32739dc1a1270cc860a5ce31731198bec",
     "0503cc5d67d81ff4910d8882aeb1a42b1711a2c3",
     "e7dffc8a216812f16cad4d8b226f44765c01c2a4",
-    "0326b61b254df41aca0297f92d2e72a51c51a28c",
     "61c750a67b59ce71b1d81b80de5cfcecc8de302b",
     "2aa8ef5c397344aa98e621e64d25b8a5ffda2609",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
@@ -85,10 +84,10 @@
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "0326b61b254df41aca0297f92d2e72a51c51a28c"
   ],
   "recent_titles": [
-    "매일의 작은 행동이 차곡차곡 나를 만드는 순간",
     "운명을 탓하기 전에 나를 돌아보는 지혜",
     "말하지 않아도 사람들이 따르는 사람의 아침",
     "열두 척만 남은 새벽, 끝까지 나아가는 법",
@@ -107,10 +106,10 @@
     "바쁘게 움직였는데, 왜 성과는 멀어졌을까",
     "넘어진 자만 아는, 다시 뛰는 순간",
     "별을 올려다본 순간, 마음이 조용해졌다",
-    "남의 발자국이 사라진 새벽, 어디로 갈 것인가"
+    "남의 발자국이 사라진 새벽, 어디로 갈 것인가",
+    "빛이 보인다고 모두 문을 열 수 있을까"
   ],
   "recent_quote_ids": [
-    "ebba16c7bc661d474493fdea345062ab09228038",
     "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
@@ -129,10 +128,10 @@
     "8c5ad036a9407ed5d95bd656da2aeab68e7a4d13",
     "55e3030758a7e78df354fa0a6045fc1826b6db97",
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "0326b61b254df41aca0297f92d2e72a51c51a28c"
   ],
   "recent_image_fingerprints": [
-    "f9527307c2b04f92",
     "6054e3090f884a77",
     "4cc31779c990902b",
     "ca74dfaa34a4c499",
@@ -151,7 +150,8 @@
     "29368f1e7e82d30f",
     "a7af13db13a7ef88",
     "795cf1c9417e3431",
-    "9a041982cd494f13"
+    "9a041982cd494f13",
+    "0d88c486136843b3"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -165,12 +165,11 @@
     "calligraphy",
     "실사",
     "watercolor",
-    "서화",
     "ink",
-    "photoreal"
+    "photoreal",
+    "서화"
   ],
   "recent_music_signatures": [
-    "358d052523ea",
     "40bf3f0569ae",
     "8c5dbfa192ea",
     "260405954d4c",
@@ -189,11 +188,11 @@
     "9f519ecfad86",
     "36a4c1392280",
     "79f302c6dfec",
-    "a50d6ce9e76f"
+    "a50d6ce9e76f",
+    "fc869ef112ce"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-09-29",
     "2026-09-30",
     "2026-10-01",
     "2026-10-02",
@@ -212,6 +211,7 @@
     "2026-10-15",
     "2026-10-27",
     "2026-10-28",
-    "2026-10-29"
+    "2026-10-29",
+    "2026-10-30"
   ]
 }
