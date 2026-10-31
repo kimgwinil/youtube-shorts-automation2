@@ -45,7 +45,6 @@
     "b4761fd82438f6ddca69a23e41cf68da8b496646",
     "879220a5b8cbb95ca5f5f9e3082d6ff994a49ff2",
     "91ec69487bbc91c0c17c04e5745929eb5adf159f",
-    "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "13026a2f95f385bc527a87c0a06de37f47603e23",
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "d3485ee60b499337294e9184c6bcd2e43d0538ec",
@@ -85,10 +84,10 @@
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
-    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca"
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
+    "df7ae00048e14dc6edd4f670d6c426df2c000635"
   ],
   "recent_titles": [
-    "말하지 않아도 사람들이 따르는 사람의 아침",
     "열두 척만 남은 새벽, 끝까지 나아가는 법",
     "세상이 달라지길 기다리기 전, 이 새벽에 할 일",
     "아무렇지 않은 아침에 숨은 작은 기적",
@@ -107,10 +106,10 @@
     "별을 올려다본 순간, 마음이 조용해졌다",
     "남의 발자국이 사라진 새벽, 어디로 갈 것인가",
     "빛이 보인다고 모두 문을 열 수 있을까",
-    "첫 계단 앞에서, 길은 이미 시작됐다"
+    "첫 계단 앞에서, 길은 이미 시작됐다",
+    "휘어진 나무가 끝내 부러지지 않은 이유"
   ],
   "recent_quote_ids": [
-    "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
     "07374f20ac4361831e80019d99223af56a1ba321",
@@ -129,10 +128,10 @@
     "5dfae36c58d9bd6eaf1c5d3c53cb3e7a0c09fb18",
     "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
     "0326b61b254df41aca0297f92d2e72a51c51a28c",
-    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca"
+    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
+    "df7ae00048e14dc6edd4f670d6c426df2c000635"
   ],
   "recent_image_fingerprints": [
-    "4cc31779c990902b",
     "ca74dfaa34a4c499",
     "50d4e51e4546b1ac",
     "dc7190f4ac97db8e",
@@ -151,7 +150,8 @@
     "795cf1c9417e3431",
     "9a041982cd494f13",
     "0d88c486136843b3",
-    "d7deaecf353be00b"
+    "d7deaecf353be00b",
+    "2c3d359e7ddf8e34"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -170,7 +170,6 @@
     "photoreal"
   ],
   "recent_music_signatures": [
-    "8c5dbfa192ea",
     "260405954d4c",
     "0cf437559abb",
     "fd9b5518d9cd",
@@ -189,11 +188,11 @@
     "79f302c6dfec",
     "a50d6ce9e76f",
     "fc869ef112ce",
-    "985b3707aaf2"
+    "985b3707aaf2",
+    "92449a71f793"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-10-01",
     "2026-10-02",
     "2026-10-03",
     "2026-10-04",
@@ -212,6 +211,7 @@
     "2026-10-28",
     "2026-10-29",
     "2026-10-30",
-    "2026-10-31"
+    "2026-10-31",
+    "2026-11-01"
   ]
 }
