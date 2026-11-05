@@ -61,7 +61,6 @@
     "0f571748654087b515f12c03598f81b5ef5285dd",
     "34897b2ab8b9d89431c92532eca188a1fa3c3b26",
     "ebba16c7bc661d474493fdea345062ab09228038",
-    "d5dccc677562dab90ebadc98234d56ab9cab7f72",
     "5bb045d3aa50bf8572aceaa3c386e0bed7be9775",
     "a410956f324ec26ac7933bd420fadd2104b6469b",
     "52ac49c876b8e60685653cbc34850e8ffe3450f7",
@@ -85,10 +84,10 @@
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "f97d0ad8888bd2f01f450a624dcad46f5e493bca"
+    "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_titles": [
-    "내일의 나에게 맡기기엔 너무 아까운 아침",
     "빈자리를 찾지 말고, 당신의 자리를 만들어라",
     "편안함을 깨뜨리는 책을 만난 새벽",
     "아이디어를 현실로 바꾸는 사람은 먼저 이것을 한다",
@@ -107,10 +106,10 @@
     "휘어진 나무가 끝내 부러지지 않은 이유",
     "매일의 흔적이 마음을 지켜주는 이유",
     "어제의 지식이 오늘 낡아지는 순간",
-    "폭풍이 멎은 뒤, 발걸음이 증명하는 것"
+    "폭풍이 멎은 뒤, 발걸음이 증명하는 것",
+    "별이 아니라 나침반이 멈춘 곳에서"
   ],
   "recent_quote_ids": [
-    "c430decabbdcd788e1b5649c26215911f6ce628e",
     "daf4109241d98263155099d4ed5653e61494d10b",
     "dfce9e1d2c80b33252c447d2361aa1d6c974726c",
     "6d3fb5c2735998e9bbc33d4091a9490c2bce629e",
@@ -129,10 +128,10 @@
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
-    "f97d0ad8888bd2f01f450a624dcad46f5e493bca"
+    "f97d0ad8888bd2f01f450a624dcad46f5e493bca",
+    "d5dccc677562dab90ebadc98234d56ab9cab7f72"
   ],
   "recent_image_fingerprints": [
-    "001b0807ced3393c",
     "4277ed519df5749a",
     "32084f08966cabe0",
     "f80316b227e2d401",
@@ -151,7 +150,8 @@
     "2c3d359e7ddf8e34",
     "82d9e3a5a74dd1dc",
     "98b53fc9c307d88c",
-    "0da219ccd0db24a8"
+    "0da219ccd0db24a8",
+    "0beb3fb34386edd3"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -166,11 +166,10 @@
     "실사",
     "watercolor",
     "ink",
-    "photoreal",
-    "서화"
+    "서화",
+    "photoreal"
   ],
   "recent_music_signatures": [
-    "7e7e40fb120e",
     "9096dbe1b919",
     "d0ffec6e3170",
     "203fe83aa87e",
@@ -189,11 +188,11 @@
     "92449a71f793",
     "efd6e591172f",
     "553994b483d6",
-    "d050c0c53293"
+    "d050c0c53293",
+    "22aabce935d8"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-10-05",
     "2026-10-06",
     "2026-10-07",
     "2026-10-08",
@@ -212,6 +211,7 @@
     "2026-11-01",
     "2026-11-02",
     "2026-11-03",
-    "2026-11-04"
+    "2026-11-04",
+    "2026-11-05"
   ]
 }
