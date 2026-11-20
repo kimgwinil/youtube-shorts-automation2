@@ -44,7 +44,6 @@
     "26901b1051af21cc7b0929218d4024b03f9454a8",
     "bc779e2be7a6e8b7f39e5c2b4419fb88adce0f29",
     "34a835ac9d92321f7b0aea34edc62145262a2060",
-    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7",
     "98c1ebc98efd79ddd0b2a851bc82612ccfd185e6",
     "30e1bd6bb34a39b81dbde46d32b0288e97fc4675",
     "a42223bff26e76b57876f7a079d0ed4a19cb1878",
@@ -86,10 +85,10 @@
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "85661b85057484d01768b7cc8383a1737744c71e",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_titles": [
-    "첫 계단 앞에서, 길은 이미 시작됐다",
     "휘어진 나무가 끝내 부러지지 않은 이유",
     "매일의 흔적이 마음을 지켜주는 이유",
     "어제의 지식이 오늘 낡아지는 순간",
@@ -108,10 +107,10 @@
     "별 앞에 서면, 작아지는 내가 선명해진다",
     "세상을 바꾸려던 손이 멈춘 곳",
     "같은 광장에 서도, 모두의 방향은 다르다",
-    "새벽 두 시, 누구의 길을 걷고 있나요"
+    "새벽 두 시, 누구의 길을 걷고 있나요",
+    "화이트보드에 답보다 오래 남는 것"
   ],
   "recent_quote_ids": [
-    "8cd2384ff0b143980c0151b7b5c6c4bcfd2c3aca",
     "df7ae00048e14dc6edd4f670d6c426df2c000635",
     "6297e1290da7926c4568a898da2116c84083ddf2",
     "4a0dcbbd0907c038214445cb201bbfb10e96a743",
@@ -130,10 +129,10 @@
     "4cf62c86e1ece3b4c1cee473094534fd1e1c07f8",
     "0c67880332d9dbf2dc5317ac4efc76b17ede0bf3",
     "85661b85057484d01768b7cc8383a1737744c71e",
-    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094"
+    "2506d56b2db8cf1f02b05ff4b9f39d3fdd5f5094",
+    "31ec5665f7fe9cdc1cbe69b7b3f1dae4ab9701e7"
   ],
   "recent_image_fingerprints": [
-    "d7deaecf353be00b",
     "2c3d359e7ddf8e34",
     "82d9e3a5a74dd1dc",
     "98b53fc9c307d88c",
@@ -152,7 +151,8 @@
     "cee2aa593c736877",
     "e507efdf6935d220",
     "8fc08256e6e116c9",
-    "e4151c457c6dcd10"
+    "e4151c457c6dcd10",
+    "8f7373af91388456"
   ],
   "recent_visual_styles": [
     "Sumi-e",
@@ -172,7 +172,6 @@
     "photoreal"
   ],
   "recent_music_signatures": [
-    "985b3707aaf2",
     "92449a71f793",
     "efd6e591172f",
     "553994b483d6",
@@ -191,11 +190,11 @@
     "d601fdfa2127",
     "a21d54c8fe92",
     "5cba574c4494",
-    "81fe6f0e52a3"
+    "81fe6f0e52a3",
+    "d23700a86750"
   ],
   "recent_music_assets": [],
   "recent_dates": [
-    "2026-10-31",
     "2026-11-01",
     "2026-11-02",
     "2026-11-03",
@@ -214,6 +213,7 @@
     "2026-11-16",
     "2026-11-17",
     "2026-11-18",
-    "2026-11-19"
+    "2026-11-19",
+    "2026-11-20"
   ]
 }
